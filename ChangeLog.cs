@@ -16,5 +16,10 @@ namespace _345_Launcher
         {
             InitializeComponent();
         }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
