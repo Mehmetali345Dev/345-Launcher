@@ -21,6 +21,7 @@ namespace _345_Launcher
             versiyon();
             Init_Data();
             rpc();
+            cbVersion.DropDownHeight = 200;
         }
 
 
@@ -33,6 +34,7 @@ namespace _345_Launcher
         #region stringler ıvır zıvırlar
         bool useMJava = true;
         string javaPath = "java.exe";
+        bool mcactive = false;
 
         MinecraftPath MinecraftPath;
         MVersionCollection Versions;
@@ -165,6 +167,7 @@ namespace _345_Launcher
         {
             if (chkStartUp.Checked == true)
             {
+                client.Dispose();
                 this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
             }
             this.WindowState = FormWindowState.Minimized;
@@ -303,7 +306,7 @@ namespace _345_Launcher
 
         private void btnLaunch_Click(object sender, EventArgs e)
         {
-
+            mcactive = true;
             client.Dispose();
             string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
 
@@ -598,6 +601,25 @@ namespace _345_Launcher
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
+
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            client = new DiscordRpcClient("814773064671690762");
+            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
+
+            client.Initialize();
+            client.SetPresence(new RichPresence()
+            {
+                Details = $"v. {versionInf.FileVersion}",
+                State = "Ana Menüde",
+                Timestamps = Timestamps.Now,
+                Assets = new Assets()
+                {
+                    LargeImageKey = "launcher",
+                    LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
+                }
+            });
         }
 
         private void guna2TileButton6_Click(object sender, EventArgs e)
@@ -615,6 +637,8 @@ namespace _345_Launcher
         {
             refreshVersions(null);
         }
+
+       
     }
 }
 
