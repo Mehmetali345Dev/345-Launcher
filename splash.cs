@@ -24,13 +24,23 @@ namespace _345_Launcher
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             panel2.Width += 3;
             if(panel2.Width >=560)
             {
                 timer1.Stop();
-                login login = new login();
-                login.Show();
-                this.Hide();
+                if(Properties.Settings.Default.wlcome == false)
+                {
+                    login log = new login();
+                    log.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    WelcomeForm wlc = new WelcomeForm();
+                    wlc.Show();
+                    this.Hide();
+                }
             }
         }
     }

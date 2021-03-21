@@ -4,6 +4,7 @@ using CmlLib.Core.Downloader;
 using CmlLib.Core.Version;
 using DiscordRPC;
 using DiscordRPC.Logging;
+using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -161,6 +162,16 @@ namespace _345_Launcher
             var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
             InitializeLauncher(defaultPath);
             metroPanel1.AutoScroll = true;
+            Modlar frm = new Modlar() { TopLevel = false, TopMost = true };
+            this.panel2.Controls.Add(frm);
+            frm.Show();
+
+            var appName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
+            using (var Key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
+                Key.SetValue(appName, 99999, RegistryValueKind.DWord);
+
+            webBrowser1.Navigate("https://launcher.mehmetali345.xyz");
+            webBrowser1.ScriptErrorsSuppressed = true;
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -575,27 +586,11 @@ namespace _345_Launcher
 
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
-            ChangeLog log = new ChangeLog();
-            log.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (pictureBox1.Visible == true)
-            {
-                pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
-            }
-            else if (pictureBox2.Visible == true)
-            {
-                pictureBox2.Visible = false;
-                pictureBox3.Visible = true;
-            }
-            else if (pictureBox3.Visible == true)
-            {
-                pictureBox3.Visible = false;
-                pictureBox1.Visible = true;
-            }
+            
         }
 
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)

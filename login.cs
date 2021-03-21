@@ -119,8 +119,6 @@ namespace _345_Launcher
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            ChangeLog changeLog = new ChangeLog();
-            changeLog.Show();
         }
 
         private void label6_Click(object sender, EventArgs e)

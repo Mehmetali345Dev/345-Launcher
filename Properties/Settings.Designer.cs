@@ -94,5 +94,17 @@ namespace _345_Launcher.Properties {
                 this["mram"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool wlcome {
+            get {
+                return ((bool)(this["wlcome"]));
+            }
+            set {
+                this["wlcome"] = value;
+            }
+        }
     }
 }

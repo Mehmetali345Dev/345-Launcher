@@ -94,10 +94,9 @@ namespace _345_Launcher
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.guna2TileButton7 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton6 = new Guna.UI2.WinForms.Guna2TileButton();
@@ -105,10 +104,10 @@ namespace _345_Launcher
             this.chkStartUp = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbVersion = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TileButton4 = new Guna.UI2.WinForms.Guna2TileButton();
             this.notify_icon = new System.Windows.Forms.NotifyIcon(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -119,10 +118,8 @@ namespace _345_Launcher
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -465,7 +462,7 @@ namespace _345_Launcher
             this.metroLabel18.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel18.ForeColor = System.Drawing.Color.White;
-            this.metroLabel18.Location = new System.Drawing.Point(3, 152);
+            this.metroLabel18.Location = new System.Drawing.Point(-2, 249);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(328, 25);
             this.metroLabel18.TabIndex = 7;
@@ -1122,9 +1119,7 @@ namespace _345_Launcher
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.pictureBox3);
-            this.metroTabPage1.Controls.Add(this.pictureBox2);
-            this.metroTabPage1.Controls.Add(this.pictureBox1);
+            this.metroTabPage1.Controls.Add(this.webBrowser1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -1132,57 +1127,20 @@ namespace _345_Launcher
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(542, 289);
             this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Oyun";
+            this.metroTabPage1.Text = "Ana Sayfa";
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(542, 289);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::_345_Launcher.Properties.Resources.tascraft2;
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(542, 289);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::_345_Launcher.Properties.Resources.xxxxxxxx;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(542, 289);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // metroTabControl1
             // 
             this.metroTabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(12, 68);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
@@ -1191,6 +1149,30 @@ namespace _345_Launcher
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabPage5
+            // 
+            this.metroTabPage5.Controls.Add(this.panel2);
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.HorizontalScrollbarSize = 10;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 4);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(542, 289);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "Modlar";
+            this.metroTabPage5.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.VerticalScrollbarSize = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(542, 289);
+            this.panel2.TabIndex = 2;
             // 
             // metroTabPage4
             // 
@@ -1310,22 +1292,6 @@ namespace _345_Launcher
             this.cbVersion.Size = new System.Drawing.Size(246, 36);
             this.cbVersion.TabIndex = 19;
             // 
-            // guna2TileButton4
-            // 
-            this.guna2TileButton4.CheckedState.Parent = this.guna2TileButton4;
-            this.guna2TileButton4.CustomImages.Parent = this.guna2TileButton4;
-            this.guna2TileButton4.FillColor = System.Drawing.Color.Silver;
-            this.guna2TileButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TileButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2TileButton4.HoverState.Parent = this.guna2TileButton4;
-            this.guna2TileButton4.Location = new System.Drawing.Point(370, 40);
-            this.guna2TileButton4.Name = "guna2TileButton4";
-            this.guna2TileButton4.ShadowDecoration.Parent = this.guna2TileButton4;
-            this.guna2TileButton4.Size = new System.Drawing.Size(97, 25);
-            this.guna2TileButton4.TabIndex = 20;
-            this.guna2TileButton4.Text = "Değişim Kaydı";
-            this.guna2TileButton4.Click += new System.EventHandler(this.guna2TileButton4_Click);
-            // 
             // notify_icon
             // 
             this.notify_icon.BalloonTipText = "Launcher küçültüldü.";
@@ -1356,6 +1322,15 @@ namespace _345_Launcher
             this.metroCheckBox1.UseSelectable = true;
             this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(542, 289);
+            this.webBrowser1.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1365,7 +1340,6 @@ namespace _345_Launcher
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.cbVersion);
             this.Controls.Add(this.btnRefreshVersion);
-            this.Controls.Add(this.guna2TileButton4);
             this.Controls.Add(this.Pb_Progress);
             this.Controls.Add(this.Pb_File);
             this.Controls.Add(this.btnSetLastVersion);
@@ -1401,10 +1375,8 @@ namespace _345_Launcher
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.metroTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
             this.ResumeLayout(false);
@@ -1472,15 +1444,11 @@ namespace _345_Launcher
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Label uplabel;
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton4;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2CheckBox chkStartUp;
         private System.Windows.Forms.NotifyIcon notify_icon;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton6;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton7;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1492,5 +1460,8 @@ namespace _345_Launcher
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txtPath;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

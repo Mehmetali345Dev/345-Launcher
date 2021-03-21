@@ -37,7 +37,6 @@ namespace _345_Launcher
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -126,22 +125,6 @@ namespace _345_Launcher
             this.label6.TabIndex = 9;
             this.label6.Text = "tarafından geliştirildi.";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(112)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(5, 454);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(90, 43);
-            this.guna2Button2.TabIndex = 10;
-            this.guna2Button2.Text = "Değişim Kaydı";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // label9
             // 
@@ -236,7 +219,6 @@ namespace _345_Launcher
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
@@ -261,7 +243,6 @@ namespace _345_Launcher
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private System.Windows.Forms.Label label3;

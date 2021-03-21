@@ -72,9 +72,6 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\Desktop\Ivır Zıvır\Guna Framework UI Lastest Version + Cracked\Guna_UI_Framework_Ultimate_2.0.0.1_Downloadly.ir\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.11.31.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>packages\HtmlAgilityPack.1.11.31\lib\Net45\HtmlAgilityPack.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -96,6 +93,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -108,12 +106,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChangeLog.Designer.cs">
-      <DependentUpon>ChangeLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="DotNetBarTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -159,6 +151,12 @@
     <Compile Include="mcbuton.Designer.cs">
       <DependentUpon>mcbuton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modlar.Designer.cs">
+      <DependentUpon>Modlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="PathForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +178,12 @@
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <EmbeddedResource Include="ChangeLog.resx">
-      <DependentUpon>ChangeLog.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ForgeInstall.resx">
       <DependentUpon>ForgeInstall.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +205,9 @@
     <EmbeddedResource Include="mcbuton.resx">
       <DependentUpon>mcbuton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modlar.resx">
+      <DependentUpon>Modlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PathForm.resx">
       <DependentUpon>PathForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

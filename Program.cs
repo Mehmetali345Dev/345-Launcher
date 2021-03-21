@@ -14,7 +14,6 @@ namespace _345_Launcher
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new splash());
-
         }
 
     }
