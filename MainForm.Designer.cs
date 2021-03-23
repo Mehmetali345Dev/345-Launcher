@@ -94,6 +94,7 @@ namespace _345_Launcher
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -107,7 +108,6 @@ namespace _345_Launcher
             this.notify_icon = new System.Windows.Forms.NotifyIcon(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -1133,6 +1133,15 @@ namespace _345_Launcher
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(542, 289);
+            this.webBrowser1.TabIndex = 2;
+            // 
             // metroTabControl1
             // 
             this.metroTabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -1321,15 +1330,6 @@ namespace _345_Launcher
             this.metroCheckBox1.UseCustomForeColor = true;
             this.metroCheckBox1.UseSelectable = true;
             this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(542, 289);
-            this.webBrowser1.TabIndex = 2;
             // 
             // MainForm
             // 

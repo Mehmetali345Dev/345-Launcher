@@ -11,11 +11,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace _345_Launcher
 {
+
     public partial class MainForm : Form
     {
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int conn, int val);
         public MainForm()
         {
             InitializeComponent();
@@ -102,48 +106,78 @@ namespace _345_Launcher
         private void refreshVersions(string showVersion)
         {
             cbVersion.Items.Clear();
-
-            var th = new Thread(new ThreadStart(delegate
+            int Out;
+            if (InternetGetConnectedState(out Out, 0) == true)
             {
-                Versions = new MVersionLoader().GetVersionMetadatas(MinecraftPath);
-
-                Invoke(new Action(() =>
+                var th = new Thread(new ThreadStart(delegate
                 {
-                    bool showVersionExist = false;
-                    if(metroCheckBox1.Checked == true)
+                    Versions = new MVersionLoader().GetVersionMetadatas(MinecraftPath);
+
+                    Invoke(new Action(() =>
                     {
-                        foreach (var item in Versions)
+                        bool showVersionExist = false;
+                        if (metroCheckBox1.Checked == true)
                         {
-                            if (item.IsLocalVersion || item.MType == MVersionType.Snapshot)
+                            foreach (var item in Versions)
                             {
-                                showVersionExist = true;
-                                cbVersion.Items.Add(item.Name);
+                                if (item.IsLocalVersion || item.MType == MVersionType.Snapshot)
+                                {
+                                    showVersionExist = true;
+                                    cbVersion.Items.Add(item.Name);
+                                }
+                                if (showVersion == null || !showVersionExist)
+                                    btnSetLastVersion_Click(null, null);
+                                else
+                                    cbVersion.Text = showVersion;
                             }
-                            if (showVersion == null || !showVersionExist)
-                                btnSetLastVersion_Click(null, null);
-                            else
-                                cbVersion.Text = showVersion;
                         }
-                    }
-                    else
-                    {
-                        foreach (var item in Versions)
+                        else
                         {
-                            if (item.IsLocalVersion || item.MType == MVersionType.Release)
+                            foreach (var item in Versions)
                             {
-                                showVersionExist = true;
-                                cbVersion.Items.Add(item.Name);
+                                if (item.IsLocalVersion || item.MType == MVersionType.Release)
+                                {
+                                    showVersionExist = true;
+                                    cbVersion.Items.Add(item.Name);
+                                }
+                                if (showVersion == null || !showVersionExist)
+                                    btnSetLastVersion_Click(null, null);
+                                else
+                                    cbVersion.Text = showVersion;
                             }
-                            if (showVersion == null || !showVersionExist)
-                                btnSetLastVersion_Click(null, null);
-                            else
-                                cbVersion.Text = showVersion;
                         }
-                    }
-                    
+
+                    }));
                 }));
-            }));
-            th.Start();
+                th.Start();
+            }
+            else
+            {
+                var th = new Thread(new ThreadStart(delegate
+                {
+                    Versions = new MVersionLoader().GetVersionMetadatasFromLocal(MinecraftPath);
+
+                    Invoke(new Action(() =>
+                    {
+                        bool showVersionExist = false;
+
+                        foreach (var item in Versions)
+                        {
+                            if (item.IsLocalVersion)
+                            {
+                                MVersion version = Versions.GetVersion(item);
+                                showVersionExist = true;
+                                cbVersion.Items.Add(item.Name);
+                            }
+                            if (showVersion == null || !showVersionExist)
+                                btnSetLastVersion_Click(null, null);
+                            else
+                                cbVersion.Text = showVersion;
+                        }
+                    }));
+                }));
+                th.Start();
+            }
         }
 
         private void UpdateSession(MSession session)
@@ -307,7 +341,7 @@ namespace _345_Launcher
 
                 return launchOption;
             }
-            catch (Exception ex) // exceptions. like FormatException in int.Parse
+            catch (Exception ex)
             {
                 MessageBox.Show("Failed to create MLaunchOption\n\n" + ex.ToString());
                 this.Alert("MLaunchOption oluşamadı", "Eğer sorun devam ederse", "geri bildirim gönderin.", Form_Info.enmType.Error);
@@ -366,7 +400,7 @@ namespace _345_Launcher
             {
                 try
                 {
-                    if (useMJava) // Download Java
+                    if (useMJava)
                     {
                         var mjava = new MJava(MinecraftPath.Runtime);
                         mjava.ProgressChanged += Launcher_ProgressChanged;
@@ -375,10 +409,10 @@ namespace _345_Launcher
                         launchOption.JavaPath = javapath;
                     }
 
-                    MVersion versionInfo = Versions.GetVersion(version); // Get Version Info
+                    MVersion versionInfo = Versions.GetVersion(version);
                     launchOption.StartVersion = versionInfo;
 
-                    MDownloader downloader; // Create Downloader
+                    MDownloader downloader;
                     if (useParallel)
                         downloader = new MParallelDownloader(MinecraftPath, versionInfo, 10, true);
                     else
@@ -389,15 +423,14 @@ namespace _345_Launcher
                     downloader.CheckHash = checkHash;
                     downloader.DownloadAll(downloadAssets);
 
-                    var launch = new MLaunch(launchOption); // Create Arguments and Process
+                    var launch = new MLaunch(launchOption);
                     var process = launch.GetProcess();
 
-                    StartProcess(process); // Start Process with debug options
+                    StartProcess(process); 
 
-                    // or just start process
-                    // process.Start();
+
                 }
-                catch (MDownloadFileException mex) // download exception
+                catch (MDownloadFileException mex)
                 {
                     MessageBox.Show(
                         $"FileName : {mex.ExceptionFile.Name}\n" +
@@ -406,11 +439,11 @@ namespace _345_Launcher
                         $"FileType : {mex.ExceptionFile.Type}\n\n" +
                         mex.ToString());
                 }
-                catch (Win32Exception wex) // java exception
+                catch (Win32Exception wex)
                 {
                     MessageBox.Show(wex.ToString() + "\n\nJava Problemi");
                 }
-                catch (Exception ex) // all exception
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                     this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
@@ -441,8 +474,6 @@ namespace _345_Launcher
         {
             File.WriteAllText("Ayarlar.txt", process.StartInfo.Arguments);
             output(process.StartInfo.Arguments);
-
-            // process options to display game log
 
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardError = true;
