@@ -112,18 +112,12 @@ namespace _345_Launcher
 
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://345hesabi.mehmetali345.xyz");
-        }
-
         private void guna2Button2_Click(object sender, EventArgs e)
         {
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
         }
 
     }
