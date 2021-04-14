@@ -113,9 +113,29 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_window_48px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_close_window_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_error_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_error_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_globe_48px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_globe_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +153,9 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_minecraft_sword_96px {
+        internal static System.Drawing.Bitmap icons8_minimize_window_48px_2 {
             get {
-                object obj = ResourceManager.GetObject("icons8_minecraft_sword_96px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_minimize_window_48px_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +163,9 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_minimize_window_32px_1 {
+        internal static System.Drawing.Bitmap icons8_play_48px {
             get {
-                object obj = ResourceManager.GetObject("icons8_minimize_window_32px_1", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_play_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +173,9 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_settings_96px {
+        internal static System.Drawing.Bitmap icons8_settings_48px {
             get {
-                object obj = ResourceManager.GetObject("icons8_settings_96px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_settings_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

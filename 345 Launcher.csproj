@@ -92,6 +92,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xaml" />
@@ -106,109 +108,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DotNetBarTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ForgeInstall.cs">
+    <Compile Include="Source\ForgeInstall.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgeInstall.Designer.cs">
+    <Compile Include="Source\ForgeInstall.Designer.cs">
       <DependentUpon>ForgeInstall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Info.cs">
+    <Compile Include="Source\Form_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Info.Designer.cs">
+    <Compile Include="Source\Form_Info.Designer.cs">
       <DependentUpon>Form_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameLog.cs">
+    <Compile Include="Source\GameLog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameLog.Designer.cs">
+    <Compile Include="Source\GameLog.Designer.cs">
       <DependentUpon>GameLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="JavaForm.cs">
+    <Compile Include="Source\JavaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JavaForm.Designer.cs">
+    <Compile Include="Source\JavaForm.Designer.cs">
       <DependentUpon>JavaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="Source\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="Source\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Source\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Source\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mcbuton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="mcbuton.Designer.cs">
-      <DependentUpon>mcbuton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modlar.cs">
+    <Compile Include="Source\Mods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modlar.Designer.cs">
-      <DependentUpon>Modlar.cs</DependentUpon>
+    <Compile Include="Source\Mods.Designer.cs">
+      <DependentUpon>Mods.cs</DependentUpon>
     </Compile>
-    <Compile Include="PathForm.cs">
+    <Compile Include="Source\PathForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PathForm.Designer.cs">
+    <Compile Include="Source\PathForm.Designer.cs">
       <DependentUpon>PathForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="splash.cs">
+    <Compile Include="Source\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="splash.Designer.cs">
-      <DependentUpon>splash.cs</DependentUpon>
+    <Compile Include="Source\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update.cs">
+    <Compile Include="Source\Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update.Designer.cs">
+    <Compile Include="Source\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util.cs" />
-    <Compile Include="WelcomeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WelcomeForm.Designer.cs">
-      <DependentUpon>WelcomeForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ForgeInstall.resx">
+    <Compile Include="Source\Util.cs" />
+    <EmbeddedResource Include="Source\ForgeInstall.resx">
       <DependentUpon>ForgeInstall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Info.resx">
+    <EmbeddedResource Include="Source\Form_Info.resx">
       <DependentUpon>Form_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameLog.resx">
+    <EmbeddedResource Include="Source\GameLog.resx">
       <DependentUpon>GameLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JavaForm.resx">
+    <EmbeddedResource Include="Source\JavaForm.resx">
       <DependentUpon>JavaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Source\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mcbuton.resx">
-      <DependentUpon>mcbuton.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Mods.resx">
+      <DependentUpon>Mods.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modlar.resx">
-      <DependentUpon>Modlar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PathForm.resx">
+    <EmbeddedResource Include="Source\PathForm.resx">
       <DependentUpon>PathForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -221,14 +205,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="splash.resx">
-      <DependentUpon>splash.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update.resx">
+    <EmbeddedResource Include="Source\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WelcomeForm.resx">
-      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -256,6 +237,13 @@
     <Content Include="Assets\icons8_minecraft_sword_96px.png" />
     <Content Include="Assets\icons8_settings_96px.png" />
     <Content Include="Assets\wallpaper.png" />
+    <None Include="Resources\icons8_minimize_window_48px_2.png" />
+    <None Include="Resources\icons8_minimize_window_48px_1.png" />
+    <None Include="Resources\icons8_close_window_48px.png" />
+    <None Include="Resources\icons8_error_64px_2.png" />
+    <None Include="Resources\icons8_globe_48px.png" />
+    <None Include="Resources\icons8_settings_48px.png" />
+    <None Include="Resources\icons8_play_48px.png" />
     <None Include="Resources\icons8_error_64px.png" />
     <None Include="Resources\xxxxxxxx.jpg" />
     <None Include="Resources\tascraft2.jpg" />

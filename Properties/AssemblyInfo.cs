@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("345 Launcher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Hızlı ve gelişmiş Minecraft Başlatıcısı.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Mehmet Ali Külahçı")]
 [assembly: AssemblyProduct("345 Launcher")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
 // aşağıda gösterildiği gibi '*' kullanabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.9.0")]
-[assembly: AssemblyFileVersion("2.9.0")]
+[assembly: AssemblyVersion("3.0")]
+[assembly: AssemblyFileVersion("3.0")]

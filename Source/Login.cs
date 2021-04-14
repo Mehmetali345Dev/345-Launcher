@@ -88,12 +88,14 @@ namespace _345_Launcher
             }
             else
             {
+
                 MainForm main = new MainForm();
                 main.Show();
                 main.LabelText = this.txtUsername.Text;
                 UpdateSession(MSession.GetOfflineSession(txtUsername.Text));
                 this.Hide();
                 Save_Data();
+
             }
         }
 

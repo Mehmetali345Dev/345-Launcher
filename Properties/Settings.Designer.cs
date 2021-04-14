@@ -98,12 +98,24 @@ namespace _345_Launcher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool wlcome {
+        public bool rpc {
             get {
-                return ((bool)(this["wlcome"]));
+                return ((bool)(this["rpc"]));
             }
             set {
-                this["wlcome"] = value;
+                this["rpc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool prank {
+            get {
+                return ((bool)(this["prank"]));
+            }
+            set {
+                this["prank"] = value;
             }
         }
     }

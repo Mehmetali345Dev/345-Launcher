@@ -139,7 +139,7 @@ namespace _345_Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(350, 136);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

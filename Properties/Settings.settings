@@ -20,7 +20,10 @@
     <Setting Name="mram" Type="System.String" Scope="User">
       <Value Profile="(Default)">1024</Value>
     </Setting>
-    <Setting Name="wlcome" Type="System.Boolean" Scope="User">
+    <Setting Name="rpc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="prank" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

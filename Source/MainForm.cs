@@ -8,10 +8,11 @@ using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace _345_Launcher
 {
@@ -20,13 +21,18 @@ namespace _345_Launcher
     {
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int conn, int val);
+        public DiscordRpcClient client;
+
         public MainForm()
         {
             InitializeComponent();
             versiyon();
             Init_Data();
-            rpc();
             cbVersion.DropDownHeight = 200;
+            if(Properties.Settings.Default.rpc == true)
+            {
+                rpc();
+            }
         }
 
 
@@ -57,7 +63,6 @@ namespace _345_Launcher
             }
         }
 
-        public DiscordRpcClient client;
 
         #endregion
         private void rpc()
@@ -66,8 +71,6 @@ namespace _345_Launcher
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
             client = new DiscordRpcClient("814773064671690762");
-            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
-
             client.Initialize();
             client.SetPresence(new RichPresence()
             {
@@ -88,7 +91,9 @@ namespace _345_Launcher
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            uplabel.Text += $"v.{versionInfo.FileVersion}";
+            //uplabel.Text += $"v.{versionInfo.FileVersion}";
+            uplabel.Text += versionInfo.FileVersion;
+
         }
         #endregion
 
@@ -116,7 +121,7 @@ namespace _345_Launcher
                     Invoke(new Action(() =>
                     {
                         bool showVersionExist = false;
-                        if (metroCheckBox1.Checked == true)
+                        if (snapbox.Checked == true)
                         {
                             foreach (var item in Versions)
                             {
@@ -195,7 +200,6 @@ namespace _345_Launcher
         {
             var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
             InitializeLauncher(defaultPath);
-            metroPanel1.AutoScroll = true;
             Modlar frm = new Modlar() { TopLevel = false, TopMost = true };
             this.panel2.Controls.Add(frm);
             frm.Show();
@@ -212,7 +216,10 @@ namespace _345_Launcher
         {
             if (chkStartUp.Checked == true)
             {
-                client.Dispose();
+                if (guna2CheckBox1.Checked == true)
+                {
+                    client.Dispose();
+                }
                 this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
             }
             this.WindowState = FormWindowState.Minimized;
@@ -313,12 +320,7 @@ namespace _345_Launcher
 
                     MaximumRamMb = int.Parse(TxtXmx.Text),
                     Session = this.Session,
-
-
                     FullScreen = cbFullscreen.Checked,
-
-                    ServerIp = Txt_ServerIp.Text,
-
                 };
 
                 if (!useMJava)
@@ -326,15 +328,6 @@ namespace _345_Launcher
 
                 if (!string.IsNullOrEmpty(TxtXms.Text))
                     launchOption.MinimumRamMb = int.Parse(TxtXms.Text);
-
-                if (!string.IsNullOrEmpty(Txt_ServerPort.Text))
-                    launchOption.ServerPort = int.Parse(Txt_ServerPort.Text);
-
-                if (!string.IsNullOrEmpty(Txt_ScWd.Text) && !string.IsNullOrEmpty(Txt_ScHt.Text))
-                {
-                    launchOption.ScreenHeight = int.Parse(Txt_ScHt.Text);
-                    launchOption.ScreenWidth = int.Parse(Txt_ScWd.Text);
-                }
 
                 if (!string.IsNullOrEmpty(Txt_JavaArgs.Text))
                     launchOption.JVMArguments = Txt_JavaArgs.Text.Split(' ');
@@ -352,27 +345,15 @@ namespace _345_Launcher
         private void btnLaunch_Click(object sender, EventArgs e)
         {
             mcactive = true;
-            client.Dispose();
             string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
 
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            client = new DiscordRpcClient("814773064671690762");
-            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
-
-            client.Initialize();
-            client.SetPresence(new RichPresence()
+            if (guna2CheckBox1.Checked == true)
             {
-                Details = $"v. {versionInf.FileVersion}",
-                State = $"{selected} oynuyor.",
-                Timestamps = Timestamps.Now,
-                Assets = new Assets()
-                {
-                    LargeImageKey = "launcher",
-                    LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
-                }
-            }); ;
+                client.UpdateState($"{selected} oynuyor.");
+            }
 
             UpdateSession(MSession.GetOfflineSession(lbUsername.Text));
             if (Session == null)
@@ -426,7 +407,7 @@ namespace _345_Launcher
                     var launch = new MLaunch(launchOption);
                     var process = launch.GetProcess();
 
-                    StartProcess(process); 
+                    StartProcess(process);
 
 
                 }
@@ -456,7 +437,7 @@ namespace _345_Launcher
         {
             Invoke(new Action(() =>
             {
-                Pb_Progress.Value = e.ProgressPercentage;
+                sa.Value = e.ProgressPercentage;
             }));
         }
 
@@ -464,15 +445,20 @@ namespace _345_Launcher
         {
             Invoke(new Action(() =>
             {
-                Pb_File.Maximum = e.TotalFileCount;
-                Pb_File.Value = e.ProgressedFileCount;
+                Pb_Progress.Value = e.TotalFileCount;
+                Pb_Progress.Value = e.ProgressedFileCount;
                 Lv_Status.Text = $"{e.FileKind.ToString()} : {e.FileName} ({e.ProgressedFileCount}/{e.TotalFileCount})";
             }));
         }
 
         private void StartProcess(Process process)
         {
-            File.WriteAllText("Ayarlar.txt", process.StartInfo.Arguments);
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".345launcher");
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            File.WriteAllText(path + @"\345LauncherData.txt", process.StartInfo.Arguments);
             output(process.StartInfo.Arguments);
 
             process.StartInfo.UseShellExecute = false;
@@ -516,26 +502,6 @@ namespace _345_Launcher
             }
         }
 
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Anakin Skywalker");
-        }
-
-        private void guna2TileButton3_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://mehmetali345.xyz");
-
-        }
-
-        private void guna2TileButton2_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://launcher.mehmetali345.xyz");
-        }
-
-        private void guna2TileButton1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/Mehmetali345");
-        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -589,6 +555,14 @@ namespace _345_Launcher
             {
                 chkStartUp.Checked = false;
             }
+            if(Properties.Settings.Default.rpc == true)
+            {
+                guna2CheckBox1.Checked = true;
+            }
+            else
+            {
+                guna2CheckBox1.Checked = false;
+            }
         }
 
         private void Save_Data() //Beni hatırla için string kaydı
@@ -621,31 +595,16 @@ namespace _345_Launcher
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
-
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
-
-            client = new DiscordRpcClient("814773064671690762");
-            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
-
-            client.Initialize();
-            client.SetPresence(new RichPresence()
+            if (guna2CheckBox1.Checked == true)
             {
-                Details = $"v. {versionInf.FileVersion}",
-                State = "Ana Menüde",
-                Timestamps = Timestamps.Now,
-                Assets = new Assets()
-                {
-                    LargeImageKey = "launcher",
-                    LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
-                }
-            });
+                client.UpdateState("Anamenüde");
+            }
         }
 
         private void guna2TileButton6_Click(object sender, EventArgs e)
@@ -659,11 +618,55 @@ namespace _345_Launcher
             up.Show();
         }
 
-        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
+   
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (metroTabControl1.Visible == false)
+            {
+                metroTabControl1.Visible = true;
+                guna2Button2.Text = "Ana Ekran";
+                guna2Button2.Font = new Font(guna2Button2.Font.FontFamily, 10);
+                guna2Button2.Image = Properties.Resources.icons8_globe_48px;
+            }
+            else
+            {
+                metroTabControl1.Visible = false;
+                guna2Button2.Text = "Ayarlar";
+                guna2Button2.Image = Properties.Resources.icons8_settings_48px;
+            }
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(guna2CheckBox1.Checked == true)
+            {
+                rpc();
+            }
+            else
+            {
+                client.Dispose();
+            }
+        }
+
+        private void snapbox_CheckedChanged(object sender, EventArgs e)
         {
             refreshVersions(null);
         }
 
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://mehmetali345.xyz");
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://launcher.mehmetali345.xyz/donate.html");
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Mehmetali345Dev");
+        }
     }
 }
 
