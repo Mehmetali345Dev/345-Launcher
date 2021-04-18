@@ -46,4 +46,6 @@ For donates:
 
 [My websites donation link](https://mehmetali345.xyz/donate)
 
-[My Patreon](https://www.patreon.com/mehmetali345)
+# 3
+# 4
+# 5
