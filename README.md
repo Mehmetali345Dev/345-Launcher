@@ -1,25 +1,49 @@
 # 345 Launcher
+The new minecraft launcher from Mehmetali_345!
+Fast, advanced and lightweight launcher and mod manager.
+# Features
+ - Offline Login
+ - Beautiful UI
+ - Discord - RPC
+ # Dependencies
+ - CmlLib.Core by AlphaBS
+ - DiscordRichPresence by Lachee
+ - LZMA SDK by monemihir
+ - MetroModernUI by dmagno
+ - Newtonsoft.Json by James Newton-King
+ - SharpZipLib by SharpDevelop
+# Screenshots
+![Main Screen](https://i.vgy.me/9fgh27.png)
+![Login Screen](https://i.vgy.me/sEd3MN.png)
+# Compiling From Source
+**First:**
+Open terminal and
+`git clone https://github.com/Mehmetali345Dev/345-Launcher.git` or
+just download go to code button and download.
 
-Hızlı ve gelişmiş özelliklere sahip bir minecraft launcher.
+**Second:**
 
-# Geliştirmek için gerekenler.
+> *You need Visual Studio 2019 and .Net Framework 4.8 SDK*
 
-- Visual Studio 2019 Preview veya 2019
-- .Net Framework SDK 4.8
+and open 345 Launcher.sln.
 
-# Yapmanız gerekenler
-- Kodu indirin ve ardından 345Launcher.sln dosyasını açın.
+**Third:**
+Right Click the soluton from Solution Explorer --> Explore Nuget Packages 
+--> Restore Packages.
+# Plans
+ - Authtentication
+ - [x] Offline Login
+ - [ ] Online Login
+ - [ ] Microsoft Login
+ - UI
+ - [ ] Settings Form
+ # Contributing, License and Sponsorship
+ This project is not ready for contributing.
+ This Project under GPL 3.0 (GNU Public License 3.0)
+Sponsored by TASCraft and Kalitrik
 
-# Kullanılan libaryler
+For donates:
 
--  CmlLib.Core [Meraklısı için](https://www.github.com/CmlLib/CmlLib.Core)
--  LZMA SDK
--  Newtonsoft.JSON
+[My websites donation link](https://mehmetali345.xyz/donate)
 
-# Geliştirme
-
-- Yakında eklenecektir.
-
-# 3
-# 4
-# 5
+[My Patreon](https://www.patreon.com/mehmetali345)
