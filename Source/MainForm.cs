@@ -3,13 +3,14 @@ using CmlLib.Core.Auth;
 using CmlLib.Core.Downloader;
 using CmlLib.Core.Version;
 using DiscordRPC;
-using DiscordRPC.Logging;
 using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -26,13 +27,14 @@ namespace _345_Launcher
         public MainForm()
         {
             InitializeComponent();
-            versiyon();
+            updenetle();
             Init_Data();
             cbVersion.DropDownHeight = 200;
-            if(Properties.Settings.Default.rpc == true)
+            if (Properties.Settings.Default.rpc == true)
             {
                 rpc();
             }
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
 
@@ -42,11 +44,49 @@ namespace _345_Launcher
             frm.showAlert(msg, msg2, msg3, type);
         }
 
+        public void updenetle()
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string v = versionInf.FileVersion;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+
+            timer1.Start();
+            string hedef = "https://launcher.mehmetali345.xyz/assets/update.html";
+            WebRequest istek = HttpWebRequest.Create(hedef);
+            WebResponse yanit;
+            yanit = istek.GetResponse();
+            StreamReader bilgiler = new StreamReader(yanit.GetResponseStream());
+            string gelen = bilgiler.ReadToEnd();
+            int baslangic = gelen.IndexOf("<p>") + 3;
+            int bitis = gelen.Substring(baslangic).IndexOf("</p>");
+            string gelenbilgileri = gelen.Substring(baslangic, bitis);
+            v = Convert.ToString(gelenbilgileri);
+
+            if (v == versionInf.FileVersion)
+            {
+                uplabel.Text = v;
+            }
+            else
+            {
+                if (MessageBox.Show("Güncelleme mevcut indirilsinmi?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    using (var client = new WebClient())
+                    {
+                        Update up = new Update();
+                        up.Show();
+                    }
+                else
+                {
+                    this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
+                }
+            }
+        }
+
         #region stringler ıvır zıvırlar
         bool useMJava = true;
         string javaPath = "java.exe";
-        bool mcactive = false;
-
+        private const int cGrip = 16;
+        private const int cCaption = 32;
         MinecraftPath MinecraftPath;
         MVersionCollection Versions;
         MSession Session = MSession.GetOfflineSession("test_user");
@@ -63,7 +103,25 @@ namespace _345_Launcher
             }
         }
 
-
+        protected override void WndProc(ref Message m)
+        {
+            if(m.Msg == 0x84)
+            {
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos);
+                if(pos.Y < cCaption)
+                {
+                    m.Result = (IntPtr)2;
+                    return;
+                }
+                if(pos.X > this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                {
+                    m.Result = (IntPtr)17;
+                    return;
+                }
+            }
+            base.WndProc(ref m);
+        }
         #endregion
         private void rpc()
         {
@@ -344,7 +402,6 @@ namespace _345_Launcher
 
         private void btnLaunch_Click(object sender, EventArgs e)
         {
-            mcactive = true;
             string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
 
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -454,11 +511,11 @@ namespace _345_Launcher
         private void StartProcess(Process process)
         {
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".345launcher");
-            if(!Directory.Exists(path))
+            if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            File.WriteAllText(path + @"\345LauncherData.txt", process.StartInfo.Arguments);
+            File.WriteAllText(path + @"\Argümanlar.txt", process.StartInfo.Arguments);
             output(process.StartInfo.Arguments);
 
             process.StartInfo.UseShellExecute = false;
@@ -555,7 +612,7 @@ namespace _345_Launcher
             {
                 chkStartUp.Checked = false;
             }
-            if(Properties.Settings.Default.rpc == true)
+            if (Properties.Settings.Default.rpc == true)
             {
                 guna2CheckBox1.Checked = true;
             }
@@ -618,7 +675,7 @@ namespace _345_Launcher
             up.Show();
         }
 
-   
+
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (metroTabControl1.Visible == false)
@@ -638,7 +695,7 @@ namespace _345_Launcher
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(guna2CheckBox1.Checked == true)
+            if (guna2CheckBox1.Checked == true)
             {
                 rpc();
             }
@@ -660,7 +717,7 @@ namespace _345_Launcher
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://launcher.mehmetali345.xyz/donate.html");
+            System.Diagnostics.Process.Start("https://mehmetali345.xyz/donate");
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

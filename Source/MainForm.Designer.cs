@@ -85,6 +85,8 @@ namespace _345_Launcher
             this.pnllazım = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -94,8 +96,8 @@ namespace _345_Launcher
             this.panel3 = new System.Windows.Forms.Panel();
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsername = new MetroFramework.Controls.MetroLabel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
@@ -186,7 +188,7 @@ namespace _345_Launcher
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(393, -1);
+            this.label3.Location = new System.Drawing.Point(396, -1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 21);
             this.label3.TabIndex = 7;
@@ -224,7 +226,7 @@ namespace _345_Launcher
             this.Pb_Progress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Pb_Progress.FillColor = System.Drawing.Color.Gray;
             this.Pb_Progress.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.Pb_Progress.Location = new System.Drawing.Point(0, 375);
+            this.Pb_Progress.Location = new System.Drawing.Point(0, 459);
             this.Pb_Progress.Name = "Pb_Progress";
             this.Pb_Progress.ProgressColor = System.Drawing.Color.ForestGreen;
             this.Pb_Progress.ProgressColor2 = System.Drawing.Color.ForestGreen;
@@ -361,7 +363,7 @@ namespace _345_Launcher
             this.guna2CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.guna2CheckBox1.Location = new System.Drawing.Point(8, 76);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(88, 17);
+            this.guna2CheckBox1.Size = new System.Drawing.Size(91, 19);
             this.guna2CheckBox1.TabIndex = 25;
             this.guna2CheckBox1.Text = "Discord RPC";
             this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -413,7 +415,7 @@ namespace _345_Launcher
             this.chkStartUp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkStartUp.Location = new System.Drawing.Point(8, 28);
             this.chkStartUp.Name = "chkStartUp";
-            this.chkStartUp.Size = new System.Drawing.Size(254, 17);
+            this.chkStartUp.Size = new System.Drawing.Size(260, 19);
             this.chkStartUp.TabIndex = 23;
             this.chkStartUp.Text = "Minimize tuşuna basınca launcher küçülsün.";
             this.chkStartUp.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -927,9 +929,9 @@ namespace _345_Launcher
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
-            this.metroTabControl1.Location = new System.Drawing.Point(3, 0);
+            this.metroTabControl1.Location = new System.Drawing.Point(73, 113);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(598, 340);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 5;
@@ -941,11 +943,11 @@ namespace _345_Launcher
             // pnllazım
             // 
             this.pnllazım.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.pnllazım.Controls.Add(this.metroTabControl1);
+            this.pnllazım.Controls.Add(this.metroTabPage2);
             this.pnllazım.Controls.Add(this.webBrowser1);
             this.pnllazım.Location = new System.Drawing.Point(0, 32);
             this.pnllazım.Name = "pnllazım";
-            this.pnllazım.Size = new System.Drawing.Size(601, 340);
+            this.pnllazım.Size = new System.Drawing.Size(601, 426);
             this.pnllazım.TabIndex = 22;
             // 
             // webBrowser1
@@ -953,12 +955,13 @@ namespace _345_Launcher
             this.webBrowser1.Location = new System.Drawing.Point(1, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(598, 340);
+            this.webBrowser1.Size = new System.Drawing.Size(598, 427);
             this.webBrowser1.TabIndex = 0;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.guna2Panel1.Controls.Add(this.metroTabControl1);
             this.guna2Panel1.Controls.Add(this.guna2Button5);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.metroTextBox1);
@@ -966,11 +969,49 @@ namespace _345_Launcher
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 40);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 31);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(240, 300);
+            this.guna2Panel1.Size = new System.Drawing.Size(240, 395);
             this.guna2Panel1.TabIndex = 23;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Animated = true;
+            this.guna2Button5.AutoRoundedCorners = true;
+            this.guna2Button5.BorderRadius = 8;
+            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
+            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
+            this.guna2Button5.FillColor = System.Drawing.Color.LimeGreen;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button5.HoverState.Parent = this.guna2Button5;
+            this.guna2Button5.Location = new System.Drawing.Point(3, 305);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
+            this.guna2Button5.Size = new System.Drawing.Size(232, 19);
+            this.guna2Button5.TabIndex = 26;
+            this.guna2Button5.Text = "Website";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.Animated = true;
+            this.guna2Button4.AutoRoundedCorners = true;
+            this.guna2Button4.BorderRadius = 8;
+            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
+            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.FillColor = System.Drawing.Color.LimeGreen;
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button4.HoverState.Parent = this.guna2Button4;
+            this.guna2Button4.Location = new System.Drawing.Point(3, 330);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
+            this.guna2Button4.Size = new System.Drawing.Size(232, 19);
+            this.guna2Button4.TabIndex = 25;
+            this.guna2Button4.Text = "Destek OL!";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // metroTextBox1
             // 
@@ -1021,10 +1062,10 @@ namespace _345_Launcher
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(7, 50);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 355);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(122, 19);
+            this.guna2Button3.Size = new System.Drawing.Size(232, 19);
             this.guna2Button3.TabIndex = 23;
             this.guna2Button3.Text = "Github";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -1074,7 +1115,7 @@ namespace _345_Launcher
             this.Hakkında.Location = new System.Drawing.Point(600, 32);
             this.Hakkında.Name = "Hakkında";
             this.Hakkında.ShadowDecoration.Parent = this.Hakkında;
-            this.Hakkında.Size = new System.Drawing.Size(240, 340);
+            this.Hakkında.Size = new System.Drawing.Size(240, 425);
             this.Hakkında.TabIndex = 9;
             this.Hakkında.Text = "Hakkında";
             // 
@@ -1090,7 +1131,7 @@ namespace _345_Launcher
             this.panel3.Controls.Add(this.btnLaunch);
             this.panel3.Controls.Add(this.cbVersion);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 402);
+            this.panel3.Location = new System.Drawing.Point(0, 483);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(840, 70);
             this.panel3.TabIndex = 23;
@@ -1117,61 +1158,30 @@ namespace _345_Launcher
             // 
             // lbUsername
             // 
-            this.lbUsername.AutoSize = true;
             this.lbUsername.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lbUsername.Location = new System.Drawing.Point(407, 24);
+            this.lbUsername.Location = new System.Drawing.Point(326, 28);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(65, 19);
+            this.lbUsername.Size = new System.Drawing.Size(229, 19);
             this.lbUsername.TabIndex = 22;
             this.lbUsername.Text = "Kullanıcı";
             this.lbUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbUsername.UseCustomBackColor = true;
             this.lbUsername.UseCustomForeColor = true;
             // 
-            // guna2Button4
+            // timer1
             // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.AutoRoundedCorners = true;
-            this.guna2Button4.BorderRadius = 8;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(7, 75);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(122, 19);
-            this.guna2Button4.TabIndex = 25;
-            this.guna2Button4.Text = "Destek OL!";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.timer1.Enabled = true;
             // 
-            // guna2Button5
+            // guna2DragControl1
             // 
-            this.guna2Button5.Animated = true;
-            this.guna2Button5.AutoRoundedCorners = true;
-            this.guna2Button5.BorderRadius = 8;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(7, 100);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(122, 19);
-            this.guna2Button5.TabIndex = 26;
-            this.guna2Button5.Text = "Website";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            this.guna2DragControl1.TargetControl = this.panel1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(840, 472);
+            this.ClientSize = new System.Drawing.Size(840, 553);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Hakkında);
             this.Controls.Add(this.pnllazım);
@@ -1276,5 +1286,7 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2CheckBox snapbox;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

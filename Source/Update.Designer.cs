@@ -33,7 +33,6 @@ namespace _345_Launcher
             this.bw = new System.ComponentModel.BackgroundWorker();
             this.gün_but = new Guna.UI2.WinForms.Guna2TileButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.denet_but = new Guna.UI2.WinForms.Guna2TileButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,21 +78,6 @@ namespace _345_Launcher
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "%0";
-            // 
-            // denet_but
-            // 
-            this.denet_but.CheckedState.Parent = this.denet_but;
-            this.denet_but.CustomImages.Parent = this.denet_but;
-            this.denet_but.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.denet_but.ForeColor = System.Drawing.Color.White;
-            this.denet_but.HoverState.Parent = this.denet_but;
-            this.denet_but.Location = new System.Drawing.Point(12, 73);
-            this.denet_but.Name = "denet_but";
-            this.denet_but.ShadowDecoration.Parent = this.denet_but;
-            this.denet_but.Size = new System.Drawing.Size(141, 25);
-            this.denet_but.TabIndex = 18;
-            this.denet_but.Text = "Denetle";
-            this.denet_but.Click += new System.EventHandler(this.guna2TileButton2_Click);
             // 
             // label2
             // 
@@ -145,7 +129,6 @@ namespace _345_Launcher
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.denet_but);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gün_but);
             this.Controls.Add(this.Pb_File);
@@ -163,7 +146,6 @@ namespace _345_Launcher
         private System.ComponentModel.BackgroundWorker bw;
         private Guna.UI2.WinForms.Guna2TileButton gün_but;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TileButton denet_but;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -21,51 +21,11 @@ namespace _345_Launcher
         public Update()
         {
             InitializeComponent();
-            gün_but.Enabled = false;
         }
 
-        public void Alert(string msg, string msg2, string msg3, Form_Info.enmType type)
-        {
-            Form_Info frm = new Form_Info();
-            frm.showAlert(msg, msg2, msg3, type);
-        }
-        #region bruh
-        private void guna2TileButton2_Click(object sender, EventArgs e)
-        {
         
-            WebClient webClient = new WebClient();
-            try
-            {
-                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                FileVersionInfo ver = FileVersionInfo.GetVersionInfo(assembly.Location);
-                label5.Text = "Sürüm " + ver.FileVersion;
-
-                if (!webClient.DownloadString("https://pastebinp.com/raw/2epDCPzj").Contains($"{ver.FileVersion}"))
-                {
-                    if (MessageBox.Show("Güncelleme mevcut indirilsinmi?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        using (var client = new WebClient())
-                        {
-                            gün_but.Enabled = true;
-                        }
-                    else
-                    {
-                        this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    this.Close();
-                    MessageBox.Show("Güncelleme Yok");
-                }
-
-            }
-            catch
-            {
-
-            }
-        }
-
+        #region bruh
+        
         private void gün_but_Click(object sender, EventArgs e)
         {
             bw.RunWorkerAsync();
@@ -81,7 +41,7 @@ namespace _345_Launcher
         {
             string filePath = Path.GetDirectoryName(Application.ExecutablePath);
             string indir = @".\345 Launcher.exe";
-            DownloadFileWithProgress("http://345api.epizy.com/345_Launcher.exe", indir, Pb_File, label1);
+            DownloadFileWithProgress("https://launcher.mehmetali345.xyz/assets/345%20Launcher.exe", indir, Pb_File, label1);
         }
         
         private void DownloadFileWithProgress(string DownloadLink, string TargetPath, Guna.UI2.WinForms.Guna2ProgressBar progress, Label labelProgress)
