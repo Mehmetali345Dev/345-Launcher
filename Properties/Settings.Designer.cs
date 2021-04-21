@@ -118,5 +118,17 @@ namespace _345_Launcher.Properties {
                 this["prank"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool langtr {
+            get {
+                return ((bool)(this["langtr"]));
+            }
+            set {
+                this["langtr"] = value;
+            }
+        }
     }
 }

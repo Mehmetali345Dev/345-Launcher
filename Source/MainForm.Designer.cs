@@ -46,6 +46,9 @@ namespace _345_Launcher
             this.btnLaunch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tur = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.eng = new Guna.UI2.WinForms.Guna2RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2TileButton7 = new Guna.UI2.WinForms.Guna2TileButton();
@@ -55,6 +58,14 @@ namespace _345_Launcher
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChangePath = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChangeJava = new Guna.UI2.WinForms.Guna2Button();
+            this.lbJavaPath = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cbSkipAssetsDownload = new MetroFramework.Controls.MetroCheckBox();
@@ -62,8 +73,9 @@ namespace _345_Launcher
             this.cbCheckFileHash = new MetroFramework.Controls.MetroCheckBox();
             this.rbSequenceDownload = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnRefreshVersion = new Guna.UI2.WinForms.Guna2Button();
             this.cbFullscreen = new MetroFramework.Controls.MetroCheckBox();
-            this.btnForgeInstall = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSetLastVersion = new Guna.UI2.WinForms.Guna2Button();
             this.btnAutoRamSet = new Guna.UI2.WinForms.Guna2Button();
             this.TxtXmx = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
@@ -71,16 +83,6 @@ namespace _345_Launcher
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.Txt_JavaArgs = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRefreshVersion = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChangePath = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChangeJava = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSetLastVersion = new Guna.UI2.WinForms.Guna2Button();
-            this.lbJavaPath = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.pnllazım = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -96,15 +98,15 @@ namespace _345_Launcher
             this.panel3 = new System.Windows.Forms.Panel();
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsername = new MetroFramework.Controls.MetroLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.pnllazım.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -116,6 +118,7 @@ namespace _345_Launcher
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.uplabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.guna2ImageButton2);
@@ -138,7 +141,7 @@ namespace _345_Launcher
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 5);
             this.label2.Name = "label2";
@@ -175,7 +178,7 @@ namespace _345_Launcher
             // sa
             // 
             this.sa.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.sa.Location = new System.Drawing.Point(364, 12);
+            this.sa.Location = new System.Drawing.Point(427, 11);
             this.sa.Name = "sa";
             this.sa.ShadowDecoration.Parent = this.sa;
             this.sa.Size = new System.Drawing.Size(319, 10);
@@ -185,12 +188,11 @@ namespace _345_Launcher
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(396, -1);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(349, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 21);
+            this.label3.Size = new System.Drawing.Size(184, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Hoş Geldin";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,7 +203,7 @@ namespace _345_Launcher
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.Maroon;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Location = new System.Drawing.Point(399, 53);
@@ -219,7 +221,7 @@ namespace _345_Launcher
             this.Lv_Status.Name = "Lv_Status";
             this.Lv_Status.Size = new System.Drawing.Size(36, 13);
             this.Lv_Status.TabIndex = 9;
-            this.Lv_Status.Text = "Hazır.";
+            this.Lv_Status.Text = "Hazır!";
             // 
             // Pb_Progress
             // 
@@ -275,7 +277,7 @@ namespace _345_Launcher
             this.btnLaunch.CheckedState.Parent = this.btnLaunch;
             this.btnLaunch.CustomImages.Parent = this.btnLaunch;
             this.btnLaunch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
-            this.btnLaunch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnLaunch.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnLaunch.ForeColor = System.Drawing.Color.White;
             this.btnLaunch.HoverState.Parent = this.btnLaunch;
             this.btnLaunch.Image = global::_345_Launcher.Properties.Resources.icons8_play_48px;
@@ -300,7 +302,7 @@ namespace _345_Launcher
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = global::_345_Launcher.Properties.Resources.icons8_settings_48px;
@@ -318,6 +320,9 @@ namespace _345_Launcher
             // metroTabPage4
             // 
             this.metroTabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.metroTabPage4.Controls.Add(this.label7);
+            this.metroTabPage4.Controls.Add(this.tur);
+            this.metroTabPage4.Controls.Add(this.eng);
             this.metroTabPage4.Controls.Add(this.label1);
             this.metroTabPage4.Controls.Add(this.guna2CheckBox1);
             this.metroTabPage4.Controls.Add(this.guna2TileButton7);
@@ -329,7 +334,7 @@ namespace _345_Launcher
             this.metroTabPage4.HorizontalScrollbarSize = 10;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(590, 298);
+            this.metroTabPage4.Size = new System.Drawing.Size(520, 321);
             this.metroTabPage4.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Launcher Ayarları";
@@ -339,6 +344,59 @@ namespace _345_Launcher
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label7.Location = new System.Drawing.Point(3, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 25);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Dil";
+            // 
+            // tur
+            // 
+            this.tur.AutoSize = true;
+            this.tur.Checked = true;
+            this.tur.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tur.CheckedState.BorderThickness = 0;
+            this.tur.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tur.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.tur.CheckedState.InnerOffset = -4;
+            this.tur.Location = new System.Drawing.Point(8, 147);
+            this.tur.Name = "tur";
+            this.tur.Size = new System.Drawing.Size(58, 17);
+            this.tur.TabIndex = 28;
+            this.tur.TabStop = true;
+            this.tur.Text = "Türkçe";
+            this.tur.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.tur.UncheckedState.BorderThickness = 2;
+            this.tur.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.tur.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.tur.UseVisualStyleBackColor = true;
+            this.tur.CheckedChanged += new System.EventHandler(this.tur_CheckedChanged);
+            // 
+            // eng
+            // 
+            this.eng.AutoSize = true;
+            this.eng.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.eng.CheckedState.BorderThickness = 0;
+            this.eng.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.eng.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.eng.CheckedState.InnerOffset = -4;
+            this.eng.Location = new System.Drawing.Point(8, 124);
+            this.eng.Name = "eng";
+            this.eng.Size = new System.Drawing.Size(64, 17);
+            this.eng.TabIndex = 27;
+            this.eng.Text = "İnglizce";
+            this.eng.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.eng.UncheckedState.BorderThickness = 2;
+            this.eng.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.eng.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.eng.UseVisualStyleBackColor = true;
+            this.eng.CheckedChanged += new System.EventHandler(this.guna2RadioButton1_CheckedChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -346,9 +404,9 @@ namespace _345_Launcher
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.label1.Location = new System.Drawing.Point(3, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Küçülme tuşu";
+            this.label1.Text = "Discord RPC";
             // 
             // guna2CheckBox1
             // 
@@ -363,7 +421,7 @@ namespace _345_Launcher
             this.guna2CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.guna2CheckBox1.Location = new System.Drawing.Point(8, 76);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(91, 19);
+            this.guna2CheckBox1.Size = new System.Drawing.Size(88, 17);
             this.guna2CheckBox1.TabIndex = 25;
             this.guna2CheckBox1.Text = "Discord RPC";
             this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -381,7 +439,7 @@ namespace _345_Launcher
             this.guna2TileButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TileButton7.ForeColor = System.Drawing.Color.White;
             this.guna2TileButton7.HoverState.Parent = this.guna2TileButton7;
-            this.guna2TileButton7.Location = new System.Drawing.Point(333, 250);
+            this.guna2TileButton7.Location = new System.Drawing.Point(281, 282);
             this.guna2TileButton7.Name = "guna2TileButton7";
             this.guna2TileButton7.ShadowDecoration.Parent = this.guna2TileButton7;
             this.guna2TileButton7.Size = new System.Drawing.Size(161, 36);
@@ -396,7 +454,7 @@ namespace _345_Launcher
             this.guna2TileButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TileButton5.ForeColor = System.Drawing.Color.White;
             this.guna2TileButton5.HoverState.Parent = this.guna2TileButton5;
-            this.guna2TileButton5.Location = new System.Drawing.Point(504, 250);
+            this.guna2TileButton5.Location = new System.Drawing.Point(448, 282);
             this.guna2TileButton5.Name = "guna2TileButton5";
             this.guna2TileButton5.ShadowDecoration.Parent = this.guna2TileButton5;
             this.guna2TileButton5.Size = new System.Drawing.Size(69, 36);
@@ -415,7 +473,7 @@ namespace _345_Launcher
             this.chkStartUp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkStartUp.Location = new System.Drawing.Point(8, 28);
             this.chkStartUp.Name = "chkStartUp";
-            this.chkStartUp.Size = new System.Drawing.Size(260, 19);
+            this.chkStartUp.Size = new System.Drawing.Size(254, 17);
             this.chkStartUp.TabIndex = 23;
             this.chkStartUp.Text = "Minimize tuşuna basınca launcher küçülsün.";
             this.chkStartUp.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -443,7 +501,7 @@ namespace _345_Launcher
             this.metroTabPage5.HorizontalScrollbarSize = 10;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(590, 298);
+            this.metroTabPage5.Size = new System.Drawing.Size(520, 321);
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "Modlar";
             this.metroTabPage5.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -453,24 +511,25 @@ namespace _345_Launcher
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(590, 298);
+            this.panel2.Size = new System.Drawing.Size(520, 321);
             this.panel2.TabIndex = 2;
             // 
             // metroTabPage2
             // 
             this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.metroTabPage2.Controls.Add(this.groupBox1);
             this.metroTabPage2.Controls.Add(this.groupBox2);
             this.metroTabPage2.Controls.Add(this.groupBox4);
-            this.metroTabPage2.Controls.Add(this.groupBox1);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(590, 298);
+            this.metroTabPage2.Size = new System.Drawing.Size(520, 321);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Ayarlar";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -479,322 +538,23 @@ namespace _345_Launcher
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.Controls.Add(this.cbSkipAssetsDownload);
-            this.groupBox2.Controls.Add(this.rbParallelDownload);
-            this.groupBox2.Controls.Add(this.cbCheckFileHash);
-            this.groupBox2.Controls.Add(this.rbSequenceDownload);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(285, 157);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 122);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "İndirme Ayarları";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(4, 96);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(220, 15);
-            this.metroLabel4.TabIndex = 8;
-            this.metroLabel4.Text = "Gelişmiş seçenekler dokunmanız önerilmez.";
-            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel4.UseCustomBackColor = true;
-            this.metroLabel4.UseCustomForeColor = true;
-            // 
-            // cbSkipAssetsDownload
-            // 
-            this.cbSkipAssetsDownload.AutoSize = true;
-            this.cbSkipAssetsDownload.Location = new System.Drawing.Point(9, 80);
-            this.cbSkipAssetsDownload.Name = "cbSkipAssetsDownload";
-            this.cbSkipAssetsDownload.Size = new System.Drawing.Size(98, 15);
-            this.cbSkipAssetsDownload.TabIndex = 7;
-            this.cbSkipAssetsDownload.Text = "Varlıkları indir.";
-            this.cbSkipAssetsDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cbSkipAssetsDownload.UseCustomBackColor = true;
-            this.cbSkipAssetsDownload.UseSelectable = true;
-            // 
-            // rbParallelDownload
-            // 
-            this.rbParallelDownload.AutoSize = true;
-            this.rbParallelDownload.Location = new System.Drawing.Point(75, 23);
-            this.rbParallelDownload.Name = "rbParallelDownload";
-            this.rbParallelDownload.Size = new System.Drawing.Size(92, 15);
-            this.rbParallelDownload.TabIndex = 6;
-            this.rbParallelDownload.Text = "Paralel (Beta)";
-            this.rbParallelDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.rbParallelDownload.UseCustomBackColor = true;
-            this.rbParallelDownload.UseSelectable = true;
-            // 
-            // cbCheckFileHash
-            // 
-            this.cbCheckFileHash.AutoSize = true;
-            this.cbCheckFileHash.Location = new System.Drawing.Point(9, 59);
-            this.cbCheckFileHash.Name = "cbCheckFileHash";
-            this.cbCheckFileHash.Size = new System.Drawing.Size(128, 15);
-            this.cbCheckFileHash.TabIndex = 5;
-            this.cbCheckFileHash.Text = "Dosyaları kontrol et.";
-            this.cbCheckFileHash.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cbCheckFileHash.UseCustomBackColor = true;
-            this.cbCheckFileHash.UseSelectable = true;
-            // 
-            // rbSequenceDownload
-            // 
-            this.rbSequenceDownload.AutoSize = true;
-            this.rbSequenceDownload.Location = new System.Drawing.Point(9, 23);
-            this.rbSequenceDownload.Name = "rbSequenceDownload";
-            this.rbSequenceDownload.Size = new System.Drawing.Size(48, 15);
-            this.rbSequenceDownload.TabIndex = 5;
-            this.rbSequenceDownload.Text = "Sıralı";
-            this.rbSequenceDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.rbSequenceDownload.UseCustomBackColor = true;
-            this.rbSequenceDownload.UseSelectable = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox4.Controls.Add(this.cbFullscreen);
-            this.groupBox4.Controls.Add(this.btnForgeInstall);
-            this.groupBox4.Controls.Add(this.btnAutoRamSet);
-            this.groupBox4.Controls.Add(this.TxtXmx);
-            this.groupBox4.Controls.Add(this.metroLabel13);
-            this.groupBox4.Controls.Add(this.TxtXms);
-            this.groupBox4.Controls.Add(this.metroLabel14);
-            this.groupBox4.Controls.Add(this.Txt_JavaArgs);
-            this.groupBox4.Controls.Add(this.metroLabel15);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(9, 9);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(270, 270);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Gelişmiş Ayarlar";
-            // 
-            // cbFullscreen
-            // 
-            this.cbFullscreen.AutoSize = true;
-            this.cbFullscreen.Location = new System.Drawing.Point(9, 196);
-            this.cbFullscreen.Name = "cbFullscreen";
-            this.cbFullscreen.Size = new System.Drawing.Size(76, 15);
-            this.cbFullscreen.TabIndex = 20;
-            this.cbFullscreen.Text = "Tamekran";
-            this.cbFullscreen.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.cbFullscreen.UseCustomBackColor = true;
-            this.cbFullscreen.UseSelectable = true;
-            // 
-            // btnForgeInstall
-            // 
-            this.btnForgeInstall.CheckedState.Parent = this.btnForgeInstall;
-            this.btnForgeInstall.CustomImages.Parent = this.btnForgeInstall;
-            this.btnForgeInstall.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnForgeInstall.ForeColor = System.Drawing.Color.White;
-            this.btnForgeInstall.HoverState.Parent = this.btnForgeInstall;
-            this.btnForgeInstall.Location = new System.Drawing.Point(8, 221);
-            this.btnForgeInstall.Name = "btnForgeInstall";
-            this.btnForgeInstall.ShadowDecoration.Parent = this.btnForgeInstall;
-            this.btnForgeInstall.Size = new System.Drawing.Size(251, 34);
-            this.btnForgeInstall.TabIndex = 17;
-            this.btnForgeInstall.Text = "Forge Yükle";
-            // 
-            // btnAutoRamSet
-            // 
-            this.btnAutoRamSet.CheckedState.Parent = this.btnAutoRamSet;
-            this.btnAutoRamSet.CustomImages.Parent = this.btnAutoRamSet;
-            this.btnAutoRamSet.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAutoRamSet.ForeColor = System.Drawing.Color.White;
-            this.btnAutoRamSet.HoverState.Parent = this.btnAutoRamSet;
-            this.btnAutoRamSet.Location = new System.Drawing.Point(191, 58);
-            this.btnAutoRamSet.Name = "btnAutoRamSet";
-            this.btnAutoRamSet.ShadowDecoration.Parent = this.btnAutoRamSet;
-            this.btnAutoRamSet.Size = new System.Drawing.Size(73, 130);
-            this.btnAutoRamSet.TabIndex = 27;
-            this.btnAutoRamSet.Text = "Ram\'i Otomatik Ayarla";
-            this.btnAutoRamSet.Visible = false;
-            // 
-            // TxtXmx
-            // 
-            // 
-            // 
-            // 
-            this.TxtXmx.CustomButton.Image = null;
-            this.TxtXmx.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TxtXmx.CustomButton.Location = new System.Drawing.Point(153, 1);
-            this.TxtXmx.CustomButton.Name = "";
-            this.TxtXmx.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TxtXmx.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TxtXmx.CustomButton.TabIndex = 1;
-            this.TxtXmx.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TxtXmx.CustomButton.UseSelectable = true;
-            this.TxtXmx.CustomButton.Visible = false;
-            this.TxtXmx.Lines = new string[] {
-        "1512"};
-            this.TxtXmx.Location = new System.Drawing.Point(8, 165);
-            this.TxtXmx.MaxLength = 32767;
-            this.TxtXmx.Name = "TxtXmx";
-            this.TxtXmx.PasswordChar = '\0';
-            this.TxtXmx.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TxtXmx.SelectedText = "";
-            this.TxtXmx.SelectionLength = 0;
-            this.TxtXmx.SelectionStart = 0;
-            this.TxtXmx.ShortcutsEnabled = true;
-            this.TxtXmx.Size = new System.Drawing.Size(175, 23);
-            this.TxtXmx.TabIndex = 26;
-            this.TxtXmx.Text = "1512";
-            this.TxtXmx.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TxtXmx.UseCustomBackColor = true;
-            this.TxtXmx.UseSelectable = true;
-            this.TxtXmx.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TxtXmx.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.ForeColor = System.Drawing.Color.White;
-            this.metroLabel13.Location = new System.Drawing.Point(9, 36);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(114, 19);
-            this.metroLabel13.TabIndex = 25;
-            this.metroLabel13.Text = "JVM Argümanları:";
-            this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel13.UseCustomBackColor = true;
-            this.metroLabel13.UseCustomForeColor = true;
-            // 
-            // TxtXms
-            // 
-            // 
-            // 
-            // 
-            this.TxtXms.CustomButton.Image = null;
-            this.TxtXms.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TxtXms.CustomButton.Location = new System.Drawing.Point(153, 1);
-            this.TxtXms.CustomButton.Name = "";
-            this.TxtXms.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TxtXms.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TxtXms.CustomButton.TabIndex = 1;
-            this.TxtXms.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TxtXms.CustomButton.UseSelectable = true;
-            this.TxtXms.CustomButton.Visible = false;
-            this.TxtXms.Lines = new string[] {
-        "1024"};
-            this.TxtXms.Location = new System.Drawing.Point(8, 110);
-            this.TxtXms.MaxLength = 32767;
-            this.TxtXms.Name = "TxtXms";
-            this.TxtXms.PasswordChar = '\0';
-            this.TxtXms.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TxtXms.SelectedText = "";
-            this.TxtXms.SelectionLength = 0;
-            this.TxtXms.SelectionStart = 0;
-            this.TxtXms.ShortcutsEnabled = true;
-            this.TxtXms.Size = new System.Drawing.Size(175, 23);
-            this.TxtXms.TabIndex = 24;
-            this.TxtXms.Text = "1024";
-            this.TxtXms.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TxtXms.UseCustomBackColor = true;
-            this.TxtXms.UseSelectable = true;
-            this.TxtXms.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TxtXms.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.ForeColor = System.Drawing.Color.White;
-            this.metroLabel14.Location = new System.Drawing.Point(7, 143);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel14.TabIndex = 23;
-            this.metroLabel14.Text = "Maksimum Ram:";
-            this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel14.UseCustomBackColor = true;
-            this.metroLabel14.UseCustomForeColor = true;
-            // 
-            // Txt_JavaArgs
-            // 
-            // 
-            // 
-            // 
-            this.Txt_JavaArgs.CustomButton.Image = null;
-            this.Txt_JavaArgs.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Txt_JavaArgs.CustomButton.Location = new System.Drawing.Point(153, 1);
-            this.Txt_JavaArgs.CustomButton.Name = "";
-            this.Txt_JavaArgs.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.Txt_JavaArgs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Txt_JavaArgs.CustomButton.TabIndex = 1;
-            this.Txt_JavaArgs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Txt_JavaArgs.CustomButton.UseSelectable = true;
-            this.Txt_JavaArgs.CustomButton.Visible = false;
-            this.Txt_JavaArgs.Lines = new string[0];
-            this.Txt_JavaArgs.Location = new System.Drawing.Point(8, 58);
-            this.Txt_JavaArgs.MaxLength = 32767;
-            this.Txt_JavaArgs.Name = "Txt_JavaArgs";
-            this.Txt_JavaArgs.PasswordChar = '\0';
-            this.Txt_JavaArgs.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Txt_JavaArgs.SelectedText = "";
-            this.Txt_JavaArgs.SelectionLength = 0;
-            this.Txt_JavaArgs.SelectionStart = 0;
-            this.Txt_JavaArgs.ShortcutsEnabled = true;
-            this.Txt_JavaArgs.Size = new System.Drawing.Size(175, 23);
-            this.Txt_JavaArgs.TabIndex = 22;
-            this.Txt_JavaArgs.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.Txt_JavaArgs.UseCustomBackColor = true;
-            this.Txt_JavaArgs.UseSelectable = true;
-            this.Txt_JavaArgs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Txt_JavaArgs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel15
-            // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.ForeColor = System.Drawing.Color.White;
-            this.metroLabel15.Location = new System.Drawing.Point(8, 87);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(99, 19);
-            this.metroLabel15.TabIndex = 21;
-            this.metroLabel15.Text = "Minimum Ram:";
-            this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel15.UseCustomBackColor = true;
-            this.metroLabel15.UseCustomForeColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox1.Controls.Add(this.btnRefreshVersion);
             this.groupBox1.Controls.Add(this.btnChangePath);
             this.groupBox1.Controls.Add(this.btnChangeJava);
-            this.groupBox1.Controls.Add(this.btnSetLastVersion);
             this.groupBox1.Controls.Add(this.lbJavaPath);
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel3);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.txtPath);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(285, 9);
+            this.groupBox1.Location = new System.Drawing.Point(229, 134);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 142);
+            this.groupBox1.Size = new System.Drawing.Size(222, 142);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Minecraft Kurulum Ayarları";
-            // 
-            // btnRefreshVersion
-            // 
-            this.btnRefreshVersion.CheckedState.Parent = this.btnRefreshVersion;
-            this.btnRefreshVersion.CustomImages.Parent = this.btnRefreshVersion;
-            this.btnRefreshVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefreshVersion.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshVersion.HoverState.Parent = this.btnRefreshVersion;
-            this.btnRefreshVersion.Location = new System.Drawing.Point(96, 113);
-            this.btnRefreshVersion.Name = "btnRefreshVersion";
-            this.btnRefreshVersion.ShadowDecoration.Parent = this.btnRefreshVersion;
-            this.btnRefreshVersion.Size = new System.Drawing.Size(180, 26);
-            this.btnRefreshVersion.TabIndex = 16;
-            this.btnRefreshVersion.Text = "Yenile";
-            this.btnRefreshVersion.Visible = false;
             // 
             // btnChangePath
             // 
@@ -809,6 +569,7 @@ namespace _345_Launcher
             this.btnChangePath.Size = new System.Drawing.Size(65, 18);
             this.btnChangePath.TabIndex = 14;
             this.btnChangePath.Text = "Değiştir";
+            this.btnChangePath.Visible = false;
             // 
             // btnChangeJava
             // 
@@ -823,21 +584,7 @@ namespace _345_Launcher
             this.btnChangeJava.Size = new System.Drawing.Size(65, 18);
             this.btnChangeJava.TabIndex = 13;
             this.btnChangeJava.Text = "Değiştir";
-            // 
-            // btnSetLastVersion
-            // 
-            this.btnSetLastVersion.CheckedState.Parent = this.btnSetLastVersion;
-            this.btnSetLastVersion.CustomImages.Parent = this.btnSetLastVersion;
-            this.btnSetLastVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSetLastVersion.ForeColor = System.Drawing.Color.White;
-            this.btnSetLastVersion.HoverState.Parent = this.btnSetLastVersion;
-            this.btnSetLastVersion.Location = new System.Drawing.Point(8, 113);
-            this.btnSetLastVersion.Name = "btnSetLastVersion";
-            this.btnSetLastVersion.ShadowDecoration.Parent = this.btnSetLastVersion;
-            this.btnSetLastVersion.Size = new System.Drawing.Size(82, 26);
-            this.btnSetLastVersion.TabIndex = 13;
-            this.btnSetLastVersion.Text = "Son Versiyon";
-            this.btnSetLastVersion.Visible = false;
+            this.btnChangeJava.Visible = false;
             // 
             // lbJavaPath
             // 
@@ -923,27 +670,323 @@ namespace _345_Launcher
             this.txtPath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.groupBox2.Controls.Add(this.metroLabel4);
+            this.groupBox2.Controls.Add(this.cbSkipAssetsDownload);
+            this.groupBox2.Controls.Add(this.rbParallelDownload);
+            this.groupBox2.Controls.Add(this.cbCheckFileHash);
+            this.groupBox2.Controls.Add(this.rbSequenceDownload);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(229, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(222, 122);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "İndirme Ayarları";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel4.ForeColor = System.Drawing.Color.White;
+            this.metroLabel4.Location = new System.Drawing.Point(4, 96);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(220, 15);
+            this.metroLabel4.TabIndex = 8;
+            this.metroLabel4.Text = "Gelişmiş seçenekler dokunmanız önerilmez.";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel4.UseCustomBackColor = true;
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
+            // cbSkipAssetsDownload
+            // 
+            this.cbSkipAssetsDownload.AutoSize = true;
+            this.cbSkipAssetsDownload.Location = new System.Drawing.Point(9, 80);
+            this.cbSkipAssetsDownload.Name = "cbSkipAssetsDownload";
+            this.cbSkipAssetsDownload.Size = new System.Drawing.Size(98, 15);
+            this.cbSkipAssetsDownload.TabIndex = 7;
+            this.cbSkipAssetsDownload.Text = "Varlıkları indir.";
+            this.cbSkipAssetsDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cbSkipAssetsDownload.UseCustomBackColor = true;
+            this.cbSkipAssetsDownload.UseSelectable = true;
+            // 
+            // rbParallelDownload
+            // 
+            this.rbParallelDownload.AutoSize = true;
+            this.rbParallelDownload.Location = new System.Drawing.Point(75, 23);
+            this.rbParallelDownload.Name = "rbParallelDownload";
+            this.rbParallelDownload.Size = new System.Drawing.Size(92, 15);
+            this.rbParallelDownload.TabIndex = 6;
+            this.rbParallelDownload.Text = "Paralel (Beta)";
+            this.rbParallelDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.rbParallelDownload.UseCustomBackColor = true;
+            this.rbParallelDownload.UseSelectable = true;
+            // 
+            // cbCheckFileHash
+            // 
+            this.cbCheckFileHash.AutoSize = true;
+            this.cbCheckFileHash.Location = new System.Drawing.Point(9, 59);
+            this.cbCheckFileHash.Name = "cbCheckFileHash";
+            this.cbCheckFileHash.Size = new System.Drawing.Size(128, 15);
+            this.cbCheckFileHash.TabIndex = 5;
+            this.cbCheckFileHash.Text = "Dosyaları kontrol et.";
+            this.cbCheckFileHash.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cbCheckFileHash.UseCustomBackColor = true;
+            this.cbCheckFileHash.UseSelectable = true;
+            // 
+            // rbSequenceDownload
+            // 
+            this.rbSequenceDownload.AutoSize = true;
+            this.rbSequenceDownload.Location = new System.Drawing.Point(9, 23);
+            this.rbSequenceDownload.Name = "rbSequenceDownload";
+            this.rbSequenceDownload.Size = new System.Drawing.Size(48, 15);
+            this.rbSequenceDownload.TabIndex = 5;
+            this.rbSequenceDownload.Text = "Sıralı";
+            this.rbSequenceDownload.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.rbSequenceDownload.UseCustomBackColor = true;
+            this.rbSequenceDownload.UseSelectable = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.groupBox4.Controls.Add(this.btnRefreshVersion);
+            this.groupBox4.Controls.Add(this.cbFullscreen);
+            this.groupBox4.Controls.Add(this.btnSetLastVersion);
+            this.groupBox4.Controls.Add(this.btnAutoRamSet);
+            this.groupBox4.Controls.Add(this.TxtXmx);
+            this.groupBox4.Controls.Add(this.metroLabel13);
+            this.groupBox4.Controls.Add(this.TxtXms);
+            this.groupBox4.Controls.Add(this.metroLabel14);
+            this.groupBox4.Controls.Add(this.Txt_JavaArgs);
+            this.groupBox4.Controls.Add(this.metroLabel15);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(220, 273);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Gelişmiş Ayarlar";
+            // 
+            // btnRefreshVersion
+            // 
+            this.btnRefreshVersion.CheckedState.Parent = this.btnRefreshVersion;
+            this.btnRefreshVersion.CustomImages.Parent = this.btnRefreshVersion;
+            this.btnRefreshVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefreshVersion.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshVersion.HoverState.Parent = this.btnRefreshVersion;
+            this.btnRefreshVersion.Location = new System.Drawing.Point(27, 241);
+            this.btnRefreshVersion.Name = "btnRefreshVersion";
+            this.btnRefreshVersion.ShadowDecoration.Parent = this.btnRefreshVersion;
+            this.btnRefreshVersion.Size = new System.Drawing.Size(180, 26);
+            this.btnRefreshVersion.TabIndex = 16;
+            this.btnRefreshVersion.Text = "Yenile";
+            this.btnRefreshVersion.Visible = false;
+            // 
+            // cbFullscreen
+            // 
+            this.cbFullscreen.AutoSize = true;
+            this.cbFullscreen.Location = new System.Drawing.Point(7, 188);
+            this.cbFullscreen.Name = "cbFullscreen";
+            this.cbFullscreen.Size = new System.Drawing.Size(76, 15);
+            this.cbFullscreen.TabIndex = 20;
+            this.cbFullscreen.Text = "Tamekran";
+            this.cbFullscreen.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cbFullscreen.UseCustomBackColor = true;
+            this.cbFullscreen.UseSelectable = true;
+            // 
+            // btnSetLastVersion
+            // 
+            this.btnSetLastVersion.CheckedState.Parent = this.btnSetLastVersion;
+            this.btnSetLastVersion.CustomImages.Parent = this.btnSetLastVersion;
+            this.btnSetLastVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSetLastVersion.ForeColor = System.Drawing.Color.White;
+            this.btnSetLastVersion.HoverState.Parent = this.btnSetLastVersion;
+            this.btnSetLastVersion.Location = new System.Drawing.Point(69, 209);
+            this.btnSetLastVersion.Name = "btnSetLastVersion";
+            this.btnSetLastVersion.ShadowDecoration.Parent = this.btnSetLastVersion;
+            this.btnSetLastVersion.Size = new System.Drawing.Size(82, 26);
+            this.btnSetLastVersion.TabIndex = 13;
+            this.btnSetLastVersion.Text = "Son Versiyon";
+            this.btnSetLastVersion.Visible = false;
+            // 
+            // btnAutoRamSet
+            // 
+            this.btnAutoRamSet.CheckedState.Parent = this.btnAutoRamSet;
+            this.btnAutoRamSet.CustomImages.Parent = this.btnAutoRamSet;
+            this.btnAutoRamSet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAutoRamSet.ForeColor = System.Drawing.Color.White;
+            this.btnAutoRamSet.HoverState.Parent = this.btnAutoRamSet;
+            this.btnAutoRamSet.Location = new System.Drawing.Point(173, 58);
+            this.btnAutoRamSet.Name = "btnAutoRamSet";
+            this.btnAutoRamSet.ShadowDecoration.Parent = this.btnAutoRamSet;
+            this.btnAutoRamSet.Size = new System.Drawing.Size(35, 130);
+            this.btnAutoRamSet.TabIndex = 27;
+            this.btnAutoRamSet.Text = "Oto Ram";
+            this.btnAutoRamSet.Visible = false;
+            // 
+            // TxtXmx
+            // 
+            // 
+            // 
+            // 
+            this.TxtXmx.CustomButton.Image = null;
+            this.TxtXmx.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TxtXmx.CustomButton.Location = new System.Drawing.Point(137, 1);
+            this.TxtXmx.CustomButton.Name = "";
+            this.TxtXmx.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TxtXmx.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TxtXmx.CustomButton.TabIndex = 1;
+            this.TxtXmx.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TxtXmx.CustomButton.UseSelectable = true;
+            this.TxtXmx.CustomButton.Visible = false;
+            this.TxtXmx.Lines = new string[0];
+            this.TxtXmx.Location = new System.Drawing.Point(8, 161);
+            this.TxtXmx.MaxLength = 32767;
+            this.TxtXmx.Name = "TxtXmx";
+            this.TxtXmx.PasswordChar = '\0';
+            this.TxtXmx.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TxtXmx.SelectedText = "";
+            this.TxtXmx.SelectionLength = 0;
+            this.TxtXmx.SelectionStart = 0;
+            this.TxtXmx.ShortcutsEnabled = true;
+            this.TxtXmx.Size = new System.Drawing.Size(159, 23);
+            this.TxtXmx.TabIndex = 26;
+            this.TxtXmx.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TxtXmx.UseCustomBackColor = true;
+            this.TxtXmx.UseSelectable = true;
+            this.TxtXmx.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TxtXmx.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.ForeColor = System.Drawing.Color.White;
+            this.metroLabel13.Location = new System.Drawing.Point(9, 36);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(114, 19);
+            this.metroLabel13.TabIndex = 25;
+            this.metroLabel13.Text = "JVM Argümanları:";
+            this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel13.UseCustomBackColor = true;
+            this.metroLabel13.UseCustomForeColor = true;
+            // 
+            // TxtXms
+            // 
+            // 
+            // 
+            // 
+            this.TxtXms.CustomButton.Image = null;
+            this.TxtXms.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TxtXms.CustomButton.Location = new System.Drawing.Point(137, 1);
+            this.TxtXms.CustomButton.Name = "";
+            this.TxtXms.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TxtXms.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TxtXms.CustomButton.TabIndex = 1;
+            this.TxtXms.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TxtXms.CustomButton.UseSelectable = true;
+            this.TxtXms.CustomButton.Visible = false;
+            this.TxtXms.Lines = new string[0];
+            this.TxtXms.Location = new System.Drawing.Point(8, 110);
+            this.TxtXms.MaxLength = 32767;
+            this.TxtXms.Name = "TxtXms";
+            this.TxtXms.PasswordChar = '\0';
+            this.TxtXms.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TxtXms.SelectedText = "";
+            this.TxtXms.SelectionLength = 0;
+            this.TxtXms.SelectionStart = 0;
+            this.TxtXms.ShortcutsEnabled = true;
+            this.TxtXms.Size = new System.Drawing.Size(159, 23);
+            this.TxtXms.TabIndex = 24;
+            this.TxtXms.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TxtXms.UseCustomBackColor = true;
+            this.TxtXms.UseSelectable = true;
+            this.TxtXms.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TxtXms.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.ForeColor = System.Drawing.Color.White;
+            this.metroLabel14.Location = new System.Drawing.Point(7, 139);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(107, 19);
+            this.metroLabel14.TabIndex = 23;
+            this.metroLabel14.Text = "Maksimum Ram:";
+            this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel14.UseCustomBackColor = true;
+            this.metroLabel14.UseCustomForeColor = true;
+            // 
+            // Txt_JavaArgs
+            // 
+            // 
+            // 
+            // 
+            this.Txt_JavaArgs.CustomButton.Image = null;
+            this.Txt_JavaArgs.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Txt_JavaArgs.CustomButton.Location = new System.Drawing.Point(137, 1);
+            this.Txt_JavaArgs.CustomButton.Name = "";
+            this.Txt_JavaArgs.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.Txt_JavaArgs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Txt_JavaArgs.CustomButton.TabIndex = 1;
+            this.Txt_JavaArgs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Txt_JavaArgs.CustomButton.UseSelectable = true;
+            this.Txt_JavaArgs.CustomButton.Visible = false;
+            this.Txt_JavaArgs.Lines = new string[0];
+            this.Txt_JavaArgs.Location = new System.Drawing.Point(8, 58);
+            this.Txt_JavaArgs.MaxLength = 32767;
+            this.Txt_JavaArgs.Name = "Txt_JavaArgs";
+            this.Txt_JavaArgs.PasswordChar = '\0';
+            this.Txt_JavaArgs.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Txt_JavaArgs.SelectedText = "";
+            this.Txt_JavaArgs.SelectionLength = 0;
+            this.Txt_JavaArgs.SelectionStart = 0;
+            this.Txt_JavaArgs.ShortcutsEnabled = true;
+            this.Txt_JavaArgs.Size = new System.Drawing.Size(159, 23);
+            this.Txt_JavaArgs.TabIndex = 22;
+            this.Txt_JavaArgs.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Txt_JavaArgs.UseCustomBackColor = true;
+            this.Txt_JavaArgs.UseSelectable = true;
+            this.Txt_JavaArgs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.Txt_JavaArgs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.ForeColor = System.Drawing.Color.White;
+            this.metroLabel15.Location = new System.Drawing.Point(8, 87);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel15.TabIndex = 21;
+            this.metroLabel15.Text = "Minimum Ram:";
+            this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel15.UseCustomBackColor = true;
+            this.metroLabel15.UseCustomForeColor = true;
+            // 
             // metroTabControl1
             // 
             this.metroTabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
-            this.metroTabControl1.Location = new System.Drawing.Point(73, 113);
+            this.metroTabControl1.Location = new System.Drawing.Point(27, 24);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(598, 340);
+            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.Size = new System.Drawing.Size(528, 363);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 5;
-            this.metroTabControl1.UseCustomBackColor = true;
-            this.metroTabControl1.UseCustomForeColor = true;
+            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
             this.metroTabControl1.Visible = false;
             // 
             // pnllazım
             // 
             this.pnllazım.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.pnllazım.Controls.Add(this.metroTabPage2);
+            this.pnllazım.BackgroundImage = global::_345_Launcher.Properties.Resources._345launcher4x;
+            this.pnllazım.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnllazım.Controls.Add(this.metroTabControl1);
             this.pnllazım.Controls.Add(this.webBrowser1);
             this.pnllazım.Location = new System.Drawing.Point(0, 32);
             this.pnllazım.Name = "pnllazım";
@@ -952,16 +995,18 @@ namespace _345_Launcher
             // 
             // webBrowser1
             // 
+            this.webBrowser1.AllowNavigation = false;
+            this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
             this.webBrowser1.Location = new System.Drawing.Point(1, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(598, 427);
+            this.webBrowser1.Size = new System.Drawing.Size(601, 426);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.WebBrowserShortcutsEnabled = false;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.guna2Panel1.Controls.Add(this.metroTabControl1);
             this.guna2Panel1.Controls.Add(this.guna2Button5);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.metroTextBox1);
@@ -969,10 +1014,10 @@ namespace _345_Launcher
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 31);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 38);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(240, 395);
+            this.guna2Panel1.Size = new System.Drawing.Size(240, 213);
             this.guna2Panel1.TabIndex = 23;
             // 
             // guna2Button5
@@ -983,13 +1028,13 @@ namespace _345_Launcher
             this.guna2Button5.CheckedState.Parent = this.guna2Button5;
             this.guna2Button5.CustomImages.Parent = this.guna2Button5;
             this.guna2Button5.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(3, 305);
+            this.guna2Button5.Location = new System.Drawing.Point(13, 52);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(232, 19);
+            this.guna2Button5.Size = new System.Drawing.Size(113, 19);
             this.guna2Button5.TabIndex = 26;
             this.guna2Button5.Text = "Website";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -1002,13 +1047,13 @@ namespace _345_Launcher
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(3, 330);
+            this.guna2Button4.Location = new System.Drawing.Point(13, 78);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(232, 19);
+            this.guna2Button4.Size = new System.Drawing.Size(113, 19);
             this.guna2Button4.TabIndex = 25;
             this.guna2Button4.Text = "Destek OL!";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
@@ -1019,18 +1064,17 @@ namespace _345_Launcher
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(62, 1);
+            this.metroTextBox1.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(150, 1);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(169, 169);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(81, 81);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Enabled = false;
-            this.metroTextBox1.Lines = new string[] {
-        "Merhaba, ben Mehmet Ali (aka Mehmetali_345) Ben genç bir geliştiriciyim. Javascri" +
-            "pt ve C # kullanarak masaüstü programları ve web uygulamaları yazıyorum."};
+            this.metroTextBox1.Lines = new string[0];
             this.metroTextBox1.Location = new System.Drawing.Point(3, 128);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Multiline = true;
@@ -1041,10 +1085,8 @@ namespace _345_Launcher
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(232, 171);
+            this.metroTextBox1.Size = new System.Drawing.Size(232, 83);
             this.metroTextBox1.TabIndex = 24;
-            this.metroTextBox1.Text = "Merhaba, ben Mehmet Ali (aka Mehmetali_345) Ben genç bir geliştiriciyim. Javascri" +
-    "pt ve C # kullanarak masaüstü programları ve web uygulamaları yazıyorum.";
             this.metroTextBox1.UseCustomBackColor = true;
             this.metroTextBox1.UseCustomForeColor = true;
             this.metroTextBox1.UseSelectable = true;
@@ -1059,13 +1101,13 @@ namespace _345_Launcher
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
             this.guna2Button3.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(3, 355);
+            this.guna2Button3.Location = new System.Drawing.Point(13, 103);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(232, 19);
+            this.guna2Button3.Size = new System.Drawing.Size(113, 19);
             this.guna2Button3.TabIndex = 23;
             this.guna2Button3.Text = "Github";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -1073,7 +1115,7 @@ namespace _345_Launcher
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(10, 31);
             this.label6.Name = "label6";
@@ -1115,7 +1157,7 @@ namespace _345_Launcher
             this.Hakkında.Location = new System.Drawing.Point(600, 32);
             this.Hakkında.Name = "Hakkında";
             this.Hakkında.ShadowDecoration.Parent = this.Hakkında;
-            this.Hakkında.Size = new System.Drawing.Size(240, 425);
+            this.Hakkında.Size = new System.Drawing.Size(240, 426);
             this.Hakkında.TabIndex = 9;
             this.Hakkında.Text = "Hakkında";
             // 
@@ -1168,13 +1210,19 @@ namespace _345_Launcher
             this.lbUsername.UseCustomBackColor = true;
             this.lbUsername.UseCustomForeColor = true;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.TargetControl = this.panel1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(132, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 20;
             // 
             // MainForm
             // 
@@ -1182,8 +1230,8 @@ namespace _345_Launcher
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(840, 553);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.Hakkında);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnllazım);
             this.Controls.Add(this.Pb_Progress);
             this.Controls.Add(this.panel1);
@@ -1202,12 +1250,12 @@ namespace _345_Launcher
             this.metroTabPage4.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
             this.pnllazım.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
@@ -1262,7 +1310,6 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2Button btnRefreshVersion;
         private MetroFramework.Controls.MetroCheckBox cbFullscreen;
         private Guna.UI2.WinForms.Guna2Button btnSetLastVersion;
-        private Guna.UI2.WinForms.Guna2Button btnForgeInstall;
         private Guna.UI2.WinForms.Guna2Button btnAutoRamSet;
         private MetroFramework.Controls.MetroTextBox TxtXmx;
         private MetroFramework.Controls.MetroLabel metroLabel13;
@@ -1286,7 +1333,10 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2CheckBox snapbox;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2RadioButton tur;
+        private Guna.UI2.WinForms.Guna2RadioButton eng;
+        private System.Windows.Forms.Label label8;
     }
 }

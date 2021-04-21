@@ -10,7 +10,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -35,6 +34,8 @@ namespace _345_Launcher
                 rpc();
             }
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            
+            dil();
         }
 
 
@@ -51,7 +52,6 @@ namespace _345_Launcher
             string v = versionInf.FileVersion;
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
 
-            timer1.Start();
             string hedef = "https://launcher.mehmetali345.xyz/assets/update.html";
             WebRequest istek = HttpWebRequest.Create(hedef);
             WebResponse yanit;
@@ -105,16 +105,16 @@ namespace _345_Launcher
 
         protected override void WndProc(ref Message m)
         {
-            if(m.Msg == 0x84)
+            if (m.Msg == 0x84)
             {
                 Point pos = new Point(m.LParam.ToInt32());
                 pos = this.PointToClient(pos);
-                if(pos.Y < cCaption)
+                if (pos.Y < cCaption)
                 {
                     m.Result = (IntPtr)2;
                     return;
                 }
-                if(pos.X > this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                if (pos.X > this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
                 {
                     m.Result = (IntPtr)17;
                     return;
@@ -261,6 +261,7 @@ namespace _345_Launcher
             Modlar frm = new Modlar() { TopLevel = false, TopMost = true };
             this.panel2.Controls.Add(frm);
             frm.Show();
+            metroTabPage2.AutoScroll = true;
 
             var appName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
             using (var Key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
@@ -307,6 +308,7 @@ namespace _345_Launcher
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Save();
             Save_Data();
             this.Close();
             Application.Exit();
@@ -334,29 +336,6 @@ namespace _345_Launcher
             TxtXmx.Text = min.ToString();
         }
 
-        private void btnForgeInstall_Click(object sender, EventArgs e)
-        {
-            new Thread(() =>
-            {
-                var forgeJava = "";
-
-                if (useMJava)
-                {
-                    var java = new MJava();
-                    java.ProgressChanged += Launcher_ProgressChanged;
-                    forgeJava = java.CheckJava();
-                }
-                else
-                    forgeJava = javaPath;
-
-                Invoke(new Action(() =>
-                {
-                    var forgeForm = new ForgeInstall(MinecraftPath, forgeJava);
-                    forgeForm.ShowDialog();
-                    refreshVersions(forgeForm.LastInstalledVersion);
-                }));
-            }).Start();
-        }
 
         private void btnRefreshVersion_Click(object sender, EventArgs e)
         {
@@ -585,6 +564,82 @@ namespace _345_Launcher
 
         #endregion
 
+        public void dil()
+        {
+            if(eng.Checked == true)
+            {
+                btnLaunch.Text = "Play";
+                guna2Button2.Text = "Settings";
+                guna2Button1.Text = "Sign Out";
+                snapbox.Text = "Snapshots";
+                Lv_Status.Text = "Ready!";
+                label3.Text = "Welcome";
+                guna2Button4.Text = "Donate!";
+                Hakkında.Text = "About";
+                groupBox4.Text = "Settings";
+                metroLabel13.Text = "JVM Args:";
+                metroLabel14.Text = "Minimum Ram:";
+                metroLabel15.Text = "Maximum Ram:";
+                btnAutoRamSet.Text = "Auto Ram Set";
+                cbFullscreen.Text = "Fullscreen";
+                rbSequenceDownload.Text = "Sequence";
+                rbParallelDownload.Text = "Parallel(beta)";
+                groupBox2.Text = "Download Settings";
+                groupBox1.Text = "Minecraft Install Settings";
+                metroLabel1.Text = "Path:";
+                btnChangePath.Text = "Yolu Değiştir";
+                metroLabel3.Text = "Java Path:";
+                label4.Text = "Minimize Button";
+                chkStartUp.Text = "Minimize to Tray";
+                label7.Text = "Language";
+                eng.Text = "English";
+                tur.Text = "Türkçe";
+                guna2TileButton5.Text = "Save";
+                guna2TileButton7.Text = "Check for Updates";
+                metroTabPage2.Text = "Settings";
+                metroTabPage4.Text = "Launcher Settings";
+                metroTabPage5.Text = "Mods";
+                label8.Text = "English";
+                //for english lang
+            }
+            else
+            { 
+                //for Turkish lang
+                btnLaunch.Text = "Oyna";
+                guna2Button2.Text = "Ayarlar";
+                guna2Button1.Text = "Çıkış";
+                snapbox.Text = "Snapshotlar";
+                Lv_Status.Text = "Hazır!";
+                label3.Text = "Hoş Geldin";
+                guna2Button4.Text = "Destek OL!";
+                Hakkında.Text = "Hakkında";
+                groupBox4.Text = "Ayarlar";
+                metroLabel13.Text = "JVM Argümanları:";
+                metroLabel14.Text = "Minimum Ram:";
+                metroLabel15.Text = "Maximum Ram:";
+                btnAutoRamSet.Text = "Oto Ram";
+                cbFullscreen.Text = "Tamekran";
+                rbSequenceDownload.Text = "Sıralı";
+                rbParallelDownload.Text = "Paralel(beta)";
+                groupBox2.Text = "İndirme Ayarları";
+                groupBox1.Text = "Minecraft Kurulum Ayarları";
+                metroLabel1.Text = "Yol:";
+                btnChangePath.Text = "Yolu Değiştir";
+                metroLabel3.Text = "Java Yolu:";
+                label4.Text = "Küçültme Butonu";
+                chkStartUp.Text = "Bildirimlere küçült";
+                label7.Text = "Dil";
+                eng.Text = "English";
+                tur.Text = "Türkçe";
+                guna2TileButton5.Text = "Kaydet";
+                guna2TileButton7.Text = "Güncellemeleri Kontrol Et";
+                metroTabPage2.Text = "Ayarlar";
+                metroTabPage4.Text = "Launcher Ayarları";
+                metroTabPage5.Text = "Modlar";
+                label8.Text = "Türkçe";
+            }
+
+        }
         private void Init_Data()
         {
             if (Properties.Settings.Default.ram == "")
@@ -620,9 +675,18 @@ namespace _345_Launcher
             {
                 guna2CheckBox1.Checked = false;
             }
+            if(Properties.Settings.Default.langtr == true)
+            {
+                tur.Checked = true;
+            }
+            else
+            {
+                eng.Checked = true;
+            }
+            
         }
 
-        private void Save_Data() //Beni hatırla için string kaydı
+        private void Save_Data() //Remember
         {
             Properties.Settings.Default.ram = TxtXmx.Text;
             Properties.Settings.Default.mram = TxtXms.Text;
@@ -648,12 +712,9 @@ namespace _345_Launcher
 
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
+            updenetle();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -680,15 +741,32 @@ namespace _345_Launcher
         {
             if (metroTabControl1.Visible == false)
             {
+                webBrowser1.Visible = false;
                 metroTabControl1.Visible = true;
-                guna2Button2.Text = "Ana Ekran";
+                if (eng.Checked == true)
+                {
+                    guna2Button2.Text = "Main Screen";
+                }
+                else
+                {
+                    guna2Button2.Text = "Ana Ekran";
+
+                }
                 guna2Button2.Font = new Font(guna2Button2.Font.FontFamily, 10);
                 guna2Button2.Image = Properties.Resources.icons8_globe_48px;
             }
             else
             {
+                webBrowser1.Visible = true;
                 metroTabControl1.Visible = false;
-                guna2Button2.Text = "Ayarlar";
+                if (eng.Checked == true)
+                {
+                    guna2Button2.Text = "Settings";
+                }
+                else
+                {
+                    guna2Button2.Text = "Ayarlar";
+                }
                 guna2Button2.Image = Properties.Resources.icons8_settings_48px;
             }
         }
@@ -723,6 +801,18 @@ namespace _345_Launcher
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/Mehmetali345Dev");
+        }
+
+        private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.langtr = false;
+            dil();
+        }
+
+        private void tur_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.langtr = true;
+            dil();
         }
     }
 }
