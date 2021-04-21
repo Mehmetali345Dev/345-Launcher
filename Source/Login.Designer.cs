@@ -36,7 +36,6 @@ namespace _345_Launcher
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +46,7 @@ namespace _345_Launcher
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.panel1.Controls.Add(this.uplabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.guna2ImageButton1);
@@ -72,7 +71,7 @@ namespace _345_Launcher
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 21);
             this.label1.TabIndex = 3;
@@ -82,7 +81,7 @@ namespace _345_Launcher
             // 
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::_345_Launcher.Properties.Resources.icons8_cancel_32px_2;
+            this.guna2ImageButton1.Image = global::_345_Launcher.Properties.Resources.icons8_close_window_48px;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(32, 32);
             this.guna2ImageButton1.Location = new System.Drawing.Point(313, 1);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
@@ -106,25 +105,13 @@ namespace _345_Launcher
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(235, 462);
+            this.linkLabel1.Location = new System.Drawing.Point(233, 478);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(118, 21);
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Mehmetali_345";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(223, 480);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "tarafından geliştirildi.";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label9
             // 
@@ -198,10 +185,10 @@ namespace _345_Launcher
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(144, 273);
+            this.guna2Button1.Location = new System.Drawing.Point(172, 273);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(167, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(139, 45);
             this.guna2Button1.TabIndex = 18;
             this.guna2Button1.Text = "İlerle ->";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -219,7 +206,6 @@ namespace _345_Launcher
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -242,7 +228,6 @@ namespace _345_Launcher
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private System.Windows.Forms.Label label3;

@@ -69,16 +69,33 @@ namespace _345_Launcher
             }
             else
             {
-                if (MessageBox.Show("Güncelleme mevcut indirilsinmi?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    using (var client = new WebClient())
+                if(Properties.Settings.Default.langtr == false)
+                {
+                    if (MessageBox.Show("Update is avalible. Are you want update?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        using (var client = new WebClient())
+                        {
+                            Update up = new Update();
+                            up.Show();
+                        }
+                    else
                     {
-                        Update up = new Update();
-                        up.Show();
+                        this.Alert("Update avalible", "Please download update for", "last changes.", Form_Info.enmType.Info);
                     }
+                }
                 else
                 {
-                    this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
+                    if (MessageBox.Show("Güncelleme mevcut indirilsinmi?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        using (var client = new WebClient())
+                        {
+                            Update up = new Update();
+                            up.Show();
+                        }
+                    else
+                    {
+                        this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
+                    }
                 }
+                
             }
         }
 
@@ -125,22 +142,45 @@ namespace _345_Launcher
         #endregion
         private void rpc()
         {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
-
-            client = new DiscordRpcClient("814773064671690762");
-            client.Initialize();
-            client.SetPresence(new RichPresence()
+            if(Properties.Settings.Default.langtr == true)
             {
-                Details = $"v. {versionInf.FileVersion}",
-                State = "Ana Menüde",
-                Timestamps = Timestamps.Now,
-                Assets = new Assets()
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+                client = new DiscordRpcClient("814773064671690762");
+                client.Initialize();
+                client.SetPresence(new RichPresence()
                 {
-                    LargeImageKey = "launcher",
-                    LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
-                }
-            });
+                    Details = $"v. {versionInf.FileVersion}",
+                    State = "Ana Menüde",
+                    Timestamps = Timestamps.Now,
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "launcher",
+                        LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
+                    }
+                });
+            }
+            else
+            {
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+                client = new DiscordRpcClient("814773064671690762");
+                client.Initialize();
+                client.SetPresence(new RichPresence()
+                {
+                    Details = $"v. {versionInf.FileVersion}",
+                    State = "Main Screen",
+                    Timestamps = Timestamps.Now,
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "launcher",
+                        LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
+                    }
+                });
+            }
+           
         }
 
         #region update
@@ -279,7 +319,14 @@ namespace _345_Launcher
                 {
                     client.Dispose();
                 }
-                this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
+                if(Properties.Settings.Default.langtr == true)
+                {
+                    this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
+                }
+                else
+                {
+                    this.Alert("Launcher minimized", "Click the tray icon for", "open program.", Form_Info.enmType.minimized);
+                }
             }
             this.WindowState = FormWindowState.Minimized;
         }
@@ -320,7 +367,14 @@ namespace _345_Launcher
             var computerMemory = Util.GetMemoryMb();
             if (computerMemory == null)
             {
-                MessageBox.Show("RAM bilgisi alınamadı.");
+                if(Properties.Settings.Default.langtr == true)
+                {
+                    MessageBox.Show("RAM bilgisi alınamadı.");
+                }
+                else
+                {
+                    MessageBox.Show("RAM information could not be retrieved.");
+                }
                 return;
             }
 
@@ -373,8 +427,16 @@ namespace _345_Launcher
             }
             catch (Exception ex)
             {
+                if(Properties.Settings.Default.langtr == true)
+                {
+                    this.Alert("MLaunchOption oluşamadı", "Eğer sorun devam ederse", "geri bildirim gönderin.", Form_Info.enmType.Error);
+
+                }
+                else
+                {
+                    this.Alert("MLaunchOption not created", "If problems unsolves", "send feedback.", Form_Info.enmType.Error);
+                }
                 MessageBox.Show("Failed to create MLaunchOption\n\n" + ex.ToString());
-                this.Alert("MLaunchOption oluşamadı", "Eğer sorun devam ederse", "geri bildirim gönderin.", Form_Info.enmType.Error);
                 return null;
             }
         }
@@ -388,7 +450,14 @@ namespace _345_Launcher
 
             if (guna2CheckBox1.Checked == true)
             {
-                client.UpdateState($"{selected} oynuyor.");
+                if(Properties.Settings.Default.langtr == true)
+                {
+                    client.UpdateState($"{selected} oynuyor.");
+                }
+                else
+                {
+                    client.UpdateState($"Playing {selected}.");
+                }
             }
 
             UpdateSession(MSession.GetOfflineSession(lbUsername.Text));
@@ -400,7 +469,7 @@ namespace _345_Launcher
 
             if (cbVersion.Text == "")
             {
-                MessageBox.Show("Versiyon Seç");
+                MessageBox.Show("Versiyon Seç / Select Version");
                 return;
             }
 
@@ -458,12 +527,20 @@ namespace _345_Launcher
                 }
                 catch (Win32Exception wex)
                 {
-                    MessageBox.Show(wex.ToString() + "\n\nJava Problemi");
+                    MessageBox.Show(wex.ToString() + "\n\nJava Problem");
                 }
                 catch (Exception ex)
                 {
+                    if (Properties.Settings.Default.langtr == true)
+                    {
+                        this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
+
+                    }
+                    else
+                    {
+                        this.Alert("ERROR", "Libraries could not be downloaded or ", "something goes wrong.", Form_Info.enmType.Error);
+                    }
                     MessageBox.Show(ex.ToString());
-                    this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
                 }
             });
             th.Start();
@@ -495,33 +572,15 @@ namespace _345_Launcher
                 Directory.CreateDirectory(path);
             }
             File.WriteAllText(path + @"\Argümanlar.txt", process.StartInfo.Arguments);
-            output(process.StartInfo.Arguments);
 
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.RedirectStandardOutput = true;
             process.EnableRaisingEvents = true;
-            process.ErrorDataReceived += Process_ErrorDataReceived;
-            process.OutputDataReceived += Process_OutputDataReceived;
 
             process.Start();
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
-        }
-
-        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            output(e.Data);
-        }
-
-        private void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            output(e.Data);
-        }
-
-        void output(string msg)
-        {
-            GameLog.AddLog(msg);
         }
 
 
@@ -600,11 +659,13 @@ namespace _345_Launcher
                 metroTabPage4.Text = "Launcher Settings";
                 metroTabPage5.Text = "Mods";
                 label8.Text = "English";
+                metroTextBox1.Text = "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.";
                 //for english lang
             }
             else
-            { 
+            {
                 //for Turkish lang
+                metroTextBox1.Text = "Merhaba ben Mehmet Ali. 14 yaşındayım. C# ile programlar geliştiriyorum.";
                 btnLaunch.Text = "Oyna";
                 guna2Button2.Text = "Ayarlar";
                 guna2Button1.Text = "Çıkış";
@@ -813,6 +874,11 @@ namespace _345_Launcher
         {
             Properties.Settings.Default.langtr = true;
             dil();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/syprbuqGSw");
         }
     }
 }

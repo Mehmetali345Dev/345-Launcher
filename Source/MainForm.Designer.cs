@@ -32,6 +32,7 @@ namespace _345_Launcher
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.uplabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -67,7 +68,6 @@ namespace _345_Launcher
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cbSkipAssetsDownload = new MetroFramework.Controls.MetroCheckBox();
             this.rbParallelDownload = new MetroFramework.Controls.MetroRadioButton();
             this.cbCheckFileHash = new MetroFramework.Controls.MetroCheckBox();
@@ -99,7 +99,9 @@ namespace _345_Launcher
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsername = new MetroFramework.Controls.MetroLabel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.label8 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
@@ -113,6 +115,7 @@ namespace _345_Launcher
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.Hakkında.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,6 +132,16 @@ namespace _345_Launcher
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(840, 31);
             this.panel1.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(132, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 20;
             // 
             // uplabel
             // 
@@ -673,7 +686,6 @@ namespace _345_Launcher
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox2.Controls.Add(this.metroLabel4);
             this.groupBox2.Controls.Add(this.cbSkipAssetsDownload);
             this.groupBox2.Controls.Add(this.rbParallelDownload);
             this.groupBox2.Controls.Add(this.cbCheckFileHash);
@@ -685,21 +697,6 @@ namespace _345_Launcher
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İndirme Ayarları";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(4, 96);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(220, 15);
-            this.metroLabel4.TabIndex = 8;
-            this.metroLabel4.Text = "Gelişmiş seçenekler dokunmanız önerilmez.";
-            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel4.UseCustomBackColor = true;
-            this.metroLabel4.UseCustomForeColor = true;
             // 
             // cbSkipAssetsDownload
             // 
@@ -973,7 +970,7 @@ namespace _345_Launcher
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(27, 24);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(528, 363);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 5;
@@ -1074,7 +1071,8 @@ namespace _345_Launcher
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Enabled = false;
-            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Lines = new string[] {
+        "Hello my name is Mehmet Ali. I\'m 14 years old. I developing C# programs."};
             this.metroTextBox1.Location = new System.Drawing.Point(3, 128);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Multiline = true;
@@ -1087,6 +1085,7 @@ namespace _345_Launcher
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(232, 83);
             this.metroTextBox1.TabIndex = 24;
+            this.metroTextBox1.Text = "Hello my name is Mehmet Ali. I\'m 14 years old. I developing C# programs.";
             this.metroTextBox1.UseCustomBackColor = true;
             this.metroTextBox1.UseCustomForeColor = true;
             this.metroTextBox1.UseSelectable = true;
@@ -1148,10 +1147,14 @@ namespace _345_Launcher
             // 
             // Hakkında
             // 
+            this.Hakkında.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.Hakkında.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.Hakkında.Controls.Add(this.label9);
+            this.Hakkında.Controls.Add(this.guna2Button6);
+            this.Hakkında.Controls.Add(this.guna2CirclePictureBox2);
             this.Hakkında.Controls.Add(this.guna2Panel1);
             this.Hakkında.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.Hakkında.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.Hakkında.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.Hakkında.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Hakkında.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.Hakkında.Location = new System.Drawing.Point(600, 32);
@@ -1214,15 +1217,47 @@ namespace _345_Launcher
             // 
             this.guna2DragControl1.TargetControl = this.panel1;
             // 
-            // label8
+            // guna2CirclePictureBox2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(132, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 20;
+            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(56, 255);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.ShadowDecoration.Parent = this.guna2CirclePictureBox2;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(124, 124);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 24;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.Animated = true;
+            this.guna2Button6.AutoRoundedCorners = true;
+            this.guna2Button6.BorderRadius = 8;
+            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
+            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
+            this.guna2Button6.FillColor = System.Drawing.Color.LimeGreen;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.HoverState.Parent = this.guna2Button6;
+            this.guna2Button6.Location = new System.Drawing.Point(62, 399);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
+            this.guna2Button6.Size = new System.Drawing.Size(113, 19);
+            this.guna2Button6.TabIndex = 27;
+            this.guna2Button6.Text = "Discord Server";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(89, 382);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 15);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "345 Team";
             // 
             // MainForm
             // 
@@ -1262,8 +1297,10 @@ namespace _345_Launcher
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.Hakkında.ResumeLayout(false);
+            this.Hakkında.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1301,7 +1338,6 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroCheckBox cbSkipAssetsDownload;
         private MetroFramework.Controls.MetroRadioButton rbParallelDownload;
         private MetroFramework.Controls.MetroCheckBox cbCheckFileHash;
@@ -1338,5 +1374,8 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2RadioButton tur;
         private Guna.UI2.WinForms.Guna2RadioButton eng;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private System.Windows.Forms.Label label9;
     }
 }

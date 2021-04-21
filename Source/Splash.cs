@@ -8,6 +8,10 @@ namespace _345_Launcher
         public splash()
         {
             InitializeComponent();
+            if(Properties.Settings.Default.langtr == false)
+            {
+                metroLabel1.Text = "Loading...";
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -21,38 +25,39 @@ namespace _345_Launcher
             guna2CircleProgressBar1.Value += 1;
             if (guna2CircleProgressBar1.Value == 30)
             {
-                metroLabel1.Text = "Sunucuya Bağlanılıyor...";
+
+                if (Properties.Settings.Default.langtr == false)
+                {
+                    metroLabel1.Text = "Connecting to server...";
+                }
+                else
+                {
+                    metroLabel1.Text = "Sunucuya bağlanılıyor...";
+
+                }
             }
             if (guna2CircleProgressBar1.Value == 75)
             {
-                metroLabel1.Text = "Dosyalar Doğrulanıyor...";
-                if (Properties.Settings.Default.prank == true)
+                if(Properties.Settings.Default.langtr == false)
                 {
-                    timer1.Stop();
-                    MessageBox.Show("Dosyalarda Hata Var", "HATA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("LOL");
-                    Properties.Settings.Default.prank = false;
-                    Properties.Settings.Default.Save();
-                    timer1.Start();
+                    metroLabel1.Text = "Checking files...";
                 }
+                else
+                {
+                    metroLabel1.Text = "Dosyalar Doğrulanıyor...";
+
+                }
+
             }
             if (guna2CircleProgressBar1.Value >= 100)
             {
                 if (Properties.Settings.Default.Remember == true)
                 {
-                    if (Properties.Settings.Default.prank == true)
-                    {
-                        timer1.Stop();
-                        MessageBox.Show("Dosyalar Hatalı Tekrar AÇ");
-                    }
-                    else
-                    {
-                        timer1.Stop();
-                        MainForm main = new MainForm();
-                        main.LabelText = Properties.Settings.Default.UserName;
-                        main.Show();
-                        this.Hide();
-                    }
+                    timer1.Stop();
+                    MainForm main = new MainForm();
+                    main.LabelText = Properties.Settings.Default.UserName;
+                    main.Show();
+                    this.Hide();
 
                 }
                 else

@@ -21,6 +21,12 @@ namespace _345_Launcher
         public Update()
         {
             InitializeComponent();
+            if(Properties.Settings.Default.langtr == false)
+            {
+                gün_but.Text = "Update";
+                label3.Text = "File downloads same path with application locates.";
+                label4.Text = "When download finish delete old file and open new file.";
+            }
         }
 
         
@@ -40,7 +46,7 @@ namespace _345_Launcher
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             string filePath = Path.GetDirectoryName(Application.ExecutablePath);
-            string indir = @".\345 Launcher.exe";
+            string indir = filePath + @".\345 Launcher.exe";
             DownloadFileWithProgress("https://launcher.mehmetali345.xyz/assets/345%20Launcher.exe", indir, Pb_File, label1);
         }
         

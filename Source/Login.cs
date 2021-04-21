@@ -20,6 +20,12 @@ namespace _345_Launcher
             InitializeComponent();
             Init_Data();
             versiyon();
+            if(Properties.Settings.Default.langtr == false)
+            {
+                metroCheckBox1.Text = "Remember me";
+                guna2Button1.Text = "Login ->";
+                label3.Text = "Username";
+            }
         }
         public MSession Session;
 

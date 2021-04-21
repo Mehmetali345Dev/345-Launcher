@@ -36,7 +36,6 @@ namespace _345_Launcher
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Pb_File
@@ -61,10 +60,10 @@ namespace _345_Launcher
             this.gün_but.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gün_but.ForeColor = System.Drawing.Color.White;
             this.gün_but.HoverState.Parent = this.gün_but;
-            this.gün_but.Location = new System.Drawing.Point(159, 73);
+            this.gün_but.Location = new System.Drawing.Point(12, 73);
             this.gün_but.Name = "gün_but";
             this.gün_but.ShadowDecoration.Parent = this.gün_but;
-            this.gün_but.Size = new System.Drawing.Size(176, 25);
+            this.gün_but.Size = new System.Drawing.Size(323, 25);
             this.gün_but.TabIndex = 16;
             this.gün_but.Text = "Güncelle";
             this.gün_but.Click += new System.EventHandler(this.gün_but_Click);
@@ -85,9 +84,9 @@ namespace _345_Launcher
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "345 Güncelleyici";
+            this.label2.Text = "345 Updater";
             // 
             // label3
             // 
@@ -109,23 +108,12 @@ namespace _345_Launcher
             this.label4.TabIndex = 20;
             this.label4.Text = "İndikten sonra eskisini silip yeni indirilen dosyayı çalıştırmanız yeterlidir.";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(11, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Şuanki sürüm:";
-            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(350, 136);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(350, 122);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -149,6 +137,5 @@ namespace _345_Launcher
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }
