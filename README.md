@@ -40,7 +40,7 @@ Right Click the soluton from Solution Explorer --> Explore Nuget Packages
  # Contributing, License and Sponsorship
  This project is not ready for contributing.
  This Project under GPL 3.0 (GNU Public License 3.0)
-Sponsored by TASCraft and Kalitrik
+Sponsored by [Kitten Bot](https://kittenbot.ml)
 
 For donates:
 
