@@ -96,7 +96,7 @@ namespace _345_Launcher
         {
             if(txtUsername.Text == "")
             {
-                MessageBox.Show("Boş geçilemez.");
+                MessageBox.Show("Boşluk olmadan ve sadece ingilizce harf kullanarak giriş yapın!");
                 // If username contains illegal character or empty
             }
             else
