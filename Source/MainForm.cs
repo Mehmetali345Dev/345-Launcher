@@ -212,7 +212,6 @@ namespace _345_Launcher
         }
         public void lang()
         {
-
             //Language
             // I made this is temporary i code a new language system
 
@@ -403,7 +402,6 @@ namespace _345_Launcher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
             InitializeLauncher(defaultPath);
             Modlar frm = new Modlar() { TopLevel = false, TopMost = true };
@@ -418,7 +416,6 @@ namespace _345_Launcher
             webBrowser1.Navigate("https://launcher.mehmetali345.xyz/launcher.html");
             webBrowser1.ScriptErrorsSuppressed = true;
             #endregion
-
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -568,7 +565,8 @@ namespace _345_Launcher
 
             if (guna2CheckBox1.Checked == true)
 
-            {//Playing rpc
+            {
+                //Playing rpc
                 if (Properties.Settings.Default.langtr == true)
                 {
                     client.UpdateState($"{selected} oynuyor.");
