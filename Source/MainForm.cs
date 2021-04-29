@@ -63,12 +63,23 @@ namespace _345_Launcher
             string gelenbilgileri = gelen.Substring(baslangic, bitis);
             v = Convert.ToString(gelenbilgileri);
 
+            string lang;
+
             if (v == versionInf.FileVersion)
             {
-                uplabel.Text = v;
+                if (Properties.Settings.Default.langtr == false)
+                {
+                    lang = "English";
+                }
+                else
+                {
+                    lang = "Türkçe";
+                }
+                    uplabel.Text = v + lang;
             }
             else
             {
+
                 if(Properties.Settings.Default.langtr == false)
                 {
                     if (MessageBox.Show("Update is avalible. Are you want update?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -95,7 +106,8 @@ namespace _345_Launcher
                         this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
                     }
                 }
-                
+                uplabel.Text = v;
+
             }
         }
 
@@ -658,7 +670,6 @@ namespace _345_Launcher
                 metroTabPage2.Text = "Settings";
                 metroTabPage4.Text = "Launcher Settings";
                 metroTabPage5.Text = "Mods";
-                label8.Text = "English";
                 metroTextBox1.Text = "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.";
                 //for english lang
             }
@@ -697,7 +708,6 @@ namespace _345_Launcher
                 metroTabPage2.Text = "Ayarlar";
                 metroTabPage4.Text = "Launcher Ayarları";
                 metroTabPage5.Text = "Modlar";
-                label8.Text = "Türkçe";
             }
 
         }
