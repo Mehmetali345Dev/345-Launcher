@@ -26,11 +26,12 @@ namespace _345_Launcher
                 gün_but.Text = "Update";
                 label3.Text = "File downloads same path with application locates.";
                 label4.Text = "When download finish delete old file and open new file.";
+                //English Language
             }
         }
 
         
-        #region bruh
+        #region All the codes
         
         private void gün_but_Click(object sender, EventArgs e)
         {
@@ -41,10 +42,12 @@ namespace _345_Launcher
         {
             MessageBox.Show("İndirme tamamlandı", "Başarılı" , MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+            //Success message
         }
 
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
+            //File link and download folder
             string filePath = Path.GetDirectoryName(Application.ExecutablePath);
             string indir = filePath + @".\345 Launcher.exe";
             DownloadFileWithProgress("https://launcher.mehmetali345.xyz/assets/345%20Launcher.exe", indir, Pb_File, label1);

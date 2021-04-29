@@ -8,9 +8,10 @@ namespace _345_Launcher
         public splash()
         {
             InitializeComponent();
-            if(Properties.Settings.Default.langtr == false)
+            if (Properties.Settings.Default.langtr == false)
             {
                 metroLabel1.Text = "Loading...";
+                //English
             }
         }
 
@@ -28,24 +29,28 @@ namespace _345_Launcher
 
                 if (Properties.Settings.Default.langtr == false)
                 {
+
+                    //English
                     metroLabel1.Text = "Connecting to server...";
                 }
                 else
                 {
                     metroLabel1.Text = "Sunucuya bağlanılıyor...";
+                    //Turkish
 
                 }
             }
             if (guna2CircleProgressBar1.Value == 75)
             {
-                if(Properties.Settings.Default.langtr == false)
+                if (Properties.Settings.Default.langtr == false)
                 {
                     metroLabel1.Text = "Checking files...";
+                    //English
                 }
                 else
                 {
                     metroLabel1.Text = "Dosyalar Doğrulanıyor...";
-
+                    //Turkish
                 }
 
             }
@@ -53,6 +58,8 @@ namespace _345_Launcher
             {
                 if (Properties.Settings.Default.Remember == true)
                 {
+
+                    // If remember me checked auto logins
                     timer1.Stop();
                     MainForm main = new MainForm();
                     main.LabelText = Properties.Settings.Default.UserName;
@@ -62,6 +69,7 @@ namespace _345_Launcher
                 }
                 else
                 {
+                    
                     timer1.Stop();
                     login log = new login();
                     log.Show();

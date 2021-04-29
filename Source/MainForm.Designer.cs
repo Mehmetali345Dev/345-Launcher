@@ -154,7 +154,7 @@ namespace _345_Launcher
             // 
             this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Image = global::_345_Launcher.Properties.Resources.icons8_minimize_window_48px_2;
+            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton2.Location = new System.Drawing.Point(784, 3);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
@@ -167,7 +167,7 @@ namespace _345_Launcher
             // 
             this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::_345_Launcher.Properties.Resources.icons8_close_window_48px;
+            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2ImageButton1.Location = new System.Drawing.Point(813, 3);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
@@ -281,7 +281,7 @@ namespace _345_Launcher
             this.btnLaunch.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnLaunch.ForeColor = System.Drawing.Color.White;
             this.btnLaunch.HoverState.Parent = this.btnLaunch;
-            this.btnLaunch.Image = global::_345_Launcher.Properties.Resources.icons8_play_48px;
+            this.btnLaunch.Image = ((System.Drawing.Image)(resources.GetObject("btnLaunch.Image")));
             this.btnLaunch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLaunch.ImageSize = new System.Drawing.Size(30, 30);
             this.btnLaunch.Location = new System.Drawing.Point(714, 7);
@@ -306,7 +306,7 @@ namespace _345_Launcher
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::_345_Launcher.Properties.Resources.icons8_settings_48px;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2Button2.Location = new System.Drawing.Point(568, 7);
@@ -571,6 +571,7 @@ namespace _345_Launcher
             this.btnChangePath.TabIndex = 14;
             this.btnChangePath.Text = "Değiştir";
             this.btnChangePath.Visible = false;
+            this.btnChangePath.Click += new System.EventHandler(this.btnChangePath_Click);
             // 
             // btnChangeJava
             // 
@@ -969,7 +970,7 @@ namespace _345_Launcher
             // pnllazım
             // 
             this.pnllazım.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.pnllazım.BackgroundImage = global::_345_Launcher.Properties.Resources._345launcher4x;
+            this.pnllazım.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnllazım.BackgroundImage")));
             this.pnllazım.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnllazım.Controls.Add(this.metroTabControl1);
             this.pnllazım.Controls.Add(this.webBrowser1);

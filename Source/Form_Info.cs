@@ -30,6 +30,7 @@ namespace _345_Launcher
             Error,
             minimized,
             Info
+                // For exporting types
         }
         private Form_Info.enmAction action;
 
@@ -69,6 +70,8 @@ namespace _345_Launcher
                         base.Close();
                     }
                     break;
+
+                    // This for animation of Update and other things.
             }
         }
 
@@ -97,15 +100,17 @@ namespace _345_Launcher
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
             switch (type)
-            {
+            {   // Info notification(like Update is availble, etc.)
                 case enmType.Info:
                     this.pictureBox1.Image = Properties.Resources.icons8_info_96px;
                     this.BackColor = Color.RoyalBlue;
                     break;
+                // Minimized notification
                 case enmType.minimized:
                     this.pictureBox1.Image = Properties.Resources._345launcher;
                     this.BackColor = Color.DimGray;
                     break;
+                    // Error notification
                 case enmType.Error:
                     this.pictureBox1.Image = Properties.Resources.icons8_error_64px;
                     this.BackColor = Color.Red;

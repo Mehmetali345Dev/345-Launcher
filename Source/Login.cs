@@ -25,6 +25,7 @@ namespace _345_Launcher
                 metroCheckBox1.Text = "Remember me";
                 guna2Button1.Text = "Login ->";
                 label3.Text = "Username";
+                // For English Language
             }
         }
         public MSession Session;
@@ -35,23 +36,28 @@ namespace _345_Launcher
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
             uplabel.Text += $"v. {versionInfo.FileVersion}";
+
+            //Version label 
         }
 
         public login(MSession session)
         {
+            //Setting session for MainForm
             this.Session = session;
             InitializeComponent();
         }
 
         private void login_Load(object sender, EventArgs e)
         {
+            //Session Update
             UpdateSession(Session);
         }
 
-        private void Init_Data()
+        private void Init_Data() // Remember me autofill
         {
             if (Properties.Settings.Default.UserName != string.Empty)
             {
+
                 if (Properties.Settings.Default.Remember == true)
                 {
                     txtUsername.Text = Properties.Settings.Default.UserName;
@@ -62,9 +68,9 @@ namespace _345_Launcher
                     txtUsername.Text = Properties.Settings.Default.UserName;
                 }
             }
-        }// beni hatırla için otomatik doldurma
+        }
 
-        private void Save_Data() //Beni hatırla için string kaydı
+        private void Save_Data() //Remember me save
         {
             if (metroCheckBox1.Checked)
             {
@@ -91,15 +97,22 @@ namespace _345_Launcher
             if(txtUsername.Text == "")
             {
                 MessageBox.Show("Boş geçilemez.");
+                // If username contains illegal character or empty
             }
             else
             {
 
                 MainForm main = new MainForm();
                 main.Show();
+
+                //Username Label on MainForm gets this textboxes value
                 main.LabelText = this.txtUsername.Text;
+
                 UpdateSession(MSession.GetOfflineSession(txtUsername.Text));
+                //Updating MainForm Session
+
                 this.Hide();
+
                 Save_Data();
 
             }
@@ -112,20 +125,8 @@ namespace _345_Launcher
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //My websites link
             System.Diagnostics.Process.Start("https://mehmetali345.xyz");
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
         }
 
     }

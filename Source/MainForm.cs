@@ -26,7 +26,7 @@ namespace _345_Launcher
         public MainForm()
         {
             InitializeComponent();
-            updenetle();
+            upcheck();
             Init_Data();
             cbVersion.DropDownHeight = 200;
             if (Properties.Settings.Default.rpc == true)
@@ -34,34 +34,37 @@ namespace _345_Launcher
                 rpc();
             }
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-            
-            dil();
+
+            lang();
         }
 
+        #region strings and etc.
 
         public void Alert(string msg, string msg2, string msg3, Form_Info.enmType type)
         {
+            //Notification alert
             Form_Info frm = new Form_Info();
             frm.showAlert(msg, msg2, msg3, type);
         }
 
-        public void updenetle()
+        public void upcheck()
         {
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
             string v = versionInf.FileVersion;
+
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
 
-            string hedef = "https://launcher.mehmetali345.xyz/assets/update.html";
-            WebRequest istek = HttpWebRequest.Create(hedef);
-            WebResponse yanit;
-            yanit = istek.GetResponse();
-            StreamReader bilgiler = new StreamReader(yanit.GetResponseStream());
-            string gelen = bilgiler.ReadToEnd();
-            int baslangic = gelen.IndexOf("<p>") + 3;
-            int bitis = gelen.Substring(baslangic).IndexOf("</p>");
-            string gelenbilgileri = gelen.Substring(baslangic, bitis);
-            v = Convert.ToString(gelenbilgileri);
+            string target = "https://launcher.mehmetali345.xyz/assets/update.html";
+            WebRequest request = HttpWebRequest.Create(target);
+            WebResponse response;
+            response = request.GetResponse();
+            StreamReader gets = new StreamReader(response.GetResponseStream());
+            string vinf = gets.ReadToEnd();
+            int starts = vinf.IndexOf("<p>") + 3;
+            int ends = vinf.Substring(starts).IndexOf("</p>");
+            string getinf = vinf.Substring(starts, ends);
+            v = Convert.ToString(getinf);
 
             string lang;
 
@@ -75,12 +78,12 @@ namespace _345_Launcher
                 {
                     lang = "Türkçe";
                 }
-                    uplabel.Text = v + lang;
+                uplabel.Text = v + " " + lang;
             }
             else
             {
-
-                if(Properties.Settings.Default.langtr == false)
+                //Update attention
+                if (Properties.Settings.Default.langtr == false)
                 {
                     if (MessageBox.Show("Update is avalible. Are you want update?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         using (var client = new WebClient())
@@ -90,6 +93,7 @@ namespace _345_Launcher
                         }
                     else
                     {
+                        // Notification
                         this.Alert("Update avalible", "Please download update for", "last changes.", Form_Info.enmType.Info);
                     }
                 }
@@ -111,19 +115,19 @@ namespace _345_Launcher
             }
         }
 
-        #region stringler ıvır zıvırlar
         bool useMJava = true;
         string javaPath = "java.exe";
         private const int cGrip = 16;
         private const int cCaption = 32;
         MinecraftPath MinecraftPath;
         MVersionCollection Versions;
-        MSession Session = MSession.GetOfflineSession("test_user");
+        MSession Session = MSession.GetOfflineSession("345 Launcher User");
 
         public string LabelText
         {
             get
             {
+                //Loling textbox value is comes here
                 return this.lbUsername.Text;
             }
             set
@@ -134,6 +138,7 @@ namespace _345_Launcher
 
         protected override void WndProc(ref Message m)
         {
+            // For draggeble form
             if (m.Msg == 0x84)
             {
                 Point pos = new Point(m.LParam.ToInt32());
@@ -151,10 +156,11 @@ namespace _345_Launcher
             }
             base.WndProc(ref m);
         }
-        #endregion
+
         private void rpc()
         {
-            if(Properties.Settings.Default.langtr == true)
+            // Discord rpc initilaze 
+            if (Properties.Settings.Default.langtr == true)
             {
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
                 FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -192,17 +198,97 @@ namespace _345_Launcher
                     }
                 });
             }
-           
+
         }
 
-        #region update
-        private void versiyon()
-        {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            //uplabel.Text += $"v.{versionInfo.FileVersion}";
-            uplabel.Text += versionInfo.FileVersion;
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized && chkStartUp.Checked == true)
+            {
+                Hide();
+                notify_icon.Visible = true;
+            }
+        }
+        public void lang()
+        {
+
+            //Language
+            // I made this is temporary i code a new language system
+
+            if (eng.Checked == true)
+            {
+                //English
+                btnLaunch.Text = "Play";
+                guna2Button2.Text = "Settings";
+                guna2Button1.Text = "Sign Out";
+                snapbox.Text = "Snapshots";
+                Lv_Status.Text = "Ready!";
+                label3.Text = "Welcome";
+                guna2Button4.Text = "Donate!";
+                Hakkında.Text = "About";
+                groupBox4.Text = "Settings";
+                metroLabel13.Text = "JVM Args:";
+                metroLabel15.Text = "Minimum Ram:";
+                metroLabel14.Text = "Maximum Ram:";
+                btnAutoRamSet.Text = "Auto Ram Set";
+                cbFullscreen.Text = "Fullscreen";
+                rbSequenceDownload.Text = "Sequence";
+                rbParallelDownload.Text = "Parallel(beta)";
+                groupBox2.Text = "Download Settings";
+                groupBox1.Text = "Minecraft Install Settings";
+                metroLabel1.Text = "Path:";
+                btnChangePath.Text = "Yolu Değiştir";
+                metroLabel3.Text = "Java Path:";
+                label4.Text = "Minimize Button";
+                chkStartUp.Text = "Minimize to Tray";
+                label7.Text = "Language";
+                eng.Text = "English";
+                tur.Text = "Türkçe";
+                guna2TileButton5.Text = "Save";
+                guna2TileButton7.Text = "Check for Updates";
+                metroTabPage2.Text = "Settings";
+                metroTabPage4.Text = "Launcher Settings";
+                metroTabPage5.Text = "Mods";
+                metroTextBox1.Text = "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.";
+                //for english lang
+            }
+            else
+            {
+                //for Turkish lang
+                metroTextBox1.Text = "Merhaba ben Mehmet Ali. 14 yaşındayım. C# ile programlar geliştiriyorum.";
+                btnLaunch.Text = "Oyna";
+                guna2Button2.Text = "Ayarlar";
+                guna2Button1.Text = "Çıkış";
+                snapbox.Text = "Snapshotlar";
+                Lv_Status.Text = "Hazır!";
+                label3.Text = "Hoş Geldin";
+                guna2Button4.Text = "Destek OL!";
+                Hakkında.Text = "Hakkında";
+                groupBox4.Text = "Ayarlar";
+                metroLabel13.Text = "JVM Argümanları:";
+                metroLabel14.Text = "Maximum Ram:";
+                metroLabel15.Text = "Minimum Ram:";
+                btnAutoRamSet.Text = "Oto Ram";
+                cbFullscreen.Text = "Tamekran";
+                rbSequenceDownload.Text = "Sıralı";
+                rbParallelDownload.Text = "Paralel(beta)";
+                groupBox2.Text = "İndirme Ayarları";
+                groupBox1.Text = "Minecraft Kurulum Ayarları";
+                metroLabel1.Text = "Yol:";
+                btnChangePath.Text = "Yolu Değiştir";
+                metroLabel3.Text = "Java Yolu:";
+                label4.Text = "Küçültme Butonu";
+                chkStartUp.Text = "Bildirimlere küçült";
+                label7.Text = "Dil";
+                eng.Text = "English";
+                tur.Text = "Türkçe";
+                guna2TileButton5.Text = "Kaydet";
+                guna2TileButton7.Text = "Güncellemeleri Kontrol Et";
+                metroTabPage2.Text = "Ayarlar";
+                metroTabPage4.Text = "Launcher Ayarları";
+                metroTabPage5.Text = "Modlar";
+            }
 
         }
         #endregion
@@ -210,6 +296,7 @@ namespace _345_Launcher
         #region Launcher
         private void InitializeLauncher(MinecraftPath path)
         {
+            //initilizes mc path
             txtPath.Text = path.BasePath;
             MinecraftPath = path;
 
@@ -220,10 +307,13 @@ namespace _345_Launcher
 
         private void refreshVersions(string showVersion)
         {
+            // Gets Minecraft Versions
+
             cbVersion.Items.Clear();
             int Out;
             if (InternetGetConnectedState(out Out, 0) == true)
             {
+                //if user have internet connections
                 var th = new Thread(new ThreadStart(delegate
                 {
                     Versions = new MVersionLoader().GetVersionMetadatas(MinecraftPath);
@@ -231,6 +321,7 @@ namespace _345_Launcher
                     Invoke(new Action(() =>
                     {
                         bool showVersionExist = false;
+                        //Snapshot checkbox
                         if (snapbox.Checked == true)
                         {
                             foreach (var item in Versions)
@@ -268,6 +359,8 @@ namespace _345_Launcher
             }
             else
             {
+                //if user don't have a internet connection
+
                 var th = new Thread(new ThreadStart(delegate
                 {
                     Versions = new MVersionLoader().GetVersionMetadatasFromLocal(MinecraftPath);
@@ -297,6 +390,8 @@ namespace _345_Launcher
 
         private void UpdateSession(MSession session)
         {
+            //Session update blabla
+
             this.Session = session;
         }
 
@@ -308,19 +403,22 @@ namespace _345_Launcher
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
             InitializeLauncher(defaultPath);
             Modlar frm = new Modlar() { TopLevel = false, TopMost = true };
             this.panel2.Controls.Add(frm);
             frm.Show();
-            metroTabPage2.AutoScroll = true;
 
+            #region UpdateBrowser
             var appName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
             using (var Key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
                 Key.SetValue(appName, 99999, RegistryValueKind.DWord);
 
             webBrowser1.Navigate("https://launcher.mehmetali345.xyz/launcher.html");
             webBrowser1.ScriptErrorsSuppressed = true;
+            #endregion
+
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -331,7 +429,7 @@ namespace _345_Launcher
                 {
                     client.Dispose();
                 }
-                if(Properties.Settings.Default.langtr == true)
+                if (Properties.Settings.Default.langtr == true)
                 {
                     this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
                 }
@@ -343,8 +441,9 @@ namespace _345_Launcher
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnChangePath_Click_1(object sender, EventArgs e)
+        private void btnChangePath_Click(object sender, EventArgs e)
         {
+            //Not works but useful
             var form = new PathForm(MinecraftPath);
             form.ShowDialog();
             InitializeLauncher(form.MinecraftPath);
@@ -352,6 +451,8 @@ namespace _345_Launcher
 
         private void btnChangeJava_Click(object sender, EventArgs e)
         {
+            // not works but useful
+
             var form = new JavaForm(useMJava, MinecraftPath.Runtime, javaPath);
             form.ShowDialog();
 
@@ -367,6 +468,7 @@ namespace _345_Launcher
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
+            //Exit button
             Properties.Settings.Default.Save();
             Save_Data();
             this.Close();
@@ -376,10 +478,11 @@ namespace _345_Launcher
 
         private void btnAutoRamSet_Click(object sender, EventArgs e)
         {
+            // Auto ram set
             var computerMemory = Util.GetMemoryMb();
             if (computerMemory == null)
             {
-                if(Properties.Settings.Default.langtr == true)
+                if (Properties.Settings.Default.langtr == true)
                 {
                     MessageBox.Show("RAM bilgisi alınamadı.");
                 }
@@ -415,6 +518,7 @@ namespace _345_Launcher
 
         private MLaunchOption createLaunchOption()
         {
+            //Sets launch options
             try
             {
                 var launchOption = new MLaunchOption()
@@ -439,7 +543,7 @@ namespace _345_Launcher
             }
             catch (Exception ex)
             {
-                if(Properties.Settings.Default.langtr == true)
+                if (Properties.Settings.Default.langtr == true)
                 {
                     this.Alert("MLaunchOption oluşamadı", "Eğer sorun devam ederse", "geri bildirim gönderin.", Form_Info.enmType.Error);
 
@@ -455,14 +559,17 @@ namespace _345_Launcher
 
         private void btnLaunch_Click(object sender, EventArgs e)
         {
+            //Launches game
+
             string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
 
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
             if (guna2CheckBox1.Checked == true)
-            {
-                if(Properties.Settings.Default.langtr == true)
+
+            {//Playing rpc
+                if (Properties.Settings.Default.langtr == true)
                 {
                     client.UpdateState($"{selected} oynuyor.");
                 }
@@ -488,7 +595,7 @@ namespace _345_Launcher
             var launchOption = createLaunchOption();
             if (launchOption == null)
                 return;
-
+            //Creates launch options
             var version = cbVersion.Text;
             var useParallel = rbParallelDownload.Checked;
             var checkHash = cbCheckFileHash.Checked;
@@ -500,6 +607,7 @@ namespace _345_Launcher
                 {
                     if (useMJava)
                     {
+                        //Minecraft custom java
                         var mjava = new MJava(MinecraftPath.Runtime);
                         mjava.ProgressChanged += Launcher_ProgressChanged;
 
@@ -547,7 +655,7 @@ namespace _345_Launcher
                     {
                         this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
 
-                    }
+                    }//error
                     else
                     {
                         this.Alert("ERROR", "Libraries could not be downloaded or ", "something goes wrong.", Form_Info.enmType.Error);
@@ -560,6 +668,7 @@ namespace _345_Launcher
 
         private void Launcher_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            //Progress bar
             Invoke(new Action(() =>
             {
                 sa.Value = e.ProgressPercentage;
@@ -593,11 +702,13 @@ namespace _345_Launcher
             process.Start();
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
+            //Arguments text
         }
 
 
         private void start(string url)
         {
+            // error
             try
             {
                 Process.Start(url);
@@ -612,6 +723,7 @@ namespace _345_Launcher
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            //log out
             login login = new login(Session);
             login.ShowDialog();
             SetSession(login.Session);
@@ -621,97 +733,9 @@ namespace _345_Launcher
 
         #endregion
 
-        #region notifyicon
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Minimized && chkStartUp.Checked == true)
-            {
-                Hide();
-                notify_icon.Visible = true;
-            }
-        }
 
 
-        #endregion
-
-        public void dil()
-        {
-            if(eng.Checked == true)
-            {
-                btnLaunch.Text = "Play";
-                guna2Button2.Text = "Settings";
-                guna2Button1.Text = "Sign Out";
-                snapbox.Text = "Snapshots";
-                Lv_Status.Text = "Ready!";
-                label3.Text = "Welcome";
-                guna2Button4.Text = "Donate!";
-                Hakkında.Text = "About";
-                groupBox4.Text = "Settings";
-                metroLabel13.Text = "JVM Args:";
-                metroLabel14.Text = "Minimum Ram:";
-                metroLabel15.Text = "Maximum Ram:";
-                btnAutoRamSet.Text = "Auto Ram Set";
-                cbFullscreen.Text = "Fullscreen";
-                rbSequenceDownload.Text = "Sequence";
-                rbParallelDownload.Text = "Parallel(beta)";
-                groupBox2.Text = "Download Settings";
-                groupBox1.Text = "Minecraft Install Settings";
-                metroLabel1.Text = "Path:";
-                btnChangePath.Text = "Yolu Değiştir";
-                metroLabel3.Text = "Java Path:";
-                label4.Text = "Minimize Button";
-                chkStartUp.Text = "Minimize to Tray";
-                label7.Text = "Language";
-                eng.Text = "English";
-                tur.Text = "Türkçe";
-                guna2TileButton5.Text = "Save";
-                guna2TileButton7.Text = "Check for Updates";
-                metroTabPage2.Text = "Settings";
-                metroTabPage4.Text = "Launcher Settings";
-                metroTabPage5.Text = "Mods";
-                metroTextBox1.Text = "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.";
-                //for english lang
-            }
-            else
-            {
-                //for Turkish lang
-                metroTextBox1.Text = "Merhaba ben Mehmet Ali. 14 yaşındayım. C# ile programlar geliştiriyorum.";
-                btnLaunch.Text = "Oyna";
-                guna2Button2.Text = "Ayarlar";
-                guna2Button1.Text = "Çıkış";
-                snapbox.Text = "Snapshotlar";
-                Lv_Status.Text = "Hazır!";
-                label3.Text = "Hoş Geldin";
-                guna2Button4.Text = "Destek OL!";
-                Hakkında.Text = "Hakkında";
-                groupBox4.Text = "Ayarlar";
-                metroLabel13.Text = "JVM Argümanları:";
-                metroLabel14.Text = "Minimum Ram:";
-                metroLabel15.Text = "Maximum Ram:";
-                btnAutoRamSet.Text = "Oto Ram";
-                cbFullscreen.Text = "Tamekran";
-                rbSequenceDownload.Text = "Sıralı";
-                rbParallelDownload.Text = "Paralel(beta)";
-                groupBox2.Text = "İndirme Ayarları";
-                groupBox1.Text = "Minecraft Kurulum Ayarları";
-                metroLabel1.Text = "Yol:";
-                btnChangePath.Text = "Yolu Değiştir";
-                metroLabel3.Text = "Java Yolu:";
-                label4.Text = "Küçültme Butonu";
-                chkStartUp.Text = "Bildirimlere küçült";
-                label7.Text = "Dil";
-                eng.Text = "English";
-                tur.Text = "Türkçe";
-                guna2TileButton5.Text = "Kaydet";
-                guna2TileButton7.Text = "Güncellemeleri Kontrol Et";
-                metroTabPage2.Text = "Ayarlar";
-                metroTabPage4.Text = "Launcher Ayarları";
-                metroTabPage5.Text = "Modlar";
-            }
-
-        }
-        private void Init_Data()
+        private void Init_Data() // Initting Ram or other settings data
         {
             if (Properties.Settings.Default.ram == "")
             {
@@ -746,7 +770,7 @@ namespace _345_Launcher
             {
                 guna2CheckBox1.Checked = false;
             }
-            if(Properties.Settings.Default.langtr == true)
+            if (Properties.Settings.Default.langtr == true)
             {
                 tur.Checked = true;
             }
@@ -754,10 +778,10 @@ namespace _345_Launcher
             {
                 eng.Checked = true;
             }
-            
+
         }
 
-        private void Save_Data() //Remember
+        private void Save_Data() // Saving Options
         {
             Properties.Settings.Default.ram = TxtXmx.Text;
             Properties.Settings.Default.mram = TxtXms.Text;
@@ -776,6 +800,7 @@ namespace _345_Launcher
 
         }
 
+        #region Other buttons etc.
         private void guna2TileButton5_Click(object sender, EventArgs e)
         {
             Save_Data();
@@ -783,30 +808,29 @@ namespace _345_Launcher
 
         private void guna2TileButton4_Click(object sender, EventArgs e)
         {
-            updenetle();
+            upcheck();
         }
-
 
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
             if (guna2CheckBox1.Checked == true)
             {
-                client.UpdateState("Anamenüde");
+                if(Properties.Settings.Default.langtr == false)
+                {
+                    client.UpdateState("Main Screen");
+                }
+                else
+                {
+                    client.UpdateState("Anamenüde");
+                }
             }
-        }
-
-        private void guna2TileButton6_Click(object sender, EventArgs e)
-        {
-            Process.Start("BugBildir.exe");
         }
 
         private void guna2TileButton7_Click(object sender, EventArgs e)
         {
-            Update up = new Update();
-            up.Show();
+            upcheck();
         }
-
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
@@ -877,19 +901,20 @@ namespace _345_Launcher
         private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.langtr = false;
-            dil();
+            lang();
         }
 
         private void tur_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.langtr = true;
-            dil();
+            lang();
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://discord.gg/syprbuqGSw");
         }
+        #endregion
     }
 }
 
