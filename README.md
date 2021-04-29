@@ -4,6 +4,7 @@ Fast, advanced and lightweight launcher and mod manager.
 
 ![License](https://img.shields.io/github/license/Mehmetali345Dev/345-Launcher?style=for-the-badge)
 ![Downloads](https://img.shields.io/github/downloads/Mehmetali345Dev/345-Launcher/total?style=for-the-badge)
+[![CodeFactor](https://www.codefactor.io/repository/github/mehmetali345dev/345-launcher/badge)](https://www.codefactor.io/repository/github/mehmetali345dev/345-launcher)
 
 # Features
  - Offline Login
