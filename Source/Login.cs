@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CmlLib.Core.Auth;
@@ -94,14 +95,17 @@ namespace _345_Launcher
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "")
+            Regex regex = new Regex(@"[a-zA-Z0-9]_");
+            Match match = regex.Match(txtUsername.Text);
+            
+            if ( txtUsername.Text == "" || txtUsername.Text.Length <= 3 || txtUsername.Text.Length >= 16)
+                // || !match.Success)
             {
                 MessageBox.Show("Boşluk olmadan ve sadece ingilizce harf kullanarak giriş yapın!");
                 // If username contains illegal character or empty
             }
             else
             {
-
                 MainForm main = new MainForm();
                 main.Show();
 
