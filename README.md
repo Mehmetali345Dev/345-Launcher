@@ -2,6 +2,8 @@
 The new minecraft launcher from Mehmetali_345!
 Fast, advanced and lightweight launcher and mod manager.
 
+Now we open to Custom UI designs!!!
+
 ![License](https://img.shields.io/github/license/Mehmetali345Dev/345-Launcher?style=for-the-badge)
 ![Downloads](https://img.shields.io/github/downloads/Mehmetali345Dev/345-Launcher/total?style=for-the-badge)
 
@@ -32,8 +34,7 @@ just download go to code button and download.
 and open 345 Launcher.sln.
 
 **Third:**
-Right Click the soluton from Solution Explorer --> Explore Nuget Packages 
---> Restore Packages.
+Right Click the soluton from Solution Explorer --> Restore NuGet Packages
 # Plans
  - Authtentication
  - [x] Offline Login
@@ -42,14 +43,13 @@ Right Click the soluton from Solution Explorer --> Explore Nuget Packages
  - UI
  - [ ] Settings Form
  # Contributing, License and Sponsorship
- This project is not ready for contributing.
+ This project is not ready for public contributing.
+ 
  This Project under GPL 3.0 (GNU Public License 3.0)
+ 
 Sponsored by [Kitten Bot](https://kittenbot.ml)
 
 For donates:
 
 [My websites donation link](https://mehmetali345.xyz/donate)
 
-# 3
-# 4
-# 5
