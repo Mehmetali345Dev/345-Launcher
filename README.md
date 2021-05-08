@@ -4,7 +4,7 @@ Fast, advanced and lightweight launcher and mod manager.
 
 Now we open to Custom UI designs!!!
 
-[Turkish](https://github.com/Mehmetali345Dev/345-Launcher/master/README - Türkçe.md)
+[Turkish](https://github.com/Mehmetali345Dev/345-Launcher/blob/master/README%20-%20T%C3%BCrk%C3%A7e.md)
 
 ![License](https://img.shields.io/github/license/Mehmetali345Dev/345-Launcher?style=for-the-badge)
 ![Downloads](https://img.shields.io/github/downloads/Mehmetali345Dev/345-Launcher/total?style=for-the-badge)
