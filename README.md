@@ -4,6 +4,8 @@ Fast, advanced and lightweight launcher and mod manager.
 
 Now we open to Custom UI designs!!!
 
+[Turkish](README - Türkçe.md)
+
 ![License](https://img.shields.io/github/license/Mehmetali345Dev/345-Launcher?style=for-the-badge)
 ![Downloads](https://img.shields.io/github/downloads/Mehmetali345Dev/345-Launcher/total?style=for-the-badge)
 
@@ -40,8 +42,8 @@ Right Click the soluton from Solution Explorer --> Restore NuGet Packages
  - [x] Offline Login
  - [ ] Online Login
  - [ ] Microsoft Login
- - UI
- - [ ] Settings Form
+
+
  # Contributing, License and Sponsorship
  This project is not ready for public contributing.
  
