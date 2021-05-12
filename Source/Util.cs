@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace _345_Launcher
 {
@@ -6,13 +6,13 @@ namespace _345_Launcher
     {
         [DllImport("kernel32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool GetPhysicallyInstalledSystemMemory(out long TotalMemoryInKilobytes);
+        static extern bool GetPhysicallyInstalledSystemMemory(out int TotalMemoryInKilobytes);
 
-        public static long? GetMemoryMb()
+        public static int? GetMemoryMb()
         {
             try
             {
-                long value = 0;
+                int value = 0;
                 if (!GetPhysicallyInstalledSystemMemory(out value))
                     return null;
 
