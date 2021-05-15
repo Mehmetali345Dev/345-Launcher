@@ -46,7 +46,8 @@ Right Click the soluton from Solution Explorer --> Restore NuGet Packages
  - [x] Offline Login
  - [ ] Online Login
  - [ ] Microsoft Login
-
+# Localization
+- [] JSON Localizer for multiple languages
 
  # Contributing, License and Sponsorship
  This project is not ready for public contributing.
