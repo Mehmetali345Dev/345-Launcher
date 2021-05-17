@@ -130,6 +130,8 @@
     <Compile Include="Source\JavaForm.Designer.cs">
       <DependentUpon>JavaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Localization\LocalizationBase.cs" />
+    <Compile Include="Source\Localization\LocalizationHelper.cs" />
     <Compile Include="Source\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,7 +170,8 @@
     <Compile Include="Source\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Util.cs" />
+    <Compile Include="Source\Utils\Settings.cs" />
+    <Compile Include="Source\Utils\Util.cs" />
     <EmbeddedResource Include="Source\Form_Info.resx">
       <DependentUpon>Form_Info.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +256,9 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Languages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

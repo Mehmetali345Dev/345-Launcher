@@ -37,10 +37,10 @@ namespace _345_Launcher
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.rememberme = new MetroFramework.Controls.MetroCheckBox();
+            this.usernamelbl = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.go = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,32 +124,32 @@ namespace _345_Launcher
             this.label9.Size = new System.Drawing.Size(0, 17);
             this.label9.TabIndex = 16;
             // 
-            // metroCheckBox1
+            // rememberme
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.metroCheckBox1.ForeColor = System.Drawing.Color.White;
-            this.metroCheckBox1.Location = new System.Drawing.Point(54, 273);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(84, 15);
-            this.metroCheckBox1.TabIndex = 20;
-            this.metroCheckBox1.Text = "Beni Hatırla";
-            this.metroCheckBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroCheckBox1.UseCustomBackColor = true;
-            this.metroCheckBox1.UseCustomForeColor = true;
-            this.metroCheckBox1.UseSelectable = true;
+            this.rememberme.AutoSize = true;
+            this.rememberme.BackColor = System.Drawing.Color.Transparent;
+            this.rememberme.ForeColor = System.Drawing.Color.White;
+            this.rememberme.Location = new System.Drawing.Point(54, 273);
+            this.rememberme.Name = "rememberme";
+            this.rememberme.Size = new System.Drawing.Size(84, 15);
+            this.rememberme.TabIndex = 20;
+            this.rememberme.Text = "Beni Hatırla";
+            this.rememberme.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.rememberme.UseCustomBackColor = true;
+            this.rememberme.UseCustomForeColor = true;
+            this.rememberme.UseSelectable = true;
             // 
-            // label3
+            // usernamelbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(108, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 30);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Kullanıcı Adı";
+            this.usernamelbl.AutoSize = true;
+            this.usernamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.usernamelbl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.usernamelbl.ForeColor = System.Drawing.Color.White;
+            this.usernamelbl.Location = new System.Drawing.Point(108, 203);
+            this.usernamelbl.Name = "usernamelbl";
+            this.usernamelbl.Size = new System.Drawing.Size(138, 30);
+            this.usernamelbl.TabIndex = 19;
+            this.usernamelbl.Text = "Kullanıcı Adı";
             // 
             // txtUsername
             // 
@@ -177,21 +177,21 @@ namespace _345_Launcher
             this.txtUsername.Size = new System.Drawing.Size(261, 31);
             this.txtUsername.TabIndex = 17;
             // 
-            // guna2Button1
+            // go
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(112)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(172, 273);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(139, 45);
-            this.guna2Button1.TabIndex = 18;
-            this.guna2Button1.Text = "İlerle ->";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.go.CheckedState.Parent = this.go;
+            this.go.CustomImages.Parent = this.go;
+            this.go.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(112)))), ((int)(((byte)(141)))));
+            this.go.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.go.ForeColor = System.Drawing.Color.White;
+            this.go.HoverState.Parent = this.go;
+            this.go.Location = new System.Drawing.Point(172, 273);
+            this.go.Name = "go";
+            this.go.ShadowDecoration.Parent = this.go;
+            this.go.Size = new System.Drawing.Size(139, 45);
+            this.go.TabIndex = 18;
+            this.go.Text = "İlerle ->";
+            this.go.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // login
             // 
@@ -201,10 +201,10 @@ namespace _345_Launcher
             this.BackgroundImage = global::_345_Launcher.Properties.Resources.wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(353, 502);
-            this.Controls.Add(this.metroCheckBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.rememberme);
+            this.Controls.Add(this.usernamelbl);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.go);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
@@ -229,10 +229,10 @@ namespace _345_Launcher
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label9;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
-        private System.Windows.Forms.Label label3;
+        private MetroFramework.Controls.MetroCheckBox rememberme;
+        private System.Windows.Forms.Label usernamelbl;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button go;
         private System.Windows.Forms.Label uplabel;
     }
 }

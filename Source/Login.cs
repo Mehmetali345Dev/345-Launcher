@@ -23,9 +23,9 @@ namespace _345_Launcher
             versiyon();
             if(Properties.Settings.Default.langtr == false)
             {
-                metroCheckBox1.Text = "Remember me";
-                guna2Button1.Text = "Login ->";
-                label3.Text = "Username";
+                rememberme.Text = "Remember me";
+                go.Text = "Login ->";
+                usernamelbl.Text = "Username";
                 // For English Language
             }
         }
@@ -62,7 +62,7 @@ namespace _345_Launcher
                 if (Properties.Settings.Default.Remember == true)
                 {
                     txtUsername.Text = Properties.Settings.Default.UserName;
-                    metroCheckBox1.Checked = true;
+                    rememberme.Checked = true;
                 }
                 else
                 {
@@ -73,7 +73,7 @@ namespace _345_Launcher
 
         private void Save_Data() //Remember me save
         {
-            if (metroCheckBox1.Checked)
+            if (rememberme.Checked)
             {
                 Properties.Settings.Default.UserName = txtUsername.Text;
                 Properties.Settings.Default.Remember = true;
@@ -93,7 +93,7 @@ namespace _345_Launcher
             Application.Exit();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void go_Click(object sender, EventArgs e)
         {
             Regex regex = new Regex(@"[a-zA-Z0-9]_");
             Match match = regex.Match(txtUsername.Text);
