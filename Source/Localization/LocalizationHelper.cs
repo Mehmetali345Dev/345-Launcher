@@ -11,7 +11,8 @@ namespace _345_Launcher.Source.Localization
 {
     class LocalizationHelper
     {
-        private const string LocalFolder = "";
+        string confpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".345launcher");
+        private const string LocalFolder = "Languages";
         public static LocalizationBase Base;
 
         public static string[] GetLanguages()

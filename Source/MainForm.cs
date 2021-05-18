@@ -1,4 +1,6 @@
-﻿using CmlLib.Core;
+﻿using _345_Launcher.Source.Localization;
+using _345_Launcher.Source.Utils;
+using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Downloader;
 using CmlLib.Core.Version;
@@ -10,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -34,17 +37,15 @@ namespace _345_Launcher
                 rpc();
             }
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-
-            lang();
         }
 
         #region strings and etc.
 
-        public void Alert(string msg, string msg2, string msg3, Form_Info.enmType type)
+        public void Alert(string msg, string msg2, Form_Info.enmType type)
         {
             //Notification alert
             Form_Info frm = new Form_Info();
-            frm.showAlert(msg, msg2, msg3, type);
+            frm.showAlert(msg, msg2, type);
         }
 
         public void upcheck()
@@ -66,51 +67,25 @@ namespace _345_Launcher
             string getinf = vinf.Substring(starts, ends);
             v = Convert.ToString(getinf);
 
-            string lang;
 
             if (v == versionInf.FileVersion)
             {
-                if (Properties.Settings.Default.langtr == false)
-                {
-                    lang = "English";
-                }
-                else
-                {
-                    lang = "Türkçe";
-                }
-                uplabel.Text = v + " " + lang;
+                uplabel.Text = v;
             }
             else
             {
-                //Update attention
-                if (Properties.Settings.Default.langtr == false)
-                {
-                    if (MessageBox.Show("Update is avalible. Are you want update?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        using (var client = new WebClient())
-                        {
-                            Update up = new Update();
-                            up.Show();
-                        }
-                    else
+
+                if (MessageBox.Show(LocalizationHelper.Base.Update_Answer, "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    using (var client = new WebClient())
                     {
-                        // Notification
-                        this.Alert("Update avalible", "Please download update for", "last changes.", Form_Info.enmType.Info);
+                        Update up = new Update();
+                        up.Show();
                     }
-                }
                 else
                 {
-                    if (MessageBox.Show("Güncelleme mevcut indirilsinmi?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        using (var client = new WebClient())
-                        {
-                            Update up = new Update();
-                            up.Show();
-                        }
-                    else
-                    {
-                        this.Alert("Güncelleme Mevcut", "Lütfen son deneyim için", "güncellemeyi indirin.", Form_Info.enmType.Info);
-                    }
+                    // Notification
+                    this.Alert(LocalizationHelper.Base.Alert_Update, LocalizationHelper.Base.Alert_Update_Text, Form_Info.enmType.Info);
                 }
-                uplabel.Text = v;
 
             }
         }
@@ -159,45 +134,22 @@ namespace _345_Launcher
 
         private void rpc()
         {
-            // Discord rpc initilaze 
-            if (Properties.Settings.Default.langtr == true)
-            {
-                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-                client = new DiscordRpcClient("814773064671690762");
-                client.Initialize();
-                client.SetPresence(new RichPresence()
-                {
-                    Details = $"v. {versionInf.FileVersion}",
-                    State = "Ana Menüde",
-                    Timestamps = Timestamps.Now,
-                    Assets = new Assets()
-                    {
-                        LargeImageKey = "launcher",
-                        LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
-                    }
-                });
-            }
-            else
+            client = new DiscordRpcClient("814773064671690762");
+            client.Initialize();
+            client.SetPresence(new RichPresence()
             {
-                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
-
-                client = new DiscordRpcClient("814773064671690762");
-                client.Initialize();
-                client.SetPresence(new RichPresence()
+                Details = $"v. {versionInf.FileVersion}",
+                State = "Main Screen",
+                Timestamps = Timestamps.Now,
+                Assets = new Assets()
                 {
-                    Details = $"v. {versionInf.FileVersion}",
-                    State = "Main Screen",
-                    Timestamps = Timestamps.Now,
-                    Assets = new Assets()
-                    {
-                        LargeImageKey = "launcher",
-                        LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
-                    }
-                });
-            }
+                    LargeImageKey = "launcher",
+                    LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
+                }
+            });
 
         }
 
@@ -212,82 +164,34 @@ namespace _345_Launcher
         }
         public void lang()
         {
-            //Language
-            // I made this is temporary i code a new language system
-
-            if (eng.Checked == true)
-            {
-                //English
-                btnLaunch.Text = "Play";
-                guna2Button2.Text = "Settings";
-                guna2Button1.Text = "Sign Out";
-                snapbox.Text = "Snapshots";
-                Lv_Status.Text = "Ready!";
-                label3.Text = "Welcome";
-                guna2Button4.Text = "Donate!";
-                Hakkında.Text = "About";
-                groupBox4.Text = "Settings";
-                metroLabel13.Text = "JVM Args:";
-                metroLabel15.Text = "Minimum Ram:";
-                metroLabel14.Text = "Maximum Ram:";
-                btnAutoRamSet.Text = "Auto Ram Set";
-                cbFullscreen.Text = "Fullscreen";
-                rbSequenceDownload.Text = "Sequence";
-                rbParallelDownload.Text = "Parallel(beta)";
-                groupBox2.Text = "Download Settings";
-                groupBox1.Text = "Minecraft Install Settings";
-                metroLabel1.Text = "Path:";
-                btnChangePath.Text = "Yolu Değiştir";
-                metroLabel3.Text = "Java Path:";
-                label4.Text = "Minimize Button";
-                chkStartUp.Text = "Minimize to Tray";
-                label7.Text = "Language";
-                eng.Text = "English";
-                tur.Text = "Türkçe";
-                guna2TileButton5.Text = "Save";
-                guna2TileButton7.Text = "Check for Updates";
-                metroTabPage2.Text = "Settings";
-                metroTabPage4.Text = "Launcher Settings";
-                metroTabPage5.Text = "Mods";
-                metroTextBox1.Text = "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.";
-                //for english lang
-            }
-            else
-            {
-                //for Turkish lang
-                metroTextBox1.Text = "Merhaba ben Mehmet Ali. 14 yaşındayım. C# ile programlar geliştiriyorum.";
-                btnLaunch.Text = "Oyna";
-                guna2Button2.Text = "Ayarlar";
-                guna2Button1.Text = "Çıkış";
-                snapbox.Text = "Snapshotlar";
-                Lv_Status.Text = "Hazır!";
-                label3.Text = "Hoş Geldin";
-                guna2Button4.Text = "Destek OL!";
-                Hakkında.Text = "Hakkında";
-                groupBox4.Text = "Ayarlar";
-                metroLabel13.Text = "JVM Argümanları:";
-                metroLabel14.Text = "Maximum Ram:";
-                metroLabel15.Text = "Minimum Ram:";
-                btnAutoRamSet.Text = "Oto Ram";
-                cbFullscreen.Text = "Tamekran";
-                rbSequenceDownload.Text = "Sıralı";
-                rbParallelDownload.Text = "Paralel(beta)";
-                groupBox2.Text = "İndirme Ayarları";
-                groupBox1.Text = "Minecraft Kurulum Ayarları";
-                metroLabel1.Text = "Yol:";
-                btnChangePath.Text = "Yolu Değiştir";
-                metroLabel3.Text = "Java Yolu:";
-                label4.Text = "Küçültme Butonu";
-                chkStartUp.Text = "Bildirimlere küçült";
-                label7.Text = "Dil";
-                eng.Text = "English";
-                tur.Text = "Türkçe";
-                guna2TileButton5.Text = "Kaydet";
-                guna2TileButton7.Text = "Güncellemeleri Kontrol Et";
-                metroTabPage2.Text = "Ayarlar";
-                metroTabPage4.Text = "Launcher Ayarları";
-                metroTabPage5.Text = "Modlar";
-            }
+            metroTextBox1.Text = LocalizationHelper.Base.Main_AboutMeText;
+            btnLaunch.Text = LocalizationHelper.Base.Main_PlayButton;
+            setButton.Text = LocalizationHelper.Base.Main_SettingsButton;
+            guna2Button1.Text = LocalizationHelper.Base.Main_SignOut;
+            snapbox.Text = LocalizationHelper.Base.Main_SnapshotBox;
+            Lv_Status.Text = LocalizationHelper.Base.Main_Status;
+            label3.Text = LocalizationHelper.Base.Main_WelcomeLabel;
+            guna2Button4.Text = LocalizationHelper.Base.Main_DonateButton;
+            Hakkında.Text = LocalizationHelper.Base.Main_About;
+            groupadvance.Text = LocalizationHelper.Base.Main_AdvancedSettings;
+            jvmarglbl.Text = LocalizationHelper.Base.Main_JvmArgsLBL;
+            maxiramlbl.Text = LocalizationHelper.Base.Main_MaximumRamLBL;
+            minimramlbl.Text = LocalizationHelper.Base.Main_MinimumRamLBL;
+            cbFullscreen.Text = LocalizationHelper.Base.Main_FullScreenCheckBox;
+            rbSequenceDownload.Text = LocalizationHelper.Base.Main_SequenceCheckBox;
+            rbParallelDownload.Text = LocalizationHelper.Base.Main_ParallelCheckBox;
+            groupdownload.Text = LocalizationHelper.Base.Main_Download;
+            groupinstall.Text = LocalizationHelper.Base.Main_Install;
+            installpathlbl.Text = LocalizationHelper.Base.Main_InstallPathLBL;
+            btnChangePath.Text = LocalizationHelper.Base.Main_ChangePathButton;
+            javapathlbl.Text = LocalizationHelper.Base.Main_JavaPathLBL;
+            label4.Text = LocalizationHelper.Base.Main_MinimizeLabel;
+            chkStartUp.Text = LocalizationHelper.Base.Main_MinimizeCheckBox;
+            label7.Text = LocalizationHelper.Base.Main_LanguageLabel;
+            guna2TileButton5.Text = LocalizationHelper.Base.Main_SaveButton;
+            guna2TileButton7.Text = LocalizationHelper.Base.Main_UpdateButton;
+            metroTabPage2.Text = LocalizationHelper.Base.Main_SettingsTab;
+            metroTabPage4.Text = LocalizationHelper.Base.Main_LauncherSetTab;
 
         }
         #endregion
@@ -416,6 +320,36 @@ namespace _345_Launcher
             webBrowser1.Navigate("https://launcher.mehmetali345.xyz/launcher.html");
             webBrowser1.ScriptErrorsSuppressed = true;
             #endregion
+
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            LocalizationHelper.Update();
+
+            lang();
+
+            settings();
+        }
+        public void settings()
+        {
+            var settings = Settings.LoadSettings();
+
+            var languages = LocalizationHelper.GetLanguages();
+            languageCombo.Items.Clear();
+            foreach (var language in languages)
+            {
+                languageCombo.Items.Add(language);
+            }
+
+            if (string.IsNullOrEmpty(settings.Language))
+            {
+                var defaultLanguage = languageCombo.Items.Add("Default (Build-in English)");
+                languageCombo.SelectedIndex = defaultLanguage;
+            }
+            else
+            {
+                var index = languageCombo.Items.IndexOf(settings.Language);
+                languageCombo.SelectedIndex = index;
+            }
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -426,14 +360,9 @@ namespace _345_Launcher
                 {
                     client.Dispose();
                 }
-                if (Properties.Settings.Default.langtr == true)
-                {
-                    this.Alert("Launcher küçültüldü", "Tekrar açmak için bildirim ", "simgesine 2 kere tıklayın.", Form_Info.enmType.minimized);
-                }
-                else
-                {
-                    this.Alert("Launcher minimized", "Click the tray icon for", "open program.", Form_Info.enmType.minimized);
-                }
+
+                this.Alert(LocalizationHelper.Base.Alert_Minimize, LocalizationHelper.Base.Alert_Minimize_Text, Form_Info.enmType.Info);
+
             }
             this.WindowState = FormWindowState.Minimized;
         }
@@ -470,6 +399,13 @@ namespace _345_Launcher
             Save_Data();
             this.Close();
             Application.Exit();
+
+            var settings = new Settings
+            {
+                Language = languageCombo.Text,
+            };
+
+            Settings.SaveSettings(settings);
         }
 
 
@@ -479,15 +415,8 @@ namespace _345_Launcher
             var computerMemory = Util.GetMemoryMb();
             if (computerMemory == null)
             {
-                if (Properties.Settings.Default.langtr == true)
-                {
-                    MessageBox.Show("RAM bilgisi alınamadı.");
-                }
-                else
-                {
-                    MessageBox.Show("RAM information could not be retrieved.");
-                }
-                return;
+                MessageBox.Show("RAM information could not be retrieved.");
+
             }
 
             var max = computerMemory / 2;
@@ -540,15 +469,6 @@ namespace _345_Launcher
             }
             catch (Exception ex)
             {
-                if (Properties.Settings.Default.langtr == true)
-                {
-                    this.Alert("MLaunchOption oluşamadı", "Eğer sorun devam ederse", "geri bildirim gönderin.", Form_Info.enmType.Error);
-
-                }
-                else
-                {
-                    this.Alert("MLaunchOption not created", "If problems unsolves", "send feedback.", Form_Info.enmType.Error);
-                }
                 MessageBox.Show("Failed to create MLaunchOption\n\n" + ex.ToString());
                 return null;
             }
@@ -563,18 +483,9 @@ namespace _345_Launcher
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            if (guna2CheckBox1.Checked == true)
-
+            if (Properties.Settings.Default.rpc == true)
             {
-                //Playing rpc
-                if (Properties.Settings.Default.langtr == true)
-                {
-                    client.UpdateState($"{selected} oynuyor.");
-                }
-                else
-                {
-                    client.UpdateState($"Playing {selected}.");
-                }
+                client.UpdateState($"Playing {selected}.");
             }
 
             UpdateSession(MSession.GetOfflineSession(lbUsername.Text));
@@ -649,15 +560,6 @@ namespace _345_Launcher
                 }
                 catch (Exception ex)
                 {
-                    if (Properties.Settings.Default.langtr == true)
-                    {
-                        this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
-
-                    }//error
-                    else
-                    {
-                        this.Alert("ERROR", "Libraries could not be downloaded or ", "something goes wrong.", Form_Info.enmType.Error);
-                    }
                     MessageBox.Show(ex.ToString());
                 }
             });
@@ -690,7 +592,7 @@ namespace _345_Launcher
             {
                 Directory.CreateDirectory(path);
             }
-            File.WriteAllText(path + @"\Argümanlar.txt", process.StartInfo.Arguments);
+            File.WriteAllText(path + @"\Arguments.txt", process.StartInfo.Arguments);
 
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardError = true;
@@ -714,7 +616,6 @@ namespace _345_Launcher
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                this.Alert("Oyun başlatılamadı", "Libaryler indirilemedi veya", "birşeyler ters gitti.", Form_Info.enmType.Error);
             }
         }
 
@@ -802,6 +703,12 @@ namespace _345_Launcher
         private void guna2TileButton5_Click(object sender, EventArgs e)
         {
             Save_Data();
+            var settings = new Settings
+            {
+                Language = languageCombo.Text,
+            };
+
+            Settings.SaveSettings(settings);
         }
 
         private void guna2TileButton4_Click(object sender, EventArgs e)
@@ -812,16 +719,9 @@ namespace _345_Launcher
         private void notify_icon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
-            if (guna2CheckBox1.Checked == true)
+            if (Properties.Settings.Default.rpc == true)
             {
-                if(Properties.Settings.Default.langtr == false)
-                {
-                    client.UpdateState("Main Screen");
-                }
-                else
-                {
-                    client.UpdateState("Anamenüde");
-                }
+                client.UpdateState("Main Screen");
             }
         }
 
@@ -830,7 +730,7 @@ namespace _345_Launcher
             upcheck();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void setbutton_Click(object sender, EventArgs e)
         {
             if (metroTabControl1.Visible == false)
             {
@@ -838,15 +738,15 @@ namespace _345_Launcher
                 metroTabControl1.Visible = true;
                 if (eng.Checked == true)
                 {
-                    guna2Button2.Text = "Main Screen";
+                    setButton.Text = "Main Screen";
                 }
                 else
                 {
-                    guna2Button2.Text = "Ana Ekran";
+                    setButton.Text = "Ana Ekran";
 
                 }
-                guna2Button2.Font = new Font(guna2Button2.Font.FontFamily, 10);
-                guna2Button2.Image = Properties.Resources.icons8_globe_48px;
+                setButton.Font = new Font(setButton.Font.FontFamily, 10);
+                setButton.Image = Properties.Resources.icons8_globe_48px;
             }
             else
             {
@@ -854,13 +754,13 @@ namespace _345_Launcher
                 metroTabControl1.Visible = false;
                 if (eng.Checked == true)
                 {
-                    guna2Button2.Text = "Settings";
+                    setButton.Text = "Settings";
                 }
                 else
                 {
-                    guna2Button2.Text = "Ayarlar";
+                    setButton.Text = "Ayarlar";
                 }
-                guna2Button2.Image = Properties.Resources.icons8_settings_48px;
+                setButton.Image = Properties.Resources.icons8_settings_48px;
             }
         }
 
@@ -913,6 +813,11 @@ namespace _345_Launcher
             System.Diagnostics.Process.Start("https://discord.gg/syprbuqGSw");
         }
         #endregion
+
+        private void lbJavaPath_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

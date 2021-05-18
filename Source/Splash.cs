@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
+using _345_Launcher.Source.Localization;
 
 namespace _345_Launcher
 {
@@ -8,11 +11,13 @@ namespace _345_Launcher
         public splash()
         {
             InitializeComponent();
-            if (Properties.Settings.Default.langtr == false)
-            {
-                metroLabel1.Text = "Loading...";
-                //English
-            }
+
+
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            LocalizationHelper.Update();
+
+            metroLabel1.Text = LocalizationHelper.Base.Splash_Loading;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -26,32 +31,11 @@ namespace _345_Launcher
             guna2CircleProgressBar1.Value += 1;
             if (guna2CircleProgressBar1.Value == 30)
             {
-
-                if (Properties.Settings.Default.langtr == false)
-                {
-
-                    //English
-                    metroLabel1.Text = "Connecting to server...";
-                }
-                else
-                {
-                    metroLabel1.Text = "Sunucuya bağlanılıyor...";
-                    //Turkish
-
-                }
+                metroLabel1.Text = LocalizationHelper.Base.Splash_Check;
             }
             if (guna2CircleProgressBar1.Value == 75)
             {
-                if (Properties.Settings.Default.langtr == false)
-                {
-                    metroLabel1.Text = "Checking files...";
-                    //English
-                }
-                else
-                {
-                    metroLabel1.Text = "Dosyalar Doğrulanıyor...";
-                    //Turkish
-                }
+                metroLabel1.Text = LocalizationHelper.Base.Splash_Finished;
 
             }
             if (guna2CircleProgressBar1.Value >= 100)

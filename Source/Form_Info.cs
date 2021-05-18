@@ -75,7 +75,12 @@ namespace _345_Launcher
             }
         }
 
-        public void showAlert(string msg, string msg2, string msg3, enmType type)
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void showAlert(string msg, string msg2, enmType type)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
@@ -119,8 +124,7 @@ namespace _345_Launcher
 
 
             this.label1.Text = msg;
-            this.label2.Text = msg2;
-            this.label3.Text = msg3;
+            this.textBox1.Text = msg2;
 
             this.Show();
             this.action = enmAction.start;

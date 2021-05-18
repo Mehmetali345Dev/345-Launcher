@@ -1,0 +1,47 @@
+{
+  "Language": "English",
+
+  "Splash_Loading": "Loading...",
+  "Splash_Check": "Checking Files...",
+  "Splash_Finished": "Finished",
+
+  "Login_UsernameLBL": "Username",
+  "Login_RememberMe": "More",
+  "Login_GoButton": "Login -->",
+
+  "Main_PlayButton": "Play",
+  "Main_SettingsButton": "Settings",
+  "Main_SignOut": "Sign Out",
+  "Main_SnapshotBox": "Snapshots",
+  "Main_Status": "Ready!",
+  "Main_WelcomeLabel": "Welcome",
+  "Main_DonateButton": "Donate!",
+  "Main_About": "Hakkında",
+  "Main_AdvancedSettings": "Settings",
+  "Main_JvmArgsLBL": "JVM Args",
+  "Main_MinimumRamLBL": "Minimum RAM",
+  "Main_MaximumRamLBL": "Maximum RAM",
+  "Main_FullScreenCheckBox": "Fullscreen",
+  "Main_SequenceCheckBox": "Sequence",
+  "Main_ParallelCheckBox": "Parallel(beta)",
+  "Main_Download": "Download Settings",
+  "Main_Install": "Install Settings",
+  "Main_InstallPathLBL": "Path",
+  "Main_ChangePathButton": "Change Path",
+  "Main_JavaPathLBL": "Java Path",
+  "Main_MinimizeLabel": "Minimize Button",
+  "Main_MinimizeCheckBox": "Minimize to Tray",
+  "Main_LanguageLabel": "Language",
+  "Main_SaveButton": "Save",
+  "Main_UpdateButton": "Check For Updates",
+  "Main_SettingsTab": "Settings",
+  "Main_LauncherSetTab": "Launcher Settings",
+  "Main_AboutMeText": "Hello my name is Mehmet Ali. I'm 14 years old. I developing C# programs.",
+
+  "Update_Answer": "Update is avalible. Are you want update the program?",
+
+  "Alert_Minimize": "Launcher minimized",
+  "Alert_Minimize_Text": "Click to tray icon open program",
+  "Alert_Update": "Update avalible",
+  "Alert_Update_Text": "Please update for last changes."
+}

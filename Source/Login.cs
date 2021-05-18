@@ -20,7 +20,6 @@ namespace _345_Launcher
         {
             InitializeComponent();
             Init_Data();
-            versiyon();
             if(Properties.Settings.Default.langtr == false)
             {
                 rememberme.Text = "Remember me";
@@ -30,16 +29,6 @@ namespace _345_Launcher
             }
         }
         public MSession Session;
-
-        private void versiyon()
-        {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
-
-            uplabel.Text += $"v. {versionInfo.FileVersion}";
-
-            //Version label 
-        }
 
         public login(MSession session)
         {

@@ -44,7 +44,7 @@ namespace _345_Launcher
             this.cbVersion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.notify_icon = new System.Windows.Forms.NotifyIcon(this.components);
             this.btnLaunch = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.setButton = new Guna.UI2.WinForms.Guna2Button();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.tur = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -58,30 +58,30 @@ namespace _345_Launcher
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupinstall = new System.Windows.Forms.GroupBox();
             this.btnChangePath = new Guna.UI2.WinForms.Guna2Button();
             this.btnChangeJava = new Guna.UI2.WinForms.Guna2Button();
             this.lbJavaPath = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.javapathlbl = new MetroFramework.Controls.MetroLabel();
+            this.installpathlbl = new MetroFramework.Controls.MetroLabel();
             this.txtPath = new MetroFramework.Controls.MetroTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupdownload = new System.Windows.Forms.GroupBox();
             this.cbSkipAssetsDownload = new MetroFramework.Controls.MetroCheckBox();
             this.rbParallelDownload = new MetroFramework.Controls.MetroRadioButton();
             this.cbCheckFileHash = new MetroFramework.Controls.MetroCheckBox();
             this.rbSequenceDownload = new MetroFramework.Controls.MetroRadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupadvance = new System.Windows.Forms.GroupBox();
             this.btnRefreshVersion = new Guna.UI2.WinForms.Guna2Button();
             this.cbFullscreen = new MetroFramework.Controls.MetroCheckBox();
             this.btnSetLastVersion = new Guna.UI2.WinForms.Guna2Button();
             this.btnAutoRamSet = new Guna.UI2.WinForms.Guna2Button();
             this.TxtXmx = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.jvmarglbl = new MetroFramework.Controls.MetroLabel();
             this.TxtXms = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.maxiramlbl = new MetroFramework.Controls.MetroLabel();
             this.Txt_JavaArgs = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.minimramlbl = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.pnllazım = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -101,13 +101,14 @@ namespace _345_Launcher
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsername = new MetroFramework.Controls.MetroLabel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.languageCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupinstall.SuspendLayout();
+            this.groupdownload.SuspendLayout();
+            this.groupadvance.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.pnllazım.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -295,32 +296,33 @@ namespace _345_Launcher
             this.btnLaunch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLaunch.Click += new System.EventHandler(this.btnLaunch_Click);
             // 
-            // guna2Button2
+            // setButton
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BorderRadius = 27;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button2.Location = new System.Drawing.Point(568, 7);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(141, 57);
-            this.guna2Button2.TabIndex = 21;
-            this.guna2Button2.Text = "Ayarlar";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.setButton.Animated = true;
+            this.setButton.AutoRoundedCorners = true;
+            this.setButton.BorderRadius = 27;
+            this.setButton.CheckedState.Parent = this.setButton;
+            this.setButton.CustomImages.Parent = this.setButton;
+            this.setButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.setButton.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.setButton.ForeColor = System.Drawing.Color.White;
+            this.setButton.HoverState.Parent = this.setButton;
+            this.setButton.Image = ((System.Drawing.Image)(resources.GetObject("setButton.Image")));
+            this.setButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.setButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.setButton.Location = new System.Drawing.Point(568, 7);
+            this.setButton.Name = "setButton";
+            this.setButton.ShadowDecoration.Parent = this.setButton;
+            this.setButton.Size = new System.Drawing.Size(141, 57);
+            this.setButton.TabIndex = 21;
+            this.setButton.Text = "Ayarlar";
+            this.setButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.setButton.Click += new System.EventHandler(this.setbutton_Click);
             // 
             // metroTabPage4
             // 
             this.metroTabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.metroTabPage4.Controls.Add(this.languageCombo);
             this.metroTabPage4.Controls.Add(this.label7);
             this.metroTabPage4.Controls.Add(this.tur);
             this.metroTabPage4.Controls.Add(this.eng);
@@ -522,9 +524,9 @@ namespace _345_Launcher
             // metroTabPage2
             // 
             this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.metroTabPage2.Controls.Add(this.groupBox1);
-            this.metroTabPage2.Controls.Add(this.groupBox2);
-            this.metroTabPage2.Controls.Add(this.groupBox4);
+            this.metroTabPage2.Controls.Add(this.groupinstall);
+            this.metroTabPage2.Controls.Add(this.groupdownload);
+            this.metroTabPage2.Controls.Add(this.groupadvance);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 10;
@@ -539,23 +541,23 @@ namespace _345_Launcher
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // groupBox1
+            // groupinstall
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox1.Controls.Add(this.btnChangePath);
-            this.groupBox1.Controls.Add(this.btnChangeJava);
-            this.groupBox1.Controls.Add(this.lbJavaPath);
-            this.groupBox1.Controls.Add(this.metroLabel5);
-            this.groupBox1.Controls.Add(this.metroLabel3);
-            this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Controls.Add(this.txtPath);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(229, 134);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 142);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Minecraft Kurulum Ayarları";
+            this.groupinstall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.groupinstall.Controls.Add(this.btnChangePath);
+            this.groupinstall.Controls.Add(this.btnChangeJava);
+            this.groupinstall.Controls.Add(this.lbJavaPath);
+            this.groupinstall.Controls.Add(this.metroLabel5);
+            this.groupinstall.Controls.Add(this.javapathlbl);
+            this.groupinstall.Controls.Add(this.installpathlbl);
+            this.groupinstall.Controls.Add(this.txtPath);
+            this.groupinstall.ForeColor = System.Drawing.Color.White;
+            this.groupinstall.Location = new System.Drawing.Point(229, 134);
+            this.groupinstall.Name = "groupinstall";
+            this.groupinstall.Size = new System.Drawing.Size(222, 142);
+            this.groupinstall.TabIndex = 10;
+            this.groupinstall.TabStop = false;
+            this.groupinstall.Text = "Minecraft Kurulum Ayarları";
             // 
             // btnChangePath
             // 
@@ -600,6 +602,7 @@ namespace _345_Launcher
             this.lbJavaPath.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.lbJavaPath.UseCustomBackColor = true;
             this.lbJavaPath.UseCustomForeColor = true;
+            this.lbJavaPath.Click += new System.EventHandler(this.lbJavaPath_Click);
             // 
             // metroLabel5
             // 
@@ -612,32 +615,32 @@ namespace _345_Launcher
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel5.UseCustomForeColor = true;
             // 
-            // metroLabel3
+            // javapathlbl
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 71);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "Java Yolu:";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel3.UseCustomBackColor = true;
-            this.metroLabel3.UseCustomForeColor = true;
+            this.javapathlbl.AutoSize = true;
+            this.javapathlbl.ForeColor = System.Drawing.Color.White;
+            this.javapathlbl.Location = new System.Drawing.Point(8, 71);
+            this.javapathlbl.Name = "javapathlbl";
+            this.javapathlbl.Size = new System.Drawing.Size(67, 19);
+            this.javapathlbl.TabIndex = 7;
+            this.javapathlbl.Text = "Java Yolu:";
+            this.javapathlbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.javapathlbl.UseCustomBackColor = true;
+            this.javapathlbl.UseCustomForeColor = true;
             // 
-            // metroLabel1
+            // installpathlbl
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(6, 18);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(92, 19);
-            this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "Kurulum Yolu";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
+            this.installpathlbl.AutoSize = true;
+            this.installpathlbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.installpathlbl.ForeColor = System.Drawing.Color.White;
+            this.installpathlbl.Location = new System.Drawing.Point(6, 18);
+            this.installpathlbl.Name = "installpathlbl";
+            this.installpathlbl.Size = new System.Drawing.Size(92, 19);
+            this.installpathlbl.TabIndex = 5;
+            this.installpathlbl.Text = "Kurulum Yolu";
+            this.installpathlbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.installpathlbl.UseCustomBackColor = true;
+            this.installpathlbl.UseCustomForeColor = true;
             // 
             // txtPath
             // 
@@ -672,20 +675,20 @@ namespace _345_Launcher
             this.txtPath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // groupBox2
+            // groupdownload
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox2.Controls.Add(this.cbSkipAssetsDownload);
-            this.groupBox2.Controls.Add(this.rbParallelDownload);
-            this.groupBox2.Controls.Add(this.cbCheckFileHash);
-            this.groupBox2.Controls.Add(this.rbSequenceDownload);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(229, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(222, 122);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "İndirme Ayarları";
+            this.groupdownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.groupdownload.Controls.Add(this.cbSkipAssetsDownload);
+            this.groupdownload.Controls.Add(this.rbParallelDownload);
+            this.groupdownload.Controls.Add(this.cbCheckFileHash);
+            this.groupdownload.Controls.Add(this.rbSequenceDownload);
+            this.groupdownload.ForeColor = System.Drawing.Color.White;
+            this.groupdownload.Location = new System.Drawing.Point(229, 2);
+            this.groupdownload.Name = "groupdownload";
+            this.groupdownload.Size = new System.Drawing.Size(222, 122);
+            this.groupdownload.TabIndex = 11;
+            this.groupdownload.TabStop = false;
+            this.groupdownload.Text = "İndirme Ayarları";
             // 
             // cbSkipAssetsDownload
             // 
@@ -735,26 +738,26 @@ namespace _345_Launcher
             this.rbSequenceDownload.UseCustomBackColor = true;
             this.rbSequenceDownload.UseSelectable = true;
             // 
-            // groupBox4
+            // groupadvance
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.groupBox4.Controls.Add(this.btnRefreshVersion);
-            this.groupBox4.Controls.Add(this.cbFullscreen);
-            this.groupBox4.Controls.Add(this.btnSetLastVersion);
-            this.groupBox4.Controls.Add(this.btnAutoRamSet);
-            this.groupBox4.Controls.Add(this.TxtXmx);
-            this.groupBox4.Controls.Add(this.metroLabel13);
-            this.groupBox4.Controls.Add(this.TxtXms);
-            this.groupBox4.Controls.Add(this.metroLabel14);
-            this.groupBox4.Controls.Add(this.Txt_JavaArgs);
-            this.groupBox4.Controls.Add(this.metroLabel15);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(220, 273);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Gelişmiş Ayarlar";
+            this.groupadvance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.groupadvance.Controls.Add(this.btnRefreshVersion);
+            this.groupadvance.Controls.Add(this.cbFullscreen);
+            this.groupadvance.Controls.Add(this.btnSetLastVersion);
+            this.groupadvance.Controls.Add(this.btnAutoRamSet);
+            this.groupadvance.Controls.Add(this.TxtXmx);
+            this.groupadvance.Controls.Add(this.jvmarglbl);
+            this.groupadvance.Controls.Add(this.TxtXms);
+            this.groupadvance.Controls.Add(this.maxiramlbl);
+            this.groupadvance.Controls.Add(this.Txt_JavaArgs);
+            this.groupadvance.Controls.Add(this.minimramlbl);
+            this.groupadvance.ForeColor = System.Drawing.Color.White;
+            this.groupadvance.Location = new System.Drawing.Point(3, 3);
+            this.groupadvance.Name = "groupadvance";
+            this.groupadvance.Size = new System.Drawing.Size(220, 273);
+            this.groupadvance.TabIndex = 12;
+            this.groupadvance.TabStop = false;
+            this.groupadvance.Text = "Gelişmiş Ayarlar";
             // 
             // btnRefreshVersion
             // 
@@ -846,18 +849,18 @@ namespace _345_Launcher
             this.TxtXmx.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TxtXmx.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel13
+            // jvmarglbl
             // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.ForeColor = System.Drawing.Color.White;
-            this.metroLabel13.Location = new System.Drawing.Point(9, 36);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(114, 19);
-            this.metroLabel13.TabIndex = 25;
-            this.metroLabel13.Text = "JVM Argümanları:";
-            this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel13.UseCustomBackColor = true;
-            this.metroLabel13.UseCustomForeColor = true;
+            this.jvmarglbl.AutoSize = true;
+            this.jvmarglbl.ForeColor = System.Drawing.Color.White;
+            this.jvmarglbl.Location = new System.Drawing.Point(9, 36);
+            this.jvmarglbl.Name = "jvmarglbl";
+            this.jvmarglbl.Size = new System.Drawing.Size(114, 19);
+            this.jvmarglbl.TabIndex = 25;
+            this.jvmarglbl.Text = "JVM Argümanları:";
+            this.jvmarglbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.jvmarglbl.UseCustomBackColor = true;
+            this.jvmarglbl.UseCustomForeColor = true;
             // 
             // TxtXms
             // 
@@ -892,18 +895,18 @@ namespace _345_Launcher
             this.TxtXms.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TxtXms.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel14
+            // maxiramlbl
             // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.ForeColor = System.Drawing.Color.White;
-            this.metroLabel14.Location = new System.Drawing.Point(7, 139);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel14.TabIndex = 23;
-            this.metroLabel14.Text = "Maksimum Ram:";
-            this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel14.UseCustomBackColor = true;
-            this.metroLabel14.UseCustomForeColor = true;
+            this.maxiramlbl.AutoSize = true;
+            this.maxiramlbl.ForeColor = System.Drawing.Color.White;
+            this.maxiramlbl.Location = new System.Drawing.Point(7, 139);
+            this.maxiramlbl.Name = "maxiramlbl";
+            this.maxiramlbl.Size = new System.Drawing.Size(107, 19);
+            this.maxiramlbl.TabIndex = 23;
+            this.maxiramlbl.Text = "Maksimum Ram:";
+            this.maxiramlbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.maxiramlbl.UseCustomBackColor = true;
+            this.maxiramlbl.UseCustomForeColor = true;
             // 
             // Txt_JavaArgs
             // 
@@ -938,18 +941,18 @@ namespace _345_Launcher
             this.Txt_JavaArgs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Txt_JavaArgs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel15
+            // minimramlbl
             // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.ForeColor = System.Drawing.Color.White;
-            this.metroLabel15.Location = new System.Drawing.Point(8, 87);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(99, 19);
-            this.metroLabel15.TabIndex = 21;
-            this.metroLabel15.Text = "Minimum Ram:";
-            this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel15.UseCustomBackColor = true;
-            this.metroLabel15.UseCustomForeColor = true;
+            this.minimramlbl.AutoSize = true;
+            this.minimramlbl.ForeColor = System.Drawing.Color.White;
+            this.minimramlbl.Location = new System.Drawing.Point(8, 87);
+            this.minimramlbl.Name = "minimramlbl";
+            this.minimramlbl.Size = new System.Drawing.Size(99, 19);
+            this.minimramlbl.TabIndex = 21;
+            this.minimramlbl.Text = "Minimum Ram:";
+            this.minimramlbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.minimramlbl.UseCustomBackColor = true;
+            this.minimramlbl.UseCustomForeColor = true;
             // 
             // metroTabControl1
             // 
@@ -959,7 +962,7 @@ namespace _345_Launcher
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(27, 24);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(528, 363);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroTabControl1.TabIndex = 5;
@@ -1203,7 +1206,7 @@ namespace _345_Launcher
             this.panel3.Controls.Add(this.Lv_Status);
             this.panel3.Controls.Add(this.guna2Button1);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.guna2Button2);
+            this.panel3.Controls.Add(this.setButton);
             this.panel3.Controls.Add(this.btnLaunch);
             this.panel3.Controls.Add(this.cbVersion);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1248,6 +1251,25 @@ namespace _345_Launcher
             // 
             this.guna2DragControl1.TargetControl = this.panel1;
             // 
+            // languageCombo
+            // 
+            this.languageCombo.BackColor = System.Drawing.Color.Transparent;
+            this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.languageCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.languageCombo.FocusedColor = System.Drawing.Color.Empty;
+            this.languageCombo.FocusedState.Parent = this.languageCombo;
+            this.languageCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.languageCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.languageCombo.FormattingEnabled = true;
+            this.languageCombo.HoverState.Parent = this.languageCombo;
+            this.languageCombo.ItemHeight = 30;
+            this.languageCombo.ItemsAppearance.Parent = this.languageCombo;
+            this.languageCombo.Location = new System.Drawing.Point(8, 185);
+            this.languageCombo.Name = "languageCombo";
+            this.languageCombo.ShadowDecoration.Parent = this.languageCombo;
+            this.languageCombo.Size = new System.Drawing.Size(140, 36);
+            this.languageCombo.TabIndex = 30;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1274,12 +1296,12 @@ namespace _345_Launcher
             this.metroTabPage4.PerformLayout();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupinstall.ResumeLayout(false);
+            this.groupinstall.PerformLayout();
+            this.groupdownload.ResumeLayout(false);
+            this.groupdownload.PerformLayout();
+            this.groupadvance.ResumeLayout(false);
+            this.groupadvance.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
             this.pnllazım.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
@@ -1308,7 +1330,7 @@ namespace _345_Launcher
         private System.Windows.Forms.Label uplabel;
         private System.Windows.Forms.NotifyIcon notify_icon;
         private Guna.UI2.WinForms.Guna2Button btnLaunch;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button setButton;
         private System.Windows.Forms.Panel pnllazım;
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton7;
@@ -1326,29 +1348,29 @@ namespace _345_Launcher
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupdownload;
         private MetroFramework.Controls.MetroCheckBox cbSkipAssetsDownload;
         private MetroFramework.Controls.MetroRadioButton rbParallelDownload;
         private MetroFramework.Controls.MetroCheckBox cbCheckFileHash;
         private MetroFramework.Controls.MetroRadioButton rbSequenceDownload;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupadvance;
         private Guna.UI2.WinForms.Guna2Button btnRefreshVersion;
         private MetroFramework.Controls.MetroCheckBox cbFullscreen;
         private Guna.UI2.WinForms.Guna2Button btnSetLastVersion;
         private Guna.UI2.WinForms.Guna2Button btnAutoRamSet;
         private MetroFramework.Controls.MetroTextBox TxtXmx;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel jvmarglbl;
         private MetroFramework.Controls.MetroTextBox TxtXms;
-        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroLabel maxiramlbl;
         private MetroFramework.Controls.MetroTextBox Txt_JavaArgs;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroLabel minimramlbl;
+        private System.Windows.Forms.GroupBox groupinstall;
         private Guna.UI2.WinForms.Guna2Button btnChangePath;
         private Guna.UI2.WinForms.Guna2Button btnChangeJava;
         private MetroFramework.Controls.MetroLabel lbJavaPath;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel javapathlbl;
+        private MetroFramework.Controls.MetroLabel installpathlbl;
         private MetroFramework.Controls.MetroTextBox txtPath;
         private Guna.UI2.WinForms.Guna2GroupBox Hakkında;
         private System.Windows.Forms.Label label1;
@@ -1365,5 +1387,6 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2ComboBox languageCombo;
     }
 }

@@ -191,7 +191,7 @@ namespace _345_Launcher
             this.go.Size = new System.Drawing.Size(139, 45);
             this.go.TabIndex = 18;
             this.go.Text = "İlerle ->";
-            this.go.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.go.Click += new System.EventHandler(this.go_Click);
             // 
             // login
             // 
