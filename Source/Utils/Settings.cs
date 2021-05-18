@@ -16,7 +16,8 @@ namespace _345_Launcher.Source.Utils
         public static string GetSettingsFilename()
         {
             string confpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".345launcher");
-            return Path.Combine(confpath, @"\lang_settings.json");
+
+            return Path.Combine(confpath, "lang_settings.json");
         }
 
         public static void SaveSettings(Settings settings)

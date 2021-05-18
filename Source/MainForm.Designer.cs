@@ -46,9 +46,8 @@ namespace _345_Launcher
             this.btnLaunch = new Guna.UI2.WinForms.Guna2Button();
             this.setButton = new Guna.UI2.WinForms.Guna2Button();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.languageCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tur = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.eng = new Guna.UI2.WinForms.Guna2RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2TileButton7 = new Guna.UI2.WinForms.Guna2TileButton();
@@ -90,7 +89,6 @@ namespace _345_Launcher
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Hakkında = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -101,7 +99,7 @@ namespace _345_Launcher
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsername = new MetroFramework.Controls.MetroLabel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.languageCombo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
@@ -322,10 +320,9 @@ namespace _345_Launcher
             // metroTabPage4
             // 
             this.metroTabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.metroTabPage4.Controls.Add(this.label6);
             this.metroTabPage4.Controls.Add(this.languageCombo);
             this.metroTabPage4.Controls.Add(this.label7);
-            this.metroTabPage4.Controls.Add(this.tur);
-            this.metroTabPage4.Controls.Add(this.eng);
             this.metroTabPage4.Controls.Add(this.label1);
             this.metroTabPage4.Controls.Add(this.guna2CheckBox1);
             this.metroTabPage4.Controls.Add(this.guna2TileButton7);
@@ -347,6 +344,25 @@ namespace _345_Launcher
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
+            // languageCombo
+            // 
+            this.languageCombo.BackColor = System.Drawing.Color.Transparent;
+            this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.languageCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.languageCombo.FocusedColor = System.Drawing.Color.Empty;
+            this.languageCombo.FocusedState.Parent = this.languageCombo;
+            this.languageCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.languageCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.languageCombo.FormattingEnabled = true;
+            this.languageCombo.HoverState.Parent = this.languageCombo;
+            this.languageCombo.ItemHeight = 30;
+            this.languageCombo.ItemsAppearance.Parent = this.languageCombo;
+            this.languageCombo.Location = new System.Drawing.Point(3, 124);
+            this.languageCombo.Name = "languageCombo";
+            this.languageCombo.ShadowDecoration.Parent = this.languageCombo;
+            this.languageCombo.Size = new System.Drawing.Size(189, 36);
+            this.languageCombo.TabIndex = 30;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -357,48 +373,6 @@ namespace _345_Launcher
             this.label7.Size = new System.Drawing.Size(35, 25);
             this.label7.TabIndex = 29;
             this.label7.Text = "Dil";
-            // 
-            // tur
-            // 
-            this.tur.AutoSize = true;
-            this.tur.Checked = true;
-            this.tur.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tur.CheckedState.BorderThickness = 0;
-            this.tur.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tur.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.tur.CheckedState.InnerOffset = -4;
-            this.tur.Location = new System.Drawing.Point(8, 147);
-            this.tur.Name = "tur";
-            this.tur.Size = new System.Drawing.Size(58, 17);
-            this.tur.TabIndex = 28;
-            this.tur.TabStop = true;
-            this.tur.Text = "Türkçe";
-            this.tur.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.tur.UncheckedState.BorderThickness = 2;
-            this.tur.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.tur.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.tur.UseVisualStyleBackColor = true;
-            this.tur.CheckedChanged += new System.EventHandler(this.tur_CheckedChanged);
-            // 
-            // eng
-            // 
-            this.eng.AutoSize = true;
-            this.eng.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.eng.CheckedState.BorderThickness = 0;
-            this.eng.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.eng.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.eng.CheckedState.InnerOffset = -4;
-            this.eng.Location = new System.Drawing.Point(8, 124);
-            this.eng.Name = "eng";
-            this.eng.Size = new System.Drawing.Size(64, 17);
-            this.eng.TabIndex = 27;
-            this.eng.Text = "İnglizce";
-            this.eng.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.eng.UncheckedState.BorderThickness = 2;
-            this.eng.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.eng.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.eng.UseVisualStyleBackColor = true;
-            this.eng.CheckedChanged += new System.EventHandler(this.guna2RadioButton1_CheckedChanged);
             // 
             // label1
             // 
@@ -1000,7 +974,6 @@ namespace _345_Launcher
             this.guna2Panel1.Controls.Add(this.guna2Button4);
             this.guna2Panel1.Controls.Add(this.metroTextBox1);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
-            this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 38);
@@ -1103,23 +1076,12 @@ namespace _345_Launcher
             this.guna2Button3.Text = "Github";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(10, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 15);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "tarafından geliştirildi.";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 10);
+            this.label5.Location = new System.Drawing.Point(7, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 21);
             this.label5.TabIndex = 21;
@@ -1251,24 +1213,14 @@ namespace _345_Launcher
             // 
             this.guna2DragControl1.TargetControl = this.panel1;
             // 
-            // languageCombo
+            // label6
             // 
-            this.languageCombo.BackColor = System.Drawing.Color.Transparent;
-            this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.languageCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.languageCombo.FocusedColor = System.Drawing.Color.Empty;
-            this.languageCombo.FocusedState.Parent = this.languageCombo;
-            this.languageCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.languageCombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.languageCombo.FormattingEnabled = true;
-            this.languageCombo.HoverState.Parent = this.languageCombo;
-            this.languageCombo.ItemHeight = 30;
-            this.languageCombo.ItemsAppearance.Parent = this.languageCombo;
-            this.languageCombo.Location = new System.Drawing.Point(8, 185);
-            this.languageCombo.Name = "languageCombo";
-            this.languageCombo.ShadowDecoration.Parent = this.languageCombo;
-            this.languageCombo.Size = new System.Drawing.Size(140, 36);
-            this.languageCombo.TabIndex = 30;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 295);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(211, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "After change language restart program.";
             // 
             // MainForm
             // 
@@ -1344,7 +1296,6 @@ namespace _345_Launcher
         private System.Windows.Forms.WebBrowser webBrowser1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
@@ -1382,11 +1333,10 @@ namespace _345_Launcher
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2RadioButton tur;
-        private Guna.UI2.WinForms.Guna2RadioButton eng;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox languageCombo;
+        private System.Windows.Forms.Label label6;
     }
 }

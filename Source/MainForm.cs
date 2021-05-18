@@ -137,7 +137,7 @@ namespace _345_Launcher
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            client = new DiscordRpcClient("814773064671690762");
+            client = new DiscordRpcClient("844116191697043507");
             client.Initialize();
             client.SetPresence(new RichPresence()
             {
@@ -669,14 +669,6 @@ namespace _345_Launcher
             {
                 guna2CheckBox1.Checked = false;
             }
-            if (Properties.Settings.Default.langtr == true)
-            {
-                tur.Checked = true;
-            }
-            else
-            {
-                eng.Checked = true;
-            }
 
         }
 
@@ -736,30 +728,13 @@ namespace _345_Launcher
             {
                 webBrowser1.Visible = false;
                 metroTabControl1.Visible = true;
-                if (eng.Checked == true)
-                {
-                    setButton.Text = "Main Screen";
-                }
-                else
-                {
-                    setButton.Text = "Ana Ekran";
-
-                }
                 setButton.Font = new Font(setButton.Font.FontFamily, 10);
                 setButton.Image = Properties.Resources.icons8_globe_48px;
             }
             else
             {
                 webBrowser1.Visible = true;
-                metroTabControl1.Visible = false;
-                if (eng.Checked == true)
-                {
-                    setButton.Text = "Settings";
-                }
-                else
-                {
-                    setButton.Text = "Ayarlar";
-                }
+                metroTabControl1.Visible = false;            
                 setButton.Image = Properties.Resources.icons8_settings_48px;
             }
         }
@@ -796,17 +771,6 @@ namespace _345_Launcher
             System.Diagnostics.Process.Start("https://github.com/Mehmetali345Dev");
         }
 
-        private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.langtr = false;
-            lang();
-        }
-
-        private void tur_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.langtr = true;
-            lang();
-        }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {

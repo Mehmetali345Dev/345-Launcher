@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _345_Launcher.Source.Localization;
 using CmlLib.Core.Auth;
 using Guna.UI2.WinForms;
 
@@ -20,13 +23,14 @@ namespace _345_Launcher
         {
             InitializeComponent();
             Init_Data();
-            if(Properties.Settings.Default.langtr == false)
-            {
-                rememberme.Text = "Remember me";
-                go.Text = "Login ->";
-                usernamelbl.Text = "Username";
-                // For English Language
-            }
+
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            LocalizationHelper.Update();
+
+            rememberme.Text = LocalizationHelper.Base.Login_RememberMe;
+            go.Text = LocalizationHelper.Base.Login_GoButton;
+            usernamelbl.Text = LocalizationHelper.Base.Login_UsernameLBL;
         }
         public MSession Session;
 

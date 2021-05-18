@@ -15,7 +15,7 @@ namespace _345_Launcher.Source.Localization
         public string Splash_Finished = "Finished";
         
         public string Login_UsernameLBL = "Username";
-        public string Login_RememberMe = "More";
+        public string Login_RememberMe = "Remember Me";
         public string Login_GoButton = "Login -->";
 
         public string Main_PlayButton = "Play";
@@ -25,7 +25,7 @@ namespace _345_Launcher.Source.Localization
         public string Main_Status = "Ready!";
         public string Main_WelcomeLabel = "Welcome";
         public string Main_DonateButton = "Donate!";
-        public string Main_About = "Hakkında";
+        public string Main_About = "About Me";
         public string Main_AdvancedSettings = "Settings";
         public string Main_JvmArgsLBL = "JVM Args";
         public string Main_MinimumRamLBL = "Minimum RAM";
