@@ -1,0 +1,47 @@
+{
+  "Language": "Turkish",
+
+  "Splash_Loading": "Yükleniyor...",
+  "Splash_Check": "Dosyalar Doğrulanıyor...",
+  "Splash_Finished": "Bitti!!!",
+
+  "Login_UsernameLBL": "Kullanıcı Adı",
+  "Login_RememberMe": "Beni hatırla",
+  "Login_GoButton": "Devam -->",
+
+  "Main_PlayButton": "Oyna",
+  "Main_SettingsButton": "Ayarlar",
+  "Main_SignOut": "Çıkış Yap",
+  "Main_SnapshotBox": "Snapshotlar",
+  "Main_Status": "Hazır!",
+  "Main_WelcomeLabel": "Hoşgeldin",
+  "Main_DonateButton": "Destek OL!",
+  "Main_About": "Hakkında",
+  "Main_AdvancedSettings": "Gelişmiş Ayarlar",
+  "Main_JvmArgsLBL": "JVM Argümanları",
+  "Main_MinimumRamLBL": "Minimum RAM",
+  "Main_MaximumRamLBL": "Maximum RAM",
+  "Main_FullScreenCheckBox": "Tamekran",
+  "Main_SequenceCheckBox": "Sıralı",
+  "Main_ParallelCheckBox": "Paralel(beta)",
+  "Main_Download": "İndirme Ayarları",
+  "Main_Install": "Kurulum Ayarları",
+  "Main_InstallPathLBL": "Yol",
+  "Main_ChangePathButton": "Değiştir",
+  "Main_JavaPathLBL": "Java Yolu",
+  "Main_MinimizeLabel": "Küçültme Butonu",
+  "Main_MinimizeCheckBox": "Sistem tepsisine küçültü",
+  "Main_LanguageLabel": "Dil",
+  "Main_SaveButton": "Kaydet",
+  "Main_UpdateButton": "Güncellemeleri kontrol et",
+  "Main_SettingsTab": "Ayarlar",
+  "Main_LauncherSetTab": "Launcher Ayarları",
+  "Main_AboutMeText": "Benim adım Mehmet Ali. C# ve Javascript ile uygulamalar yazıyorum.",
+
+  "Update_Answer": "Güncelleme mevcut yapmak istermisiniz?",
+
+  "Alert_Minimize": "Launcher küçültüldü",
+  "Alert_Minimize_Text": "Sistem tepsisindeki uygulamaya basınki açılsın",
+  "Alert_Update": "Güncelleme mevcut",
+  "Alert_Update_Text": "Lütfen son deneyim için güncellemeyi yapın"
+}

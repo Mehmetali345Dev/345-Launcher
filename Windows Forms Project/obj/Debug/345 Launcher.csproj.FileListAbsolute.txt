@@ -1,0 +1,76 @@
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\345 Launcher.exe.config
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\345 Launcher.exe
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\345 Launcher.pdb
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\CmlLib.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\DiscordRPC.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\Guna.UI2.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\MetroFramework.Design.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\MetroFramework.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\SevenZip.dll
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\DiscordRPC.pdb
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\DiscordRPC.xml
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\bin\Debug\SevenZip.xml
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.csprojAssemblyReference.cache
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.Form_Info.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.JavaForm.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.login.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.MainForm.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.Modlar.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.PathForm.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.Properties.Resources.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.splash.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\_345_Launcher.Update.resources
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.csproj.GenerateResource.cache
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.csproj.CopyComplete
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.exe
+C:\Users\Mehmetali345\Source\Repos\Mehmetali345Dev\345 Launcher\obj\Debug\345 Launcher.pdb
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\bin\Debug\Siticone.UI.dll
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\bin\Debug\XanderUI.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\345 Launcher.exe.config
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\345 Launcher.exe
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\345 Launcher.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\CmlLib.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\DiscordRPC.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\Guna.UI2.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\MetroFramework.Design.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\MetroFramework.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\SevenZip.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\DiscordRPC.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\DiscordRPC.xml
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\SevenZip.xml
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.Form_Info.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.JavaForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.login.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.MainForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.Modlar.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.PathForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.Properties.Resources.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.splash.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\_345_Launcher.Update.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.csproj.GenerateResource.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.csproj.CopyComplete
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.exe
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Debug\345 Launcher.csproj.AssemblyReference.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\Languages\Turkish.json
+C:\Users\Mehmetali345\source\repos\345 Launcher\bin\Debug\Languages\English.json

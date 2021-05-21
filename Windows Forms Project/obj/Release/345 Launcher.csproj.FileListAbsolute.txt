@@ -1,0 +1,38 @@
+C:\Users\Mehmetali345\source\Desktop\345 Launcher Releases\345 Launcher.exe.config
+C:\Users\Mehmetali345\source\Desktop\345 Launcher Releases\345 Launcher.exe
+C:\Users\Mehmetali345\source\Desktop\345 Launcher Releases\345 Launcher.pdb
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.csprojAssemblyReference.cache
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.Form_Info.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.JavaForm.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.login.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.MainForm.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.Modlar.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.PathForm.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.Properties.Resources.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.splash.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\_345_Launcher.Update.resources
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.csproj.GenerateResource.cache
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.csproj.CopyComplete
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.exe
+C:\Users\Mehmetali345\source\repos\Mehmetali345Dev\345 Launcher\obj\Release\345 Launcher.pdb
+C:\Users\Mehmetali345\Desktop\345 Launcher Releases\Languages\Turkish.json
+C:\Users\Mehmetali345\Desktop\345 Launcher Releases\Languages\English.json
+C:\Users\Mehmetali345\Desktop\345 Launcher Releases\345 Launcher.exe.config
+C:\Users\Mehmetali345\Desktop\345 Launcher Releases\345 Launcher.exe
+C:\Users\Mehmetali345\Desktop\345 Launcher Releases\345 Launcher.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.csproj.AssemblyReference.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.Form_Info.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.JavaForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.login.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.MainForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.Modlar.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.PathForm.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.Properties.Resources.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.splash.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\_345_Launcher.Update.resources
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.csproj.GenerateResource.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.csproj.CopyComplete
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.exe
+C:\Users\Mehmetali345\source\repos\345 Launcher\obj\Release\345 Launcher.pdb

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31306.274
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "345 Launcher - Core", "345 Launcher - Core\345 Launcher - Core.csproj", "{C759881A-E04E-4EEB-AFEF-5B9344328CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "345 Launcher - App", "345 Launcher - App\345 Launcher - App.csproj", "{24BE0D59-B041-4752-9E9C-09999CE20713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "345 Launcher - App", "345 Launcher - App\345 Launcher - App.csproj", "{24BE0D59-B041-4752-9E9C-09999CE20713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
