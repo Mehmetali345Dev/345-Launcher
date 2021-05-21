@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31306.274
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "345 Launcher_WPF", "345 Launcher_WPF\345 Launcher_WPF.csproj", "{499401BB-EDEF-4E1D-B342-7A4BA8A30CD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "345 Launcher_Core", "345 Launcher_Core\345 Launcher_Core.csproj", "{D7D61FEF-6393-4B8C-82EC-6CE2006F2016}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{499401BB-EDEF-4E1D-B342-7A4BA8A30CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499401BB-EDEF-4E1D-B342-7A4BA8A30CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499401BB-EDEF-4E1D-B342-7A4BA8A30CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499401BB-EDEF-4E1D-B342-7A4BA8A30CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D61FEF-6393-4B8C-82EC-6CE2006F2016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D61FEF-6393-4B8C-82EC-6CE2006F2016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D61FEF-6393-4B8C-82EC-6CE2006F2016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D61FEF-6393-4B8C-82EC-6CE2006F2016}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43BDD01-71E2-400A-A509-F58246934207}
+	EndGlobalSection
+EndGlobal

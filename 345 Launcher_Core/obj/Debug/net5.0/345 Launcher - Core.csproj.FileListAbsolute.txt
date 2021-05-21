@@ -1,0 +1,33 @@
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.exe
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.deps.json
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.runtimeconfig.json
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.runtimeconfig.dev.json
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\ref\345 Launcher - Core.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\345 Launcher - Core.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\CmlLib.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\SevenZip.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\ICSharpCode.SharpZipLib.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.csproj.AssemblyReference.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.AssemblyInfoInputs.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.AssemblyInfo.cs
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.csproj.CoreCompileInputs.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.csproj.CopyComplete
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\ref\345 Launcher - Core.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.pdb
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\obj\Debug\net5.0\345 Launcher - Core.genruntimeconfig.cache
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\Figgle.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\System.Security.Permissions.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\System.Windows.Extensions.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Mehmetali345\source\repos\345 Launcher - Core\345 Launcher - Core\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll

@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Mehmetali345\\Desktop\\345 Launcher - Core\\345 Launcher - Core.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Mehmetali345\\Desktop\\345 Launcher - Core\\345 Launcher - Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mehmetali345\\Desktop\\345 Launcher - Core\\345 Launcher - Core.csproj",
+        "projectName": "345 Launcher - Core",
+        "projectPath": "C:\\Users\\Mehmetali345\\Desktop\\345 Launcher - Core\\345 Launcher - Core.csproj",
+        "packagesPath": "C:\\Users\\Mehmetali345\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehmetali345\\Desktop\\345 Launcher - Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mehmetali345\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Figgle": {
+              "target": "Package",
+              "version": "[0.4.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300-preview.21228.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
