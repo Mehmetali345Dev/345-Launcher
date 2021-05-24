@@ -112,135 +112,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Re-Write\Localization\LocalizationBase.cs" />
-    <Compile Include="Re-Write\Localization\LocalizationHelper.cs" />
-    <Compile Include="Re-Write\Login_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\Login_Form.Designer.cs">
-      <DependentUpon>Login_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\Main_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\Main_Form.Designer.cs">
-      <DependentUpon>Main_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\PathForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\PathForm.Designer.cs">
-      <DependentUpon>PathForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\SettingsForms\Settings_Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\SettingsForms\Settings_Info.Designer.cs">
-      <DependentUpon>Settings_Info.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\SettingsForms\Settings_Minecraft.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\SettingsForms\Settings_Minecraft.Designer.cs">
-      <DependentUpon>Settings_Minecraft.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\Splash_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Re-Write\Splash_Form.Designer.cs">
-      <DependentUpon>Splash_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Re-Write\Utils\Settings.cs" />
-    <Compile Include="Re-Write\Utils\Util.cs" />
-    <Compile Include="Source\Form_Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Form_Info.Designer.cs">
-      <DependentUpon>Form_Info.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\JavaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\JavaForm.Designer.cs">
-      <DependentUpon>JavaForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Localization\LocalizationBase.cs" />
     <Compile Include="Source\Localization\LocalizationHelper.cs" />
-    <Compile Include="Source\Login.cs">
+    <Compile Include="Source\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Source\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\MainForm.cs">
+    <Compile Include="Source\Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Source\Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Mods.cs">
+    <Compile Include="Source\SettingsForms\Settings_Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Mods.Designer.cs">
-      <DependentUpon>Mods.cs</DependentUpon>
+    <Compile Include="Source\SettingsForms\Settings_Info.Designer.cs">
+      <DependentUpon>Settings_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\PathForm.cs">
+    <Compile Include="Source\SettingsForms\Settings_Minecraft.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\PathForm.Designer.cs">
-      <DependentUpon>PathForm.cs</DependentUpon>
+    <Compile Include="Source\SettingsForms\Settings_Minecraft.Designer.cs">
+      <DependentUpon>Settings_Minecraft.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Splash.cs">
+    <Compile Include="Source\Splash_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Splash.Designer.cs">
-      <DependentUpon>Splash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Update.Designer.cs">
-      <DependentUpon>Update.cs</DependentUpon>
+    <Compile Include="Source\Splash_Form.Designer.cs">
+      <DependentUpon>Splash_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Utils\Settings.cs" />
     <Compile Include="Source\Utils\Util.cs" />
-    <EmbeddedResource Include="Re-Write\Login_Form.resx">
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Source\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Re-Write\Main_Form.resx">
+    <EmbeddedResource Include="Source\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Re-Write\PathForm.resx">
-      <DependentUpon>PathForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Re-Write\SettingsForms\Settings_Info.resx">
+    <EmbeddedResource Include="Source\SettingsForms\Settings_Info.resx">
       <DependentUpon>Settings_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Re-Write\SettingsForms\Settings_Minecraft.resx">
+    <EmbeddedResource Include="Source\SettingsForms\Settings_Minecraft.resx">
       <DependentUpon>Settings_Minecraft.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Re-Write\Splash_Form.resx">
+    <EmbeddedResource Include="Source\Splash_Form.resx">
       <DependentUpon>Splash_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Form_Info.resx">
-      <DependentUpon>Form_Info.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\JavaForm.resx">
-      <DependentUpon>JavaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Mods.resx">
-      <DependentUpon>Mods.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\PathForm.resx">
-      <DependentUpon>PathForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -252,12 +173,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Source\Splash.resx">
-      <DependentUpon>Splash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Update.resx">
-      <DependentUpon>Update.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Languages\Turkish.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -290,7 +205,7 @@
     <None Include="Resources\icons8_website_52px.png" />
     <None Include="Resources\icons8_github_52px.png" />
     <None Include="Resources\icons8_donate_52px.png" />
-    <None Include="New Resources\icons8_minecraft_logo_52px.png" />
+    <None Include="Resources\icons8_minecraft_logo_52px.png" />
     <None Include="Resources\icons8_shopping_bag_52px.png" />
     <None Include="Resources\icons8_available_updates_52px.png" />
     <None Include="Resources\icons8_support_52px_2.png" />
@@ -327,6 +242,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="New Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

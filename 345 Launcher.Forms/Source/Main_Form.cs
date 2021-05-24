@@ -1,4 +1,4 @@
-﻿using _345_Launcher.Re_Write.SettingsForms;
+﻿using _345_Launcher.Source.SettingsForms;
 using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Downloader;
@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace _345_Launcher.Re_Write
+namespace _345_Launcher.Source
 {
     public partial class Main_Form : Form
     {

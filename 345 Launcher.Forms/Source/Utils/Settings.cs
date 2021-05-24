@@ -1,17 +1,14 @@
 ﻿using _345_Launcher.Source.Localization;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _345_Launcher.Source.Utils
 {
     class Settings
     {
         public string Language = "";
+
 
         public static string GetSettingsFilename()
         {
@@ -30,8 +27,6 @@ namespace _345_Launcher.Source.Utils
             var serialized = JsonConvert.SerializeObject(settings);
             var file = GetSettingsFilename();
 
-            if (File.Exists(file))
-                File.Delete(file);
 
             File.WriteAllText(file, serialized);
 

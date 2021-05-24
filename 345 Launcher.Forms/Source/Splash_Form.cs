@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace _345_Launcher.Re_Write
+namespace _345_Launcher.Source
 {
     public partial class Splash_Form : Form
     {

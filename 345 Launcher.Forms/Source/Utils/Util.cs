@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace _345_Launcher
+namespace _345_Launcher.Source.Utils
 {
     public class Util
     {
