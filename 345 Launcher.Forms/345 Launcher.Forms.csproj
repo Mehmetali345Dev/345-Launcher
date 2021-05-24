@@ -126,11 +126,23 @@
     <Compile Include="Re-Write\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Re-Write\PathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Re-Write\PathForm.Designer.cs">
+      <DependentUpon>PathForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Re-Write\SettingsForms\Settings_Info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Re-Write\SettingsForms\Settings_Info.Designer.cs">
       <DependentUpon>Settings_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Re-Write\SettingsForms\Settings_Minecraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Re-Write\SettingsForms\Settings_Minecraft.Designer.cs">
+      <DependentUpon>Settings_Minecraft.cs</DependentUpon>
     </Compile>
     <Compile Include="Re-Write\Splash_Form.cs">
       <SubType>Form</SubType>
@@ -200,8 +212,14 @@
     <EmbeddedResource Include="Re-Write\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Re-Write\PathForm.resx">
+      <DependentUpon>PathForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Re-Write\SettingsForms\Settings_Info.resx">
       <DependentUpon>Settings_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Re-Write\SettingsForms\Settings_Minecraft.resx">
+      <DependentUpon>Settings_Minecraft.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Re-Write\Splash_Form.resx">
       <DependentUpon>Splash_Form.cs</DependentUpon>

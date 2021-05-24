@@ -13,6 +13,7 @@ namespace _345_Launcher.Re_Write
         public Splash_Form()
         {
             InitializeComponent();
+            Properties.Settings.Default.Upgrade();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace _345_Launcher.Re_Write
             {
                 if(Properties.Settings.Default.Remember == true)
                 {
+                    timer1.Stop();
                     Main_Form main = new Main_Form();
                     main.LabelText = Properties.Settings.Default.UserName;
                     this.Hide();

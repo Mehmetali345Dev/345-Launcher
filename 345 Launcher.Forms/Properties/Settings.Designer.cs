@@ -110,12 +110,24 @@ namespace _345_Launcher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string McPath {
+        public string JVM {
             get {
-                return ((string)(this["McPath"]));
+                return ((string)(this["JVM"]));
             }
             set {
-                this["McPath"] = value;
+                this["JVM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool fs {
+            get {
+                return ((bool)(this["fs"]));
+            }
+            set {
+                this["fs"] = value;
             }
         }
     }
