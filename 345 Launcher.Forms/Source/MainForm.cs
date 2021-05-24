@@ -24,6 +24,7 @@ namespace _345_Launcher
     {
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int conn, int val);
+
         public DiscordRpcClient client;
 
         public MainForm()

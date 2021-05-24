@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using _345_Launcher.Re_Write;
 
 namespace _345_Launcher
 {
@@ -13,7 +14,7 @@ namespace _345_Launcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new splash());
+            Application.Run(new Main_Form());
         }
 
     }

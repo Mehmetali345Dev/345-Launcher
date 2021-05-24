@@ -103,6 +103,16 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_available_updates_52px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_available_updates_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_32px_2 {
             get {
                 object obj = ResourceManager.GetObject("icons8_cancel_32px_2", resourceCulture);
@@ -133,6 +143,16 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_52px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_exit_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_globe_48px {
             get {
                 object obj = ResourceManager.GetObject("icons8_globe_48px", resourceCulture);
@@ -143,9 +163,39 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_info_52px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_info_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_info_96px {
             get {
                 object obj = ResourceManager.GetObject("icons8_info_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_minecraft_logo_52px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_minecraft_logo_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_minecraft_sword_96px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_minecraft_sword_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +233,49 @@ namespace _345_Launcher.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap tascraft2 {
+        internal static System.Drawing.Bitmap icons8_settings_96px {
             get {
-                object obj = ResourceManager.GetObject("tascraft2", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_settings_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_shopping_bag_52px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_shopping_bag_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_support_52px_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_support_52px_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap SplashBanner {
+            get {
+                object obj = ResourceManager.GetObject("SplashBanner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap steve {
+            get {
+                object obj = ResourceManager.GetObject("steve", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +286,6 @@ namespace _345_Launcher.Properties {
         internal static System.Drawing.Bitmap wallpaper {
             get {
                 object obj = ResourceManager.GetObject("wallpaper", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap xxxxxxxx {
-            get {
-                object obj = ResourceManager.GetObject("xxxxxxxx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
