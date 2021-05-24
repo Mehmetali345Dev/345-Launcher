@@ -51,10 +51,21 @@ namespace _345_Launcher.Re_Write
             }
             else if (guna2ProgressBar1.Value == 100)
             {
-                timer1.Stop();
-                Login_Form login = new Login_Form();
-                login.Show();
-                this.Hide();
+                if(Properties.Settings.Default.Remember == true)
+                {
+                    Main_Form main = new Main_Form();
+                    main.LabelText = Properties.Settings.Default.UserName;
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    timer1.Stop();
+                    Login_Form login = new Login_Form();
+                    login.Show();
+                    this.Hide();
+                }
+               
             }
         }
     }

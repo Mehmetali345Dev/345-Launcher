@@ -1,16 +1,11 @@
-﻿using CmlLib.Core;
+﻿using _345_Launcher.Re_Write.SettingsForms;
+using CmlLib.Core;
 using CmlLib.Core.Version;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _345_Launcher.Re_Write
@@ -153,15 +148,36 @@ namespace _345_Launcher.Re_Write
         private void InitializeLauncher(MinecraftPath path)
         {
             //initilizes mc path
-           MinecraftPath = path;
+            MinecraftPath = path;
             refreshVersions(null);
         }
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
-            var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
-            InitializeLauncher(defaultPath);
-            UserHead();
+            int Out;
+            if (InternetGetConnectedState(out Out, 0) == true)
+            {
+                webBrowser1.Navigate("https://launcher.mehmetali345.xyz/launcher.html");
+                webBrowser1.ScriptErrorsSuppressed = true;
+                webBrowser1.IsWebBrowserContextMenuEnabled = false;
+                UserHead();
+            }
+            else
+            {
+                userhead.Image = Properties.Resources.steve;
+                noint_picturebox.Visible = true;
+                noint_picturebox.Image = Properties.Resources.nointbg;
+            }
+            if (Properties.Settings.Default.McPath != null)
+            {
+                var custompath = new MinecraftPath(Properties.Settings.Default.McPath);
+                InitializeLauncher(custompath);
+            }
+            else
+            {
+                var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
+                InitializeLauncher(defaultPath);
+            }
         }
 
         private void snapbox_CheckedChanged(object sender, EventArgs e)
@@ -173,7 +189,7 @@ namespace _345_Launcher.Re_Write
         {
             var request = WebRequest.Create("https://minotar.net/helm/" + username_lbl.Text);
             using (var response = request.GetResponse())
-            using(var stream = response.GetResponseStream())
+            using (var stream = response.GetResponseStream())
             {
                 userhead.Image = Bitmap.FromStream(stream);
             }
@@ -184,7 +200,38 @@ namespace _345_Launcher.Re_Write
             if (pnl_settings.Visible == false)
                 guna2Transition1.ShowSync(pnl_settings, false);
             else
-                guna2Transition1.ShowSync(pnl_settings, true);
+                pnl_settings.Visible = false;
+        }
+
+        private void info_button_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings_show.Visible == false)
+            {
+                Settings_Info frm = new Settings_Info() { TopLevel = false, TopMost = true };
+
+                this.pnl_settings_show.Controls.Add(frm);
+
+                frm.Show();
+
+                webBrowser1.Width = 737;
+
+                guna2Transition1.ShowSync(pnl_settings_show, false);
+
+            }
+            else
+            {
+                pnl_settings_show.Visible = false;
+
+                pnl_settings_show.Controls.Clear();
+
+            }
+
+
+        }
+
+        private void btn_Launch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

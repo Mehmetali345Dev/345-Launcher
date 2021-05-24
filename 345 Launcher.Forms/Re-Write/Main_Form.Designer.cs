@@ -30,13 +30,12 @@ namespace _345_Launcher.Re_Write
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pnl_settings_show = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.set_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -49,19 +48,22 @@ namespace _345_Launcher.Re_Write
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_settings = new System.Windows.Forms.Panel();
+            this.up_Button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.launcherset_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.modmark_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.info_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.mcset_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.noint_picturebox = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.info_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.modmark_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.launcherset_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.up_Button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnl_settings_show = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userhead)).BeginInit();
             this.panel4.SuspendLayout();
             this.pnl_settings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noint_picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,16 +115,6 @@ namespace _345_Launcher.Re_Write
             this.guna2ImageButton1.Size = new System.Drawing.Size(30, 30);
             this.guna2ImageButton1.TabIndex = 1;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
-            // 
-            // pnl_settings_show
-            // 
-            this.pnl_settings_show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Transition1.SetDecoration(this.pnl_settings_show, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnl_settings_show.Location = new System.Drawing.Point(737, 0);
-            this.pnl_settings_show.Name = "pnl_settings_show";
-            this.pnl_settings_show.Size = new System.Drawing.Size(326, 392);
-            this.pnl_settings_show.TabIndex = 4;
-            this.pnl_settings_show.Visible = false;
             // 
             // panel2
             // 
@@ -216,6 +208,7 @@ namespace _345_Launcher.Re_Write
             this.btn_Launch.Size = new System.Drawing.Size(419, 50);
             this.btn_Launch.TabIndex = 4;
             this.btn_Launch.Text = "Oyna";
+            this.btn_Launch.Click += new System.EventHandler(this.btn_Launch_Click);
             // 
             // username_lbl
             // 
@@ -264,28 +257,29 @@ namespace _345_Launcher.Re_Write
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.pnl_settings);
             this.panel4.Controls.Add(this.pnl_settings_show);
+            this.panel4.Controls.Add(this.pnl_settings);
+            this.panel4.Controls.Add(this.noint_picturebox);
             this.panel4.Controls.Add(this.webBrowser1);
             this.guna2Transition1.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -306,50 +300,34 @@ namespace _345_Launcher.Re_Write
             this.pnl_settings.Location = new System.Drawing.Point(1063, 0);
             this.pnl_settings.Name = "pnl_settings";
             this.pnl_settings.Size = new System.Drawing.Size(56, 392);
-            this.pnl_settings.TabIndex = 1;
+            this.pnl_settings.TabIndex = 4;
             this.pnl_settings.Visible = false;
             // 
-            // mcset_button
+            // up_Button
             // 
-            this.mcset_button.CheckedState.Parent = this.mcset_button;
-            this.guna2Transition1.SetDecoration(this.mcset_button, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.mcset_button.HoverState.Parent = this.mcset_button;
-            this.mcset_button.Image = global::_345_Launcher.Properties.Resources.icons8_minecraft_logo_52px;
-            this.mcset_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.mcset_button.Location = new System.Drawing.Point(4, 6);
-            this.mcset_button.Name = "mcset_button";
-            this.mcset_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.mcset_button.PressedState.Parent = this.mcset_button;
-            this.mcset_button.Size = new System.Drawing.Size(46, 46);
-            this.mcset_button.TabIndex = 0;
+            this.up_Button.CheckedState.Parent = this.up_Button;
+            this.guna2Transition1.SetDecoration(this.up_Button, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.up_Button.HoverState.Parent = this.up_Button;
+            this.up_Button.Image = global::_345_Launcher.Properties.Resources.icons8_available_updates_52px;
+            this.up_Button.Location = new System.Drawing.Point(19, 225);
+            this.up_Button.Name = "up_Button";
+            this.up_Button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.up_Button.PressedState.Parent = this.up_Button;
+            this.up_Button.Size = new System.Drawing.Size(20, 20);
+            this.up_Button.TabIndex = 4;
             // 
-            // webBrowser1
+            // launcherset_button
             // 
-            this.guna2Transition1.SetDecoration(this.webBrowser1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1119, 392);
-            this.webBrowser1.TabIndex = 0;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this.panel1;
-            // 
-            // info_button
-            // 
-            this.info_button.CheckedState.Parent = this.info_button;
-            this.guna2Transition1.SetDecoration(this.info_button, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.info_button.HoverState.Parent = this.info_button;
-            this.info_button.Image = global::_345_Launcher.Properties.Resources.icons8_info_96px;
-            this.info_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.info_button.Location = new System.Drawing.Point(4, 341);
-            this.info_button.Name = "info_button";
-            this.info_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.info_button.PressedState.Parent = this.info_button;
-            this.info_button.Size = new System.Drawing.Size(46, 46);
-            this.info_button.TabIndex = 1;
+            this.launcherset_button.CheckedState.Parent = this.launcherset_button;
+            this.guna2Transition1.SetDecoration(this.launcherset_button, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.launcherset_button.HoverState.Parent = this.launcherset_button;
+            this.launcherset_button.Image = global::_345_Launcher.Properties.Resources.icons8_support_52px_2;
+            this.launcherset_button.Location = new System.Drawing.Point(18, 255);
+            this.launcherset_button.Name = "launcherset_button";
+            this.launcherset_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.launcherset_button.PressedState.Parent = this.launcherset_button;
+            this.launcherset_button.Size = new System.Drawing.Size(20, 20);
+            this.launcherset_button.TabIndex = 3;
             // 
             // modmark_button
             // 
@@ -365,31 +343,69 @@ namespace _345_Launcher.Re_Write
             this.modmark_button.Size = new System.Drawing.Size(46, 46);
             this.modmark_button.TabIndex = 2;
             // 
-            // launcherset_button
+            // info_button
             // 
-            this.launcherset_button.CheckedState.Parent = this.launcherset_button;
-            this.guna2Transition1.SetDecoration(this.launcherset_button, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.launcherset_button.HoverState.Parent = this.launcherset_button;
-            this.launcherset_button.Image = global::_345_Launcher.Properties.Resources.icons8_support_52px_2;
-            this.launcherset_button.Location = new System.Drawing.Point(18, 255);
-            this.launcherset_button.Name = "launcherset_button";
-            this.launcherset_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.launcherset_button.PressedState.Parent = this.launcherset_button;
-            this.launcherset_button.Size = new System.Drawing.Size(20, 20);
-            this.launcherset_button.TabIndex = 3;
+            this.info_button.CheckedState.Parent = this.info_button;
+            this.guna2Transition1.SetDecoration(this.info_button, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.info_button.HoverState.Parent = this.info_button;
+            this.info_button.Image = global::_345_Launcher.Properties.Resources.icons8_info_96px;
+            this.info_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.info_button.Location = new System.Drawing.Point(4, 341);
+            this.info_button.Name = "info_button";
+            this.info_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.info_button.PressedState.Parent = this.info_button;
+            this.info_button.Size = new System.Drawing.Size(46, 46);
+            this.info_button.TabIndex = 1;
             // 
-            // up_Button
+            // mcset_button
             // 
-            this.up_Button.CheckedState.Parent = this.up_Button;
-            this.guna2Transition1.SetDecoration(this.up_Button, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.up_Button.HoverState.Parent = this.up_Button;
-            this.up_Button.Image = global::_345_Launcher.Properties.Resources.icons8_available_updates_52px;
-            this.up_Button.Location = new System.Drawing.Point(19, 225);
-            this.up_Button.Name = "up_Button";
-            this.up_Button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.up_Button.PressedState.Parent = this.up_Button;
-            this.up_Button.Size = new System.Drawing.Size(20, 20);
-            this.up_Button.TabIndex = 4;
+            this.mcset_button.CheckedState.Parent = this.mcset_button;
+            this.guna2Transition1.SetDecoration(this.mcset_button, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.mcset_button.HoverState.Parent = this.mcset_button;
+            this.mcset_button.Image = global::_345_Launcher.Properties.Resources.icons8_minecraft_logo_52px;
+            this.mcset_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.mcset_button.Location = new System.Drawing.Point(4, 6);
+            this.mcset_button.Name = "mcset_button";
+            this.mcset_button.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.mcset_button.PressedState.Parent = this.mcset_button;
+            this.mcset_button.Size = new System.Drawing.Size(46, 46);
+            this.mcset_button.TabIndex = 0;
+            // 
+            // noint_picturebox
+            // 
+            this.noint_picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.noint_picturebox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.noint_picturebox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noint_picturebox.Location = new System.Drawing.Point(0, 0);
+            this.noint_picturebox.Name = "noint_picturebox";
+            this.noint_picturebox.Size = new System.Drawing.Size(1119, 392);
+            this.noint_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.noint_picturebox.TabIndex = 3;
+            this.noint_picturebox.TabStop = false;
+            this.noint_picturebox.Visible = false;
+            // 
+            // webBrowser1
+            // 
+            this.guna2Transition1.SetDecoration(this.webBrowser1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1119, 392);
+            this.webBrowser1.TabIndex = 0;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this.panel1;
+            // 
+            // pnl_settings_show
+            // 
+            this.pnl_settings_show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.guna2Transition1.SetDecoration(this.pnl_settings_show, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnl_settings_show.Location = new System.Drawing.Point(737, 0);
+            this.pnl_settings_show.Name = "pnl_settings_show";
+            this.pnl_settings_show.Size = new System.Drawing.Size(326, 392);
+            this.pnl_settings_show.TabIndex = 5;
             // 
             // Main_Form
             // 
@@ -415,6 +431,7 @@ namespace _345_Launcher.Re_Write
             ((System.ComponentModel.ISupportInitialize)(this.userhead)).EndInit();
             this.panel4.ResumeLayout(false);
             this.pnl_settings.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.noint_picturebox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,15 +452,16 @@ namespace _345_Launcher.Re_Write
         private Guna.UI2.WinForms.Guna2CheckBox snapbox;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Panel pnl_settings_show;
         private Guna.UI2.WinForms.Guna2ImageButton set_button;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnl_settings;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private Guna.UI2.WinForms.Guna2ImageButton mcset_button;
+        private System.Windows.Forms.PictureBox noint_picturebox;
+        private System.Windows.Forms.Panel pnl_settings;
+        private Guna.UI2.WinForms.Guna2ImageButton up_Button;
+        private Guna.UI2.WinForms.Guna2ImageButton launcherset_button;
         private Guna.UI2.WinForms.Guna2ImageButton modmark_button;
         private Guna.UI2.WinForms.Guna2ImageButton info_button;
-        private Guna.UI2.WinForms.Guna2ImageButton launcherset_button;
-        private Guna.UI2.WinForms.Guna2ImageButton up_Button;
+        private Guna.UI2.WinForms.Guna2ImageButton mcset_button;
+        private System.Windows.Forms.Panel pnl_settings_show;
     }
 }

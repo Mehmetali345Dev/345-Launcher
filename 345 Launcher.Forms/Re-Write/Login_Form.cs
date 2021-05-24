@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using _345_Launcher.Re__Write.Utils;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _345_Launcher.Re_Write
@@ -15,6 +10,8 @@ namespace _345_Launcher.Re_Write
         public Login_Form()
         {
             InitializeComponent();
+
+            InitData();
         }
 
         private const int cGrip = 16;
@@ -45,11 +42,29 @@ namespace _345_Launcher.Re_Write
             Application.Exit();
         }
 
+        private void InitData()
+        {
+            if (Properties.Settings.Default.Remember == true)
+            {
+                guna2CheckBox1.Checked = true;
+                guna2TextBox1.Text = Properties.Settings.Default.UserName;
+            }
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Main_Form main = new Main_Form();
+
             main.LabelText = guna2TextBox1.Text;
+
             main.Show();
+
+            if (guna2CheckBox1.Checked == true)
+            {
+                Properties.Settings.Default.UserName = guna2TextBox1.Text;
+                Properties.Settings.Default.Remember = true;
+                Properties.Settings.Default.Save();
+            }
+
             this.Hide();
         }
     }

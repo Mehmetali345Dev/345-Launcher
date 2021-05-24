@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _345_Launcher.Re_Write.Custom_Controls
+namespace _345_Launcher.ModMarket
 {
-    public partial class PlayButton : UserControl
+    public partial class Login_Form : Form
     {
-        public PlayButton()
+        public Login_Form()
         {
             InitializeComponent();
         }

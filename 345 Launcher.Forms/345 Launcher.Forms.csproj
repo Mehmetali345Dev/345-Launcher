@@ -112,12 +112,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Re-Write\Custom Controls\PlayButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Re-Write\Custom Controls\PlayButton.Designer.cs">
-      <DependentUpon>PlayButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="Re-Write\Localization\LocalizationBase.cs" />
     <Compile Include="Re-Write\Localization\LocalizationHelper.cs" />
     <Compile Include="Re-Write\Login_Form.cs">
@@ -131,6 +125,12 @@
     </Compile>
     <Compile Include="Re-Write\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Re-Write\SettingsForms\Settings_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Re-Write\SettingsForms\Settings_Info.Designer.cs">
+      <DependentUpon>Settings_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="Re-Write\Splash_Form.cs">
       <SubType>Form</SubType>
@@ -194,14 +194,14 @@
     </Compile>
     <Compile Include="Source\Utils\Settings.cs" />
     <Compile Include="Source\Utils\Util.cs" />
-    <EmbeddedResource Include="Re-Write\Custom Controls\PlayButton.resx">
-      <DependentUpon>PlayButton.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Re-Write\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Re-Write\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Re-Write\SettingsForms\Settings_Info.resx">
+      <DependentUpon>Settings_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Re-Write\Splash_Form.resx">
       <DependentUpon>Splash_Form.cs</DependentUpon>
@@ -268,6 +268,10 @@
     <Content Include="Assets\345launcher4x.jpg" />
     <Content Include="Assets\Guna.UI2.dll" />
     <Content Include="Assets\icons8_cancel_32px_2.png" />
+    <None Include="Resources\nointbg.jpg" />
+    <None Include="Resources\icons8_website_52px.png" />
+    <None Include="Resources\icons8_github_52px.png" />
+    <None Include="Resources\icons8_donate_52px.png" />
     <None Include="New Resources\icons8_minecraft_logo_52px.png" />
     <None Include="Resources\icons8_shopping_bag_52px.png" />
     <None Include="Resources\icons8_available_updates_52px.png" />
@@ -280,7 +284,6 @@
     <None Include="Assets\SplashBanner.png" />
     <None Include="Assets\steve.png" />
     <Content Include="Assets\wallpaper.png" />
-    <None Include="New Resources\icons8_exit_52px.png" />
     <None Include="Resources\icons8_minimize_window_48px_2.png" />
     <None Include="Resources\icons8_minimize_window_48px_1.png" />
     <None Include="Resources\icons8_close_window_48px.png" />

@@ -21,13 +21,6 @@ namespace _345_Launcher
         public Update()
         {
             InitializeComponent();
-            if(Properties.Settings.Default.langtr == false)
-            {
-                gün_but.Text = "Update";
-                label3.Text = "File downloads same path with application locates.";
-                label4.Text = "When download finish delete old file and open new file.";
-                //English Language
-            }
         }
 
         

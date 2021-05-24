@@ -8,7 +8,7 @@ namespace _345_Launcher.Re__Write.Utils
     class Settings
     {
         public string Language = "";
-        public bool RPC = true;
+
 
         public static string GetSettingsFilename()
         {
@@ -27,8 +27,6 @@ namespace _345_Launcher.Re__Write.Utils
             var serialized = JsonConvert.SerializeObject(settings);
             var file = GetSettingsFilename();
 
-            if (File.Exists(file))
-                File.Delete(file);
 
             File.WriteAllText(file, serialized);
 
