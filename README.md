@@ -42,12 +42,20 @@ and open 345 Launcher.sln.
 **Third:**
 Right Click the soluton from Solution Explorer --> Restore NuGet Packages
 # Plans
- - Authtentication
+ - **Authtentication**
  - [x] Offline Login
  - [ ] Online Login
  - [ ] Microsoft Login
-# Localization
+ - [ ] Multiple Account
+- **Localization**
  - [x] JSON Localizer for multiple languages
+- **UI**
+- [x] Renew UI
+# Plans.Core
+- [x] Menu for Core Launcher
+- [ ] Mojang Authtentication
+# Plans.ModMarket
+- [ ] Curseforge integration
 
  # Contributing, License and Sponsorship
  This project is not ready for public contributing.
