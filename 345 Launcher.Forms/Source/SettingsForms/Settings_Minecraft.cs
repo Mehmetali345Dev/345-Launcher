@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using _345_Launcher.Re_Write;
+using _345_Launcher.Source;
 using CmlLib.Core;
 
-namespace _345_Launcher.Re_Write.SettingsForms
+namespace _345_Launcher.Source.SettingsForms
 {
     public partial class Settings_Minecraft : Form
     {

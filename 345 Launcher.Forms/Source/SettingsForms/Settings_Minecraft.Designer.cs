@@ -1,5 +1,5 @@
 ﻿
-namespace _345_Launcher.Re_Write.SettingsForms
+namespace _345_Launcher.Source.SettingsForms
 {
     partial class Settings_Minecraft
     {

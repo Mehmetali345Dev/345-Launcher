@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _345_Launcher.Re_Write.SettingsForms
+namespace _345_Launcher.Source.SettingsForms
 {
     public partial class Settings_Info : Form
     {

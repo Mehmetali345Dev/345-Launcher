@@ -57,6 +57,11 @@ namespace _345_Launcher.Source
         #endregion
 
         #region Button etc. events
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            Thanks_Form thx = new Thanks_Form();
+            thx.Show();
+        }
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
@@ -89,18 +94,7 @@ namespace _345_Launcher.Source
             refreshVersions(null);
         }
 
-        private void set_button_Click(object sender, EventArgs e)
-        {
-            if (pnl_settings.Visible == false)
-                guna2Transition1.ShowSync(pnl_settings, false);
-            else
-            {
-                pnl_settings.Visible = false;
-                pnl_settings_show.Controls.Clear();
-                pnl_settings_show.Visible = false;
-            }
-            befmenu = false;
-        }
+       
 
         private void info_button_Click(object sender, EventArgs e)
         {
@@ -337,7 +331,6 @@ namespace _345_Launcher.Source
 
         #endregion
 
-
         #region GameEvents
 
         private void UpdateSession(MSession session)
@@ -510,11 +503,64 @@ namespace _345_Launcher.Source
             process.BeginOutputReadLine();
             //Arguments text
         }
+
+
+
+
         #endregion
 
+        private void launcherset_button_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings_show.Visible == false)
+            {
+                Settings_Launcher frm = new Settings_Launcher() { TopLevel = false, TopMost = true };
+
+                this.pnl_settings_show.Controls.Add(frm);
+
+                frm.Show();
+
+                guna2Transition1.ShowSync(pnl_settings_show, false);
+
+                befmenu = true;
+            }
+            else
+            {
+                if (befmenu == true)
+                {
+                    Settings_Launcher frm = new Settings_Launcher() { TopLevel = false, TopMost = true };
+
+                    this.pnl_settings_show.Controls.Add(frm);
+
+                    frm.Show();
+
+                    guna2Transition1.ShowSync(pnl_settings_show, false);
+
+                    befmenu = true;
+                }
+                else
+                {
+                    pnl_settings_show.Visible = false;
+
+                    pnl_settings_show.Controls.Clear();
+
+                    befmenu = false;
+                }
 
 
+            }
+        }
 
-
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings.Visible == false)
+                guna2Transition1.ShowSync(pnl_settings, false);
+            else
+            {
+                pnl_settings.Visible = false;
+                pnl_settings_show.Controls.Clear();
+                pnl_settings_show.Visible = false;
+            }
+            befmenu = false;
+        }
     }
 }

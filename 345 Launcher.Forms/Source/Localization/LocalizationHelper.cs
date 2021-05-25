@@ -17,7 +17,10 @@ namespace _345_Launcher.Source.Localization
 
         public static string[] GetLanguages()
         {
-            return Directory.Exists(LocalFolder) ? Directory.GetFiles(LocalFolder) : new[] { "" };
+            return Directory.Exists(LocalFolder) ? Directory.GetFiles(LocalFolder)
+                .Select(Path.GetFileNameWithoutExtension)
+                .ToArray()
+                : new[] { "" };
         }
 
         public static void Load(string path)

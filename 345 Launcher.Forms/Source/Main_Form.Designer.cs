@@ -30,14 +30,16 @@ namespace _345_Launcher.Source
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.set_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
             this.snapbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbVersion = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btn_Launch = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +51,7 @@ namespace _345_Launcher.Source
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_settings_show = new System.Windows.Forms.Panel();
             this.pnl_settings = new System.Windows.Forms.Panel();
+            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.up_Button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.launcherset_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.modmark_button = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -57,8 +60,6 @@ namespace _345_Launcher.Source
             this.noint_picturebox = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,9 +121,9 @@ namespace _345_Launcher.Source
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.guna2ImageButton3);
             this.panel2.Controls.Add(this.progressBar1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.set_button);
             this.panel2.Controls.Add(this.snapbox);
             this.panel2.Controls.Add(this.cbVersion);
             this.panel2.Controls.Add(this.btn_Launch);
@@ -137,20 +138,39 @@ namespace _345_Launcher.Source
             this.panel2.Size = new System.Drawing.Size(1119, 90);
             this.panel2.TabIndex = 2;
             // 
-            // set_button
+            // guna2ImageButton3
             // 
-            this.set_button.CheckedState.Parent = this.set_button;
-            this.guna2Transition1.SetDecoration(this.set_button, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.set_button.HoverState.Parent = this.set_button;
-            this.set_button.Image = global::_345_Launcher.Properties.Resources.icons8_settings_48px;
-            this.set_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.set_button.Location = new System.Drawing.Point(1067, 27);
-            this.set_button.Name = "set_button";
-            this.set_button.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.set_button.PressedState.Parent = this.set_button;
-            this.set_button.Size = new System.Drawing.Size(40, 40);
-            this.set_button.TabIndex = 6;
-            this.set_button.Click += new System.EventHandler(this.set_button_Click);
+            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
+            this.guna2Transition1.SetDecoration(this.guna2ImageButton3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Image = global::_345_Launcher.Properties.Resources.icons8_settings_48px;
+            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(1068, 28);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Size = new System.Drawing.Size(40, 40);
+            this.guna2ImageButton3.TabIndex = 10;
+            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            // 
+            // progressBar1
+            // 
+            this.guna2Transition1.SetDecoration(this.progressBar1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBar1.Location = new System.Drawing.Point(0, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(1119, 10);
+            this.progressBar1.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(347, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Hazır!";
             // 
             // snapbox
             // 
@@ -261,22 +281,22 @@ namespace _345_Launcher.Source
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Transparent;
             this.guna2Transition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 1F;
-            this.guna2Transition1.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.guna2Transition1.DefaultAnimation = animation1;
             // 
             // panel4
             // 
@@ -305,6 +325,7 @@ namespace _345_Launcher.Source
             // pnl_settings
             // 
             this.pnl_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pnl_settings.Controls.Add(this.guna2ImageButton2);
             this.pnl_settings.Controls.Add(this.up_Button);
             this.pnl_settings.Controls.Add(this.launcherset_button);
             this.pnl_settings.Controls.Add(this.modmark_button);
@@ -316,6 +337,20 @@ namespace _345_Launcher.Source
             this.pnl_settings.Size = new System.Drawing.Size(56, 392);
             this.pnl_settings.TabIndex = 4;
             this.pnl_settings.Visible = false;
+            // 
+            // guna2ImageButton2
+            // 
+            this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
+            this.guna2Transition1.SetDecoration(this.guna2ImageButton2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
+            this.guna2ImageButton2.Location = new System.Drawing.Point(19, 199);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.Size = new System.Drawing.Size(20, 20);
+            this.guna2ImageButton2.TabIndex = 5;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
             // up_Button
             // 
@@ -342,6 +377,7 @@ namespace _345_Launcher.Source
             this.launcherset_button.PressedState.Parent = this.launcherset_button;
             this.launcherset_button.Size = new System.Drawing.Size(20, 20);
             this.launcherset_button.TabIndex = 3;
+            this.launcherset_button.Click += new System.EventHandler(this.launcherset_button_Click);
             // 
             // modmark_button
             // 
@@ -414,26 +450,6 @@ namespace _345_Launcher.Source
             // 
             this.guna2DragControl1.TargetControl = this.panel1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(347, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Hazır!";
-            // 
-            // progressBar1
-            // 
-            this.guna2Transition1.SetDecoration(this.progressBar1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar1.Location = new System.Drawing.Point(0, 0);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1119, 10);
-            this.progressBar1.TabIndex = 9;
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -480,7 +496,6 @@ namespace _345_Launcher.Source
         private Guna.UI2.WinForms.Guna2CheckBox snapbox;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2ImageButton set_button;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.PictureBox noint_picturebox;
@@ -493,5 +508,7 @@ namespace _345_Launcher.Source
         private System.Windows.Forms.Panel pnl_settings_show;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
     }
 }

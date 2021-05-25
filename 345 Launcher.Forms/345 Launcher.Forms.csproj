@@ -132,11 +132,23 @@
     <Compile Include="Source\SettingsForms\Settings_Info.Designer.cs">
       <DependentUpon>Settings_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\SettingsForms\Settings_Launcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\SettingsForms\Settings_Launcher.Designer.cs">
+      <DependentUpon>Settings_Launcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\SettingsForms\Settings_Minecraft.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\SettingsForms\Settings_Minecraft.Designer.cs">
       <DependentUpon>Settings_Minecraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\SettingsForms\Thanks_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\SettingsForms\Thanks_Form.Designer.cs">
+      <DependentUpon>Thanks_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Splash_Form.cs">
       <SubType>Form</SubType>
@@ -157,8 +169,14 @@
     <EmbeddedResource Include="Source\SettingsForms\Settings_Info.resx">
       <DependentUpon>Settings_Info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\SettingsForms\Settings_Launcher.resx">
+      <DependentUpon>Settings_Launcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\SettingsForms\Settings_Minecraft.resx">
       <DependentUpon>Settings_Minecraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\SettingsForms\Thanks_Form.resx">
+      <DependentUpon>Thanks_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Splash_Form.resx">
       <DependentUpon>Splash_Form.cs</DependentUpon>
@@ -242,8 +260,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="New Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
