@@ -1,34 +1,37 @@
-﻿using _345_Launcher.Source.Localization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace _345_Launcher.Source.Utils
+namespace _345_Launcher___Core.Utils
 {
     class Settings
     {
-        public string Language = "";
+        public string Username;
+
+        public bool RememberMe = false;
         public static string GetSettingsFilename()
         {
-            string confpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".345launcher");
-
-            return Path.Combine(confpath, "lang_settings.json");
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lang_settings.json");
         }
 
         public static void SaveSettings(Settings settings)
         {
-            if (settings.Language.Contains("Default"))
+            if (settings.Username.Contains(""))
             {
-                settings.Language = "";
+                settings.Username = "";
+
             }
 
             var serialized = JsonConvert.SerializeObject(settings);
-            var file = GetSettingsFilename();
 
+            var file = GetSettingsFilename();
 
             File.WriteAllText(file, serialized);
 
-            LocalizationHelper.Update();
         }
 
         public static Settings LoadSettings()

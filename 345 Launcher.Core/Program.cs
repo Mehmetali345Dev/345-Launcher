@@ -30,7 +30,7 @@ namespace _345_Launcher__Core
 
             if (islogin == true)
             {
-                session = p.OfflineLogin();
+                session = p.OfflineLogin(session);
             }
             else
             {
@@ -80,7 +80,7 @@ namespace _345_Launcher__Core
             }
         }
 
-        MSession OfflineLogin()
+        MSession OfflineLogin(MSession session)
         {
             Console.WriteLine("Kullanıcı Adı Seçin:");
 
@@ -90,9 +90,6 @@ namespace _345_Launcher__Core
 
             return MSession.GetOfflineSession(username);
 
-            Console.WriteLine("Hoşgeldiniz " + username);
-
-            islogin = false;
 
         }
 
