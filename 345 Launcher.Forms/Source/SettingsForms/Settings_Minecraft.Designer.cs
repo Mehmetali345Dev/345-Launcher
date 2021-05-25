@@ -43,6 +43,7 @@ namespace _345_Launcher.Source.SettingsForms
             this.label3 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -126,6 +127,7 @@ namespace _345_Launcher.Source.SettingsForms
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(66)))), ((int)(((byte)(70)))));
+            this.guna2GroupBox1.Controls.Add(this.label6);
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Controls.Add(this.fullscreen);
             this.guna2GroupBox1.Controls.Add(this.guna2TextBox3);
@@ -283,6 +285,15 @@ namespace _345_Launcher.Source.SettingsForms
             this.label2.TabIndex = 2;
             this.label2.Text = "JVM Argümanları";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "label6";
+            // 
             // Settings_Minecraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -295,6 +306,7 @@ namespace _345_Launcher.Source.SettingsForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Settings_Minecraft";
             this.Text = "Settings_Minecraft";
+            this.Load += new System.EventHandler(this.Settings_Minecraft_Load);
             this.panel1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
@@ -321,5 +333,6 @@ namespace _345_Launcher.Source.SettingsForms
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label label6;
     }
 }

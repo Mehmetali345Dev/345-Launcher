@@ -364,6 +364,7 @@ namespace _345_Launcher.Source
             this.up_Button.PressedState.Parent = this.up_Button;
             this.up_Button.Size = new System.Drawing.Size(20, 20);
             this.up_Button.TabIndex = 4;
+            this.up_Button.Click += new System.EventHandler(this.up_Button_Click);
             // 
             // launcherset_button
             // 

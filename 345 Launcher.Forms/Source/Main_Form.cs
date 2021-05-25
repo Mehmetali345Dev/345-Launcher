@@ -1,4 +1,5 @@
 ﻿using _345_Launcher.Source.SettingsForms;
+using AutoUpdaterDotNET;
 using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Downloader;
@@ -28,14 +29,15 @@ namespace _345_Launcher.Source
 
         private const int cGrip = 16;
         private const int cCaption = 32;
-        public MinecraftPath MinecraftPath;
+        MinecraftPath MinecraftPath;
         MVersionCollection Versions;
-        private bool befmenu;
+
         string javapath;
         public string mcpathbase;
         bool useMJava = true;
         MSession Session = MSession.GetOfflineSession("345 Launcher User");
         public DiscordRpcClient client;
+        bool gameistarted = false;
 
 
         [DllImport("wininet.dll")]
@@ -57,6 +59,43 @@ namespace _345_Launcher.Source
         #endregion
 
         #region Button etc. events
+
+        private void launcherset_button_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings_show.Visible == false)
+            {
+                Settings_Launcher frm = new Settings_Launcher() { TopLevel = false, TopMost = true };
+
+                this.pnl_settings_show.Controls.Add(frm);
+
+                frm.Show();
+
+                guna2Transition1.ShowSync(pnl_settings_show, false);
+
+            }
+            else
+            {
+
+                pnl_settings_show.Visible = false;
+
+                pnl_settings_show.Controls.Clear();
+
+
+            }
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings.Visible == false)
+                guna2Transition1.ShowSync(pnl_settings, false);
+            else
+            {
+                pnl_settings.Visible = false;
+                pnl_settings_show.Controls.Clear();
+                pnl_settings_show.Visible = false;
+            }
+        }
+
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
             Thanks_Form thx = new Thanks_Form();
@@ -94,7 +133,7 @@ namespace _345_Launcher.Source
             refreshVersions(null);
         }
 
-       
+
 
         private void info_button_Click(object sender, EventArgs e)
         {
@@ -108,31 +147,13 @@ namespace _345_Launcher.Source
 
                 guna2Transition1.ShowSync(pnl_settings_show, false);
 
-                befmenu = true;
             }
             else
             {
-                if (befmenu == true)
-                {
-                    Settings_Info frm = new Settings_Info() { TopLevel = false, TopMost = true };
 
-                    this.pnl_settings_show.Controls.Add(frm);
+                pnl_settings_show.Visible = false;
 
-                    frm.Show();
-
-                    guna2Transition1.ShowSync(pnl_settings_show, false);
-
-                    befmenu = true;
-                }
-                else
-                {
-                    pnl_settings_show.Visible = false;
-
-                    pnl_settings_show.Controls.Clear();
-
-                    befmenu = false;
-                }
-
+                pnl_settings_show.Controls.Clear();
 
             }
 
@@ -141,85 +162,104 @@ namespace _345_Launcher.Source
 
         private void btn_Launch_Click(object sender, EventArgs e)
         {
-            string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
-
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
-
-            client.UpdateState($"Playing {selected}.");
-
-
-            UpdateSession(MSession.GetOfflineSession(username_lbl.Text));
-
-            if (Session == null)
+            if (gameistarted == true)
             {
-                MessageBox.Show("İlk önce giriş yap");
-                return;
+                killgame();
             }
-
-            if (cbVersion.Text == "")
+            else
             {
-                MessageBox.Show("Versiyon Seç / Select Version");
-                return;
-            }
+                gameistarted = true;
 
-            var launchOption = createLaunchOption();
-            if (launchOption == null)
-                return;
-            //Creates launch options
-            var version = cbVersion.Text;
+                string selected = this.cbVersion.GetItemText(this.cbVersion.SelectedItem);
 
-            var th = new Thread(() =>
-            {
-                try
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                FileVersionInfo versionInf = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+                client.UpdateState($"Playing {selected}.");
+
+
+                UpdateSession(MSession.GetOfflineSession(username_lbl.Text));
+
+                if (Session == null)
                 {
-                    if (useMJava)
+                    MessageBox.Show("İlk önce giriş yap");
+                    return;
+                }
+
+                if (cbVersion.Text == "")
+                {
+                    MessageBox.Show("Versiyon Seç / Select Version");
+                    return;
+                }
+
+                var launchOption = createLaunchOption();
+                if (launchOption == null)
+                    return;
+                //Creates launch options
+                var version = cbVersion.Text;
+
+                var th = new Thread(() =>
+                {
+                    try
                     {
-                        //Minecraft custom java
-                        var mjava = new MJava(MinecraftPath.Runtime);
-                        mjava.ProgressChanged += Launcher_ProgressChanged;
+                        if (useMJava)
+                        {
+                            //Minecraft custom java
+                            var mjava = new MJava(MinecraftPath.Runtime);
+                            mjava.ProgressChanged += Launcher_ProgressChanged;
 
-                        var javapath = mjava.CheckJava();
-                        launchOption.JavaPath = javapath;
+                            var javapath = mjava.CheckJava();
+                            launchOption.JavaPath = javapath;
+                        }
+                        else
+                        {
+                            launchOption.JavaPath = javapath;
+                        }
+
+                        MVersion versionInfo = Versions.GetVersion(version);
+                        launchOption.StartVersion = versionInfo;
+
+                        MDownloader downloader;
+                        downloader = new MDownloader(MinecraftPath, versionInfo);
+
+                        downloader.ChangeFile += Launcher_FileChanged;
+                        downloader.ChangeProgress += Launcher_ProgressChanged;
+                        downloader.CheckHash = true;
+                        downloader.DownloadAll();
+
+                        var launch = new MLaunch(launchOption);
+                        var process = launch.GetProcess();
+
+                        StartProcess(process);
+
+                        btn_Launch.Text = "Oyunu Kapat";
+
+
                     }
+                    catch (MDownloadFileException mex)
+                    {
+                        MessageBox.Show(
+                            $"FileName : {mex.ExceptionFile.Name}\n" +
+                            $"FilePath : {mex.ExceptionFile.Path}\n" +
+                            $"FileUrl : {mex.ExceptionFile.Url}\n" +
+                            $"FileType : {mex.ExceptionFile.Type}\n\n" +
+                            mex.ToString());
+                        gameistarted = false;
+                    }
+                    catch (Win32Exception wex)
+                    {
+                        gameistarted = false;
+                        MessageBox.Show(wex.ToString() + "\n\nJava Problem");
+                    }
+                    catch (Exception ex)
+                    {
+                        gameistarted = false;
+                        MessageBox.Show(ex.ToString());
+                    }
+                });
+                th.Start();
+            }
 
-                    MVersion versionInfo = Versions.GetVersion(version);
-                    launchOption.StartVersion = versionInfo;
-
-                    MDownloader downloader;
-                    downloader = new MDownloader(MinecraftPath, versionInfo);
-
-                    downloader.ChangeFile += Launcher_FileChanged;
-                    downloader.ChangeProgress += Launcher_ProgressChanged;
-                    downloader.CheckHash = true;
-                    downloader.DownloadAll();
-
-                    var launch = new MLaunch(launchOption);
-                    var process = launch.GetProcess();
-
-                    StartProcess(process);
-
-
-                }
-                catch (MDownloadFileException mex)
-                {
-                    MessageBox.Show(
-                        $"FileName : {mex.ExceptionFile.Name}\n" +
-                        $"FilePath : {mex.ExceptionFile.Path}\n" +
-                        $"FileUrl : {mex.ExceptionFile.Url}\n" +
-                        $"FileType : {mex.ExceptionFile.Type}\n\n" +
-                        mex.ToString());
-                }
-                catch (Win32Exception wex)
-                {
-                    MessageBox.Show(wex.ToString() + "\n\nJava Problem");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            });
-            th.Start();
         }
 
         private void mcset_button_Click(object sender, EventArgs e)
@@ -236,32 +276,14 @@ namespace _345_Launcher.Source
 
                 guna2Transition1.ShowSync(pnl_settings_show, false);
 
-                befmenu = true;
             }
             else
             {
-                if (befmenu == true)
-                {
-                    pnl_settings_show.Controls.Clear();
 
-                    Settings_Minecraft frm = new Settings_Minecraft() { TopLevel = false, TopMost = true };
+                pnl_settings_show.Visible = false;
 
-                    this.pnl_settings_show.Controls.Add(frm);
+                pnl_settings_show.Controls.Clear();
 
-                    frm.Show();
-
-                    guna2Transition1.ShowSync(pnl_settings_show, false);
-
-                    befmenu = true;
-                }
-                else
-                {
-                    pnl_settings_show.Visible = false;
-
-                    pnl_settings_show.Controls.Clear();
-
-                    befmenu = false;
-                }
             }
         }
 
@@ -326,6 +348,23 @@ namespace _345_Launcher.Source
                     LargeImageText = $"345 Launcher v. {versionInf.FileVersion}",
                 }
             });
+
+        }
+
+        private void killgame()
+        {
+            DialogResult result = MessageBox.Show("Oyunu kapatmak istediğinize eminmisiniz?", "345 Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                gameistarted = false;
+                Process[] workers = Process.GetProcessesByName("javaw");
+                foreach (Process worker in workers)
+                {
+                    worker.Kill();
+                    worker.WaitForExit();
+                    worker.Dispose();
+                }
+            }
 
         }
 
@@ -423,9 +462,18 @@ namespace _345_Launcher.Source
         {
             MinecraftPath = path;
 
-
-            if (useMJava)
+            string installPath = GetJavaInstallationPath();
+            string filePath = System.IO.Path.Combine(installPath, "bin\\javaw.exe");
+            if (System.IO.File.Exists(filePath))
+            {
+                javapath = filePath;
+                useMJava = false;
+            }
+            else
+            {
                 javapath = path.Runtime;
+                useMJava = true;
+            }
 
 
             refreshVersions(null);
@@ -498,69 +546,44 @@ namespace _345_Launcher.Source
             process.StartInfo.RedirectStandardOutput = true;
             process.EnableRaisingEvents = true;
 
+
             process.Start();
+
+
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
+
+
             //Arguments text
         }
 
-
-
-
-        #endregion
-
-        private void launcherset_button_Click(object sender, EventArgs e)
+        private string GetJavaInstallationPath()
         {
-            if (pnl_settings_show.Visible == false)
+            string environmentPath = Environment.GetEnvironmentVariable("JAVA_HOME");
+
+            if (!string.IsNullOrEmpty(environmentPath))
             {
-                Settings_Launcher frm = new Settings_Launcher() { TopLevel = false, TopMost = true };
-
-                this.pnl_settings_show.Controls.Add(frm);
-
-                frm.Show();
-
-                guna2Transition1.ShowSync(pnl_settings_show, false);
-
-                befmenu = true;
+                return environmentPath;
             }
-            else
+
+            string javaKey = "SOFTWARE\\JavaSoft\\Java Runtime Environment\\";
+
+            using (Microsoft.Win32.RegistryKey rk = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(javaKey))
             {
-                if (befmenu == true)
+                string currentVersion = rk.GetValue("CurrentVersion").ToString();
+
+                using (Microsoft.Win32.RegistryKey key = rk.OpenSubKey(currentVersion))
                 {
-                    Settings_Launcher frm = new Settings_Launcher() { TopLevel = false, TopMost = true };
-
-                    this.pnl_settings_show.Controls.Add(frm);
-
-                    frm.Show();
-
-                    guna2Transition1.ShowSync(pnl_settings_show, false);
-
-                    befmenu = true;
+                    return key.GetValue("JavaHome").ToString();
                 }
-                else
-                {
-                    pnl_settings_show.Visible = false;
-
-                    pnl_settings_show.Controls.Clear();
-
-                    befmenu = false;
-                }
-
-
             }
         }
 
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        #endregion
+
+        private void up_Button_Click(object sender, EventArgs e)
         {
-            if (pnl_settings.Visible == false)
-                guna2Transition1.ShowSync(pnl_settings, false);
-            else
-            {
-                pnl_settings.Visible = false;
-                pnl_settings_show.Controls.Clear();
-                pnl_settings_show.Visible = false;
-            }
-            befmenu = false;
+            AutoUpdater.Start("https://launcher.mehmetali345.xyz/update.xml");
         }
     }
 }

@@ -13,7 +13,12 @@ namespace _345_Launcher.Source
         public Splash_Form()
         {
             InitializeComponent();
-            Properties.Settings.Default.Upgrade();
+            if(Properties.Settings.Default.UpdateSettings)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.UpdateSettings = false;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -14,6 +14,29 @@ namespace _345_Launcher.Source.SettingsForms
 {
     public partial class Settings_Minecraft : Form
     {
+
+        string javapath;
+
+        MinecraftPath MinecraftPath;
+        public void InitializeLauncher(MinecraftPath path)
+        {
+            MinecraftPath = path;
+
+            string installPath = GetJavaInstallationPath();
+            string filePath = System.IO.Path.Combine(installPath, "bin\\Java.exe");
+            if (System.IO.File.Exists(filePath))
+            {
+                javapath = filePath;
+            }
+            else
+            {
+                javapath = path.Runtime;
+            }
+
+            guna2TextBox4.Text = path.BasePath;
+            label6.Text = javapath;
+        }
+
         public Settings_Minecraft()
         {
             InitializeComponent();
@@ -23,7 +46,6 @@ namespace _345_Launcher.Source.SettingsForms
 
             Main_Form main = new Main_Form();
 
-            guna2TextBox4.Text = main.mcpathbase;
         }
 
 
@@ -43,5 +65,33 @@ namespace _345_Launcher.Source.SettingsForms
             Properties.Settings.Default.Save();
         }
 
+        private string GetJavaInstallationPath()
+        {
+            string environmentPath = Environment.GetEnvironmentVariable("JAVA_HOME");
+
+            if (!string.IsNullOrEmpty(environmentPath))
+            {
+                return environmentPath;
+            }
+
+            string javaKey = "SOFTWARE\\JavaSoft\\Java Runtime Environment\\";
+
+            using (Microsoft.Win32.RegistryKey rk = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(javaKey))
+            {
+                string currentVersion = rk.GetValue("CurrentVersion").ToString();
+
+                using (Microsoft.Win32.RegistryKey key = rk.OpenSubKey(currentVersion))
+                {
+                    return key.GetValue("JavaHome").ToString();
+                }
+            }
+        }
+
+        private void Settings_Minecraft_Load(object sender, EventArgs e)
+        {
+            var defaultPath = new MinecraftPath(MinecraftPath.GetOSDefaultPath());
+
+            InitializeLauncher(defaultPath);
+        }
     }
 }
