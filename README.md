@@ -50,7 +50,7 @@ Right Click the soluton from Solution Explorer --> Restore NuGet Packages
 - **Localization**
  - [x] JSON Localizer for multiple languages
 - **UI**
-- [x] Renew UI
+- [x] Renew UI(At new version I'm try implement controls to another framework)
 # Plans.Core
 - [x] Menu for Core Launcher
 - [ ] Mojang Authtentication
