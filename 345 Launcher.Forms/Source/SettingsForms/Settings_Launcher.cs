@@ -17,7 +17,17 @@ namespace _345_Launcher.Source.SettingsForms
         public Settings_Launcher()
         {
             InitializeComponent();
+
             lang();
+
+            if(Properties.Settings.Default.rpc == true)
+            {
+                guna2CheckBox1.Checked = true;
+            }
+            else
+            {
+                guna2CheckBox1.Checked = false;
+            }
         }
 
         private void lang()
@@ -33,13 +43,25 @@ namespace _345_Launcher.Source.SettingsForms
 
             if (string.IsNullOrEmpty(settings.Language))
             {
-                var defaultLanguage = languageCombo.Items.Add("Default (Build-in English)");
+                var defaultLanguage = languageCombo.Items.Add("Varsayılan(Yerleşik TÜrkçe)");
                 languageCombo.SelectedIndex = defaultLanguage;
             }
             else
             {
                 var index = languageCombo.Items.IndexOf(settings.Language);
                 languageCombo.SelectedIndex = index;
+            }
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(guna2CheckBox1.Checked == true)
+            {
+                Properties.Settings.Default.rpc = true;
+            }
+            else
+            {
+                Properties.Settings.Default.rpc = false;
             }
         }
     }

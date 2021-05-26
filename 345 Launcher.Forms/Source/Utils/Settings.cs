@@ -17,7 +17,7 @@ namespace _345_Launcher.Source.Utils
 
         public static void SaveSettings(Settings settings)
         {
-            if (settings.Language.Contains("Default"))
+            if (settings.Language.Contains("Varsayılan"))
             {
                 settings.Language = "";
             }
