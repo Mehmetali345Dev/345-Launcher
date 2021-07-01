@@ -8,7 +8,8 @@ Now we open to Custom UI designs!!!
 
 # ANNOUNCEMENT
 
-THIS PROJECT DIDN'T DEVELOP FOR 1 MONTHS BECAUSE I HAVE A LESSONS AND EXAMS!!! 
+THIS PROJECT NOT BE MAINTAINED IN FUTURE PLEASE LOOK NEW PROJECT 
+[Axelotl](https://github.com/Mehmetali345Dev/Axelotl)
 
 ![License](https://img.shields.io/github/license/Mehmetali345Dev/345-Launcher?style=for-the-badge)
 ![Downloads](https://img.shields.io/github/downloads/Mehmetali345Dev/345-Launcher/total?style=for-the-badge)
